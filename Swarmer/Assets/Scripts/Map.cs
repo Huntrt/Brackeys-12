@@ -38,15 +38,16 @@ public class Map : MonoBehaviour
 
 	public static Vector2 SnapPosition(Vector2 position)
 	{
-		//Make position take in account of spacing
-		position /= i.spacing;
-		//Snap the given position with spacing to get node postion
-		Vector2 snapped = new Vector2
-		(
-			Map.Spaced(Mathf.RoundToInt(position.x)),
-			Map.Spaced(Mathf.RoundToInt(position.y))
-		);
-		return snapped;
+		return (Vector2)WorldToCoordinates(position) * Map.i.spacing;
+	}
+
+	public static Vector2Int WorldToCoordinates(Vector2 worldPos)
+	{
+		//Make world position take in account of spacing
+		Vector2 spacedWorldPos = worldPos / Map.i.Spacing;
+		//Rounding the positon to be coordinates
+		Vector2Int coord = new Vector2Int(Mathf.RoundToInt(spacedWorldPos.x), Mathf.RoundToInt(spacedWorldPos.y));
+		return coord;
 	}
 
 	public Node FindNode(Vector2Int coord)
@@ -67,8 +68,9 @@ public class Map : MonoBehaviour
 		if(ground != null)
 		{
 			ground = Instantiate(ground, worldPos, Quaternion.identity);
-			//Setup the node object just create
+			//Setup the ground object just create
 			ground.name = nodes.Count + " | Node " + createCoord;
+			ground.transform.SetParent(nodeGrouper.transform);
 		}
 		//Make an new node and index it
 		Node createdNode = new Node(createCoord, worldPos, nodes.Count, ground);

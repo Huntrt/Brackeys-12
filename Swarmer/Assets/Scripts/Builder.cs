@@ -18,17 +18,12 @@ public class Builder : MonoBehaviour
 	void Update()
 	{
 		//? Convert mouse position to node coordinates
-		Vector2 spacedMousePos = g.MousePos() / Map.i.Spacing;
-		mouseCoord = new Vector2Int
-		(
-			Mathf.RoundToInt(spacedMousePos.x),
-			Mathf.RoundToInt(spacedMousePos.y)
-		);
+		mouseCoord = Map.WorldToCoordinates(g.MousePos());
 		//If there an node exist at mouse coordinates
 		if(Map.i.nodeIndexs.ContainsKey(mouseCoord))
 		{
 			//Move the preview and get node got hover
-			previewer.transform.position = g.MouseSnap();
+			previewer.transform.position = Map.SnapPosition(g.MousePos());
 			hoverNode = Map.i.nodeIndexs[mouseCoord];
 		}
 	}
