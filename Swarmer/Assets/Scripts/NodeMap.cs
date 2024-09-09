@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using UnityEngine.Rendering;
 using UnityEngine;
 using System;
 
@@ -25,7 +24,7 @@ public class NodeMap : MonoBehaviour
 		if(coordIndexes.ContainsKey(coord)) return coordIndexes[coord]; else return null;
 	}
 
-	public void CreateNode(Vector2Int createCoord, GameObject occupating = null)
+	public void CreateNode(Vector2Int createCoord, GameObject ground = null)
 	{
 		//Prevent new node duplication
 		if(FindNode(createCoord) != null)
@@ -34,13 +33,13 @@ public class NodeMap : MonoBehaviour
 			return;
 		}
 		Vector2 worldPos = new Vector3(createCoord.x, createCoord.y, 0) * spacing;
-		//Create the occupation if needed
-		if(occupating != null)
+		//Create the ground if needed
+		if(ground != null)
 		{
-			occupating = Instantiate(occupating, worldPos, Quaternion.identity);
+			ground = Instantiate(ground, worldPos, Quaternion.identity);
 		}
 		//Make an new node and index it
-		Node createdNode = new Node(createCoord, occupating, worldPos);
+		Node createdNode = new Node(createCoord, worldPos, nodes.Count, ground);
 		nodes.Add(createdNode);
 		coordIndexes.Add(createCoord, createdNode);
 	}
@@ -50,13 +49,17 @@ public class NodeMap : MonoBehaviour
 public class Node
 {
 	public Vector2Int coord;
-	public GameObject occupation;
 	public Vector2 pos;
+	public int index;
+	public GameObject[] occupations = new GameObject[3];
+	public bool towerable = false;
+	//? 0 = ground | 1 = foundation | 2 = tower
 
-	public Node(Vector2Int coord, GameObject occupation, Vector2 pos)
+	public Node(Vector2Int coord, Vector2 pos, int index, GameObject ground)
 	{
 		this.coord = coord;
-		this.occupation = occupation;
 		this.pos = pos;
+		this.index = index;
+		this.occupations[0] = ground;
 	}
 }
