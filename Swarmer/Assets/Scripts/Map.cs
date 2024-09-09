@@ -50,6 +50,20 @@ public class Map : MonoBehaviour
 		return coord;
 	}
 
+	public Node FindNode(Vector2Int coord, out Node finded)
+	{
+		if(nodeIndexs.ContainsKey(coord))
+		{
+			finded = nodeIndexs[coord];
+			return nodeIndexs[coord];
+		}
+		else
+		{
+			finded = null;
+			return null;
+		}
+	}
+
 	public Node FindNode(Vector2Int coord)
 	{
 		if(nodeIndexs.ContainsKey(coord)) return nodeIndexs[coord]; else return null;
@@ -77,6 +91,31 @@ public class Map : MonoBehaviour
 		nodes.Add(createdNode);
 		nodeIndexs.Add(createCoord, createdNode);
 	}
+
+	public List<Node> GetNeighbor(Node owner, bool cardinal, bool diagonal, bool self)
+	{
+		List<Node> neighbors = new List<Node>();
+		Node finded = null;
+		if(cardinal)
+		{
+			if(FindNode(owner.coord + Vector2Int.up, out finded)!=null) neighbors.Add(finded);
+			if(FindNode(owner.coord + Vector2Int.down, out finded)!=null) neighbors.Add(finded);
+			if(FindNode(owner.coord + Vector2Int.left, out finded)!=null) neighbors.Add(finded);
+			if(FindNode(owner.coord + Vector2Int.right, out finded)!=null) neighbors.Add(finded);
+		}
+		if(diagonal)
+		{
+			if(FindNode(owner.coord + (Vector2Int.up + Vector2Int.left), out finded)!=null) neighbors.Add(finded);
+			if(FindNode(owner.coord + (Vector2Int.up + Vector2Int.right), out finded)!=null) neighbors.Add(finded);
+			if(FindNode(owner.coord + (Vector2Int.down + Vector2Int.left), out finded)!=null) neighbors.Add(finded);
+			if(FindNode(owner.coord + (Vector2Int.down + Vector2Int.right), out finded)!=null) neighbors.Add(finded);
+		}
+		if(self)
+		{
+			neighbors.Add(owner);
+		}
+		return neighbors;
+	}
 }
 
 [Serializable]
@@ -86,8 +125,8 @@ public class Node
 	public Vector2 pos;
 	public int index;
 	public GameObject[] occupations = new GameObject[3];
-	public bool towerable = false;
 	//? 0 = ground | 1 = foundation | 2 = tower
+	public bool towerable = false;
 
 	public Node(Vector2Int coord, Vector2 pos, int index, GameObject ground)
 	{
@@ -95,5 +134,23 @@ public class Node
 		this.pos = pos;
 		this.index = index;
 		this.occupations[0] = ground;
+		flows = new Flows();
 	}
+
+
+	[Serializable]
+	public class Flows
+	{
+		public ushort cost;
+		public ushort prior;
+		public Vector2 direction;
+
+		public void Renew()
+		{
+			prior = ushort.MaxValue;
+			cost = 10;
+		}
+	}
+
+	public Flows flows;
 }
