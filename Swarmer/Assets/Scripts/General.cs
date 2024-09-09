@@ -25,6 +25,6 @@ public class General : MonoBehaviour
 
 	public Vector2 MouseSnap()
 	{
-		return NodeMap.SnapPosition(MousePos());
+		return Map.SnapPosition(MousePos());
 	}
 }

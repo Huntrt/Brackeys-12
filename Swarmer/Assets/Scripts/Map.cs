@@ -2,16 +2,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class NodeMap : MonoBehaviour
+public class Map : MonoBehaviour
 {
 	#region Set this class to singleton
-	static NodeMap _i; public static NodeMap i
+	static Map _i; public static Map i
 	{
 		get
 		{
 			if(_i==null)
 			{
-				_i = GameObject.FindObjectOfType<NodeMap>();
+				_i = GameObject.FindObjectOfType<Map>();
 			}
 			return _i;
 		}
@@ -22,7 +22,7 @@ public class NodeMap : MonoBehaviour
 	[SerializeField] GameObject nodeGrouper;
 	[SerializeField] Vector2Int mapSize; public Vector2Int MapSize {get => mapSize;}
 	[SerializeField] float spacing; public float Spacing {get => spacing;}
-    public Dictionary<Vector2Int, Node> coordIndexes = new Dictionary<Vector2Int, Node>();
+    public Dictionary<Vector2Int, Node> nodeIndexs = new Dictionary<Vector2Int, Node>();
 	public List<Node> nodes = new List<Node>();
 
 	void Start()
@@ -43,15 +43,15 @@ public class NodeMap : MonoBehaviour
 		//Snap the given position with spacing to get node postion
 		Vector2 snapped = new Vector2
 		(
-			NodeMap.Spaced(Mathf.RoundToInt(position.x)),
-			NodeMap.Spaced(Mathf.RoundToInt(position.y))
+			Map.Spaced(Mathf.RoundToInt(position.x)),
+			Map.Spaced(Mathf.RoundToInt(position.y))
 		);
 		return snapped;
 	}
 
 	public Node FindNode(Vector2Int coord)
 	{
-		if(coordIndexes.ContainsKey(coord)) return coordIndexes[coord]; else return null;
+		if(nodeIndexs.ContainsKey(coord)) return nodeIndexs[coord]; else return null;
 	}
 
 	public void CreateNode(Vector2Int createCoord, GameObject ground = null)
@@ -73,7 +73,7 @@ public class NodeMap : MonoBehaviour
 		//Make an new node and index it
 		Node createdNode = new Node(createCoord, worldPos, nodes.Count, ground);
 		nodes.Add(createdNode);
-		coordIndexes.Add(createCoord, createdNode);
+		nodeIndexs.Add(createCoord, createdNode);
 	}
 }
 
