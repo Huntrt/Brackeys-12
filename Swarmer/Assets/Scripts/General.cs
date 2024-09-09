@@ -17,11 +17,14 @@ public class General : MonoBehaviour
 	#endregion
     
 	public Camera cam;
-	public Vector2 mousePos;
-	public LayerMask nodeLayer;
 
 	public Vector2 MousePos()
 	{
 		return cam.ScreenToWorldPoint(Input.mousePosition);
+	}
+
+	public Vector2 MouseSnap()
+	{
+		return NodeMap.SnapPosition(MousePos());
 	}
 }

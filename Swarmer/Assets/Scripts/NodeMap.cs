@@ -4,10 +4,24 @@ using System;
 
 public class NodeMap : MonoBehaviour
 {
-	//test: test variable 
-	public GameObject testOccupation;
-	public Vector2Int mapSize;
-	public float spacing;
+	#region Set this class to singleton
+	static NodeMap _i; public static NodeMap i
+	{
+		get
+		{
+			if(_i==null)
+			{
+				_i = GameObject.FindObjectOfType<NodeMap>();
+			}
+			return _i;
+		}
+	}
+	#endregion
+
+	[SerializeField] GameObject nodeObj;
+	[SerializeField] GameObject nodeGrouper;
+	[SerializeField] Vector2Int mapSize; public Vector2Int MapSize {get => mapSize;}
+	[SerializeField] float spacing; public float Spacing {get => spacing;}
     public Dictionary<Vector2Int, Node> coordIndexes = new Dictionary<Vector2Int, Node>();
 	public List<Node> nodes = new List<Node>();
 
@@ -15,8 +29,24 @@ public class NodeMap : MonoBehaviour
 	{
 		for (int x = -mapSize.x; x <= mapSize.x; x++) for (int y = -mapSize.y; y <= mapSize.y; y++)
 		{
-			CreateNode(new Vector2Int(x,y), testOccupation);
+			CreateNode(new Vector2Int(x,y), nodeObj);
 		}
+	}
+	
+	//Function to make any value take into account of spacing
+	public static float Spaced(float value) {return (value) * i.spacing;}
+
+	public static Vector2 SnapPosition(Vector2 position)
+	{
+		//Make position take in account of spacing
+		position /= i.spacing;
+		//Snap the given position with spacing to get node postion
+		Vector2 snapped = new Vector2
+		(
+			NodeMap.Spaced(Mathf.RoundToInt(position.x)),
+			NodeMap.Spaced(Mathf.RoundToInt(position.y))
+		);
+		return snapped;
 	}
 
 	public Node FindNode(Vector2Int coord)
@@ -37,6 +67,8 @@ public class NodeMap : MonoBehaviour
 		if(ground != null)
 		{
 			ground = Instantiate(ground, worldPos, Quaternion.identity);
+			//Setup the node object just create
+			ground.name = nodes.Count + " | Node " + createCoord;
 		}
 		//Make an new node and index it
 		Node createdNode = new Node(createCoord, worldPos, nodes.Count, ground);
