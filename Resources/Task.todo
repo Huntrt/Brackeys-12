@@ -13,14 +13,17 @@ Gameplay:
 				* Complex build system
 			c. Independent tower (simple and genertic)
 				* Complex build system
-		▪ Popup to build whewn hover on buildable node.
+		▪ Popup to build when hover on buildable node.
+		▪ Building system core.
 	Pathfinding:
 		▪ Flow field:
-			▪ Spread the path from goal.
-			▪ Prior for each object.
-			▪ Enemy move on it.
+			✓ Spread the path from goal.
+			✓ Prior for each object.
+			✓ Enemy move on it.
+			▪ Pathing building
 	Enemey:
 		▪ Health system
+		▪ Check if there path to heart.
 		▪ List:
 			▪ Scout
 			▪ Tank
