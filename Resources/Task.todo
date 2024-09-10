@@ -2,8 +2,8 @@ Gameplay:
 	Map:
 		✓ Node system.
 		✓ Build the ground.
-		▪ Build the border.
 		✓ Allow to expand map.
+		✓ Build the border.
 		▪ Player heart.
 	Build:
 		▪ Tower system:

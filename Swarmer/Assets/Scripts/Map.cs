@@ -1,8 +1,7 @@
 using System.Collections.Generic;
+using Unity.Mathematics;     
 using UnityEngine;
-using System;
 using UnityEditor;
-using UnityEngine.UIElements;
 
 public class Map : MonoBehaviour
 {
@@ -21,7 +20,9 @@ public class Map : MonoBehaviour
 	#endregion
 
 	public bool debug;
-	[SerializeField] GameObject nodeObj;
+	[SerializeField] GameObject borderPrf;
+	[SerializeField] GameObject borderGrouper;
+	[SerializeField] GameObject nodePrf;
 	[SerializeField] GameObject nodeGrouper;
 	[SerializeField] int mapSize; public int MapSize {get => mapSize;}
 	[SerializeField] float spacing; public float Spacing {get => spacing;}
@@ -48,30 +49,62 @@ public class Map : MonoBehaviour
 	public void CreateMap(Vector2Int chunk)
 	{
 		if(mapSize%2 == 0) {Debug.LogError("Map size should not be even");}
+		//Shift the chunk to map size
 		Vector2Int shiftedChunk = chunk * (mapSize*2+1);
+		//Create node for given chunk
 		for (int x = -mapSize; x <= mapSize; x++) for (int y = -mapSize; y <= mapSize; y++)
 		{
-			CreateNode(new Vector2Int(x + shiftedChunk.x,y + shiftedChunk.y), chunk, nodeObj);
+			CreateNode(new Vector2Int(x + shiftedChunk.x,y + shiftedChunk.y), chunk, nodePrf);
+		}
+		RenewBorder();
+	}
+
+	void RenewBorder()
+	{
+		foreach (Node node in nodes)
+		{
+			//Destroy all node currently have border
+			if(node.isBorder)
+			{
+				node.isBorder = false;
+				DestroyOnNode(node, 1);
+			}
+			//This node is border if it dont have neighbor
+			List<Node> neighbor = GetNeighbor(node, true, true, false);
+			if(neighbor.Count < 8)
+			{
+				node.isBorder = true;
+				GameObject borderCreated = BuildOnNode(node, borderPrf, 1);
+				borderCreated.transform.SetParent(borderGrouper.transform);
+			}
 		}
 	}
 
 	public Node FindNode(Vector2Int coord, out Node finded)
 	{
-		if(nodeIndexs.ContainsKey(coord))
-		{
-			finded = nodeIndexs[coord];
-			return nodeIndexs[coord];
-		}
-		else
-		{
-			finded = null;
-			return null;
-		}
+		if(nodeIndexs.ContainsKey(coord)) {finded = nodeIndexs[coord]; return nodeIndexs[coord];} 
+		else {finded = null; return null;}
 	}
-
 	public Node FindNode(Vector2Int coord)
 	{
 		if(nodeIndexs.ContainsKey(coord)) return nodeIndexs[coord]; else return null;
+	}
+
+
+	public GameObject BuildOnNode(Node node, GameObject structure, int layer)
+	{
+		GameObject builded = Instantiate(structure, node.pos, quaternion.identity);
+		node.occupations[layer] = builded;
+		return builded;
+	}
+
+	public void DestroyOnNode(Node node, GameObject structure) //? Destroy by search the building occupaid it
+	{
+		foreach (GameObject o in node.occupations) {if(o == structure) Destroy(o);}
+	}
+	public void DestroyOnNode(Node node, int layer) //? Destroy by get the structure at given layer
+	{
+		Destroy(node.occupations[layer]);
 	}
 
 	public void CreateNode(Vector2Int createCoord, Vector2Int chunk, GameObject ground = null)
@@ -127,7 +160,7 @@ public class Map : MonoBehaviour
 		if(!debug) return;
 		foreach (Node n in nodes)
 		{
-			Handles.Label(n.pos, "u" + n.chunkLocate + "\n c" + n.coord);
+			Handles.Label(n.pos, "u" + n.chunkLocate + "\n c" + n.coord + "\n");
 		}
 	}
 }

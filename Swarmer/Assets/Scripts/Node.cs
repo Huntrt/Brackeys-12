@@ -9,7 +9,7 @@ public class Node
 	public int index;
 	public GameObject[] occupations = new GameObject[3];
 	//? 0 = ground | 1 = foundation | 2 = tower
-	public bool towerable = false;
+	public bool towerable = false, isBorder = false;
 	public Vector2Int chunkLocate;
 
 	public Node(Vector2Int coord, Vector2 pos, int index, GameObject ground, Vector2Int chunk)
@@ -21,7 +21,6 @@ public class Node
 		this.chunkLocate = chunk;
 		flows = new Flows();
 	}
-
 
 	[Serializable]
 	public class Flows
