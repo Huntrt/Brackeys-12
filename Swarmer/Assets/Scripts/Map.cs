@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEditor;
+using UnityEngine.UIElements;
 
 public class Map : MonoBehaviour
 {
@@ -18,20 +20,13 @@ public class Map : MonoBehaviour
 	}
 	#endregion
 
+	public bool debug;
 	[SerializeField] GameObject nodeObj;
 	[SerializeField] GameObject nodeGrouper;
-	[SerializeField] Vector2Int mapSize; public Vector2Int MapSize {get => mapSize;}
+	[SerializeField] int mapSize; public int MapSize {get => mapSize;}
 	[SerializeField] float spacing; public float Spacing {get => spacing;}
     public Dictionary<Vector2Int, Node> nodeIndexs = new Dictionary<Vector2Int, Node>();
 	public List<Node> nodes = new List<Node>();
-
-	void Start()
-	{
-		for (int x = -mapSize.x; x <= mapSize.x; x++) for (int y = -mapSize.y; y <= mapSize.y; y++)
-		{
-			CreateNode(new Vector2Int(x,y), nodeObj);
-		}
-	}
 	
 	//Function to make any value take into account of spacing
 	public static float Spaced(float value) {return (value) * i.spacing;}
@@ -48,6 +43,16 @@ public class Map : MonoBehaviour
 		//Rounding the positon to be coordinates
 		Vector2Int coord = new Vector2Int(Mathf.RoundToInt(spacedWorldPos.x), Mathf.RoundToInt(spacedWorldPos.y));
 		return coord;
+	}
+
+	public void CreateMap(Vector2Int chunk)
+	{
+		if(mapSize%2 == 0) {Debug.LogError("Map size should not be even");}
+		Vector2Int shiftedChunk = chunk * (mapSize*2+1);
+		for (int x = -mapSize; x <= mapSize; x++) for (int y = -mapSize; y <= mapSize; y++)
+		{
+			CreateNode(new Vector2Int(x + shiftedChunk.x,y + shiftedChunk.y), chunk, nodeObj);
+		}
 	}
 
 	public Node FindNode(Vector2Int coord, out Node finded)
@@ -69,7 +74,7 @@ public class Map : MonoBehaviour
 		if(nodeIndexs.ContainsKey(coord)) return nodeIndexs[coord]; else return null;
 	}
 
-	public void CreateNode(Vector2Int createCoord, GameObject ground = null)
+	public void CreateNode(Vector2Int createCoord, Vector2Int chunk, GameObject ground = null)
 	{
 		//Prevent new node duplication
 		if(FindNode(createCoord) != null)
@@ -87,7 +92,7 @@ public class Map : MonoBehaviour
 			ground.transform.SetParent(nodeGrouper.transform);
 		}
 		//Make an new node and index it
-		Node createdNode = new Node(createCoord, worldPos, nodes.Count, ground);
+		Node createdNode = new Node(createCoord, worldPos, nodes.Count, ground, chunk);
 		nodes.Add(createdNode);
 		nodeIndexs.Add(createCoord, createdNode);
 	}
@@ -115,5 +120,14 @@ public class Map : MonoBehaviour
 			neighbors.Add(owner);
 		}
 		return neighbors;
+	}
+
+	void OnDrawGizmos()
+	{
+		if(!debug) return;
+		foreach (Node n in nodes)
+		{
+			Handles.Label(n.pos, "u" + n.chunkLocate + "\n c" + n.coord);
+		}
 	}
 }
