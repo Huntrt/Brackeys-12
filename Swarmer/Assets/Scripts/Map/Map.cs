@@ -139,6 +139,19 @@ public class Map : MonoBehaviour
 		return neighbors;
 	}
 
+	public List<Node> GetVacants()
+	{
+		List<Node> vacants = new List<Node>();
+		foreach (Node node in nodes)
+		{
+			if(node.occupations[1].obj == null)
+			{
+				vacants.Add(node);
+			}
+		}
+		return vacants;
+	}
+
 	void OnDrawGizmos()
 	{
 		if(!debug) return;
