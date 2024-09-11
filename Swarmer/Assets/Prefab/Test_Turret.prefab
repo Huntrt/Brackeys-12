@@ -265,10 +265,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats:
     firerate: 10
-    accuracy: 100
+    accuracy: 5
     range: 4
     projectile: 5
-    damage: 0
+    damage: 4
     piercing: 10
     speed: 15
     lifetime: 2

@@ -31,7 +31,7 @@ public class Builder : MonoBehaviour
 		//Stop build if not allow to occupation the node
 		if(!node.AllowOccupation(structure, out status)) return null;
 		//Create structure and occupating the node
-		GameObject builded = Instantiate(structure, node.pos, Quaternion.identity);
+		GameObject builded = Instantiate(structure, node.pos, structure.transform.rotation);
 		node.Occupating(builded);
 		return builded;
 	}

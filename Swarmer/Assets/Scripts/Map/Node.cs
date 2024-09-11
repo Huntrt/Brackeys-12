@@ -37,6 +37,7 @@ public class Node
 	public bool AllowOccupation(GameObject checkObj, out string status)
 	{
 		Structure structure = checkObj.GetComponent<Structure>();
+		if(structure == null) Debug.LogError("The [" + checkObj.name + "] structure is missing structure component");
 		/// STOP - If there an structure already occupied on that layer
 		if(occupations[structure.layer].obj != null) 
 		{

@@ -4,8 +4,8 @@ public class Health : MonoBehaviour
 {
     [SerializeField] float curHealth, maxHealth;
 	public float MaxHealth {get; set;}
-	public delegate void OnHurt(float taken); public delegate void OnHeal(float taken);
-	public OnHurt onHurt; public OnHeal onHeal;
+	public delegate void OnHurt(float taken); public delegate void OnHeal(float taken); public delegate void OnDeath();
+	public OnHurt onHurt; public OnHeal onHeal; public OnDeath onDeath;
 
 	void OnEnable()
 	{
@@ -31,6 +31,7 @@ public class Health : MonoBehaviour
 
 	public void Die()
 	{
+		onDeath?.Invoke();
 		//temp: pool later
 		Destroy(gameObject);
 	}
