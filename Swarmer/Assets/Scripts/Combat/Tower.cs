@@ -8,6 +8,7 @@ public class Tower : MonoBehaviour
 		[SerializeField] float firerate; //FRT
 		[SerializeField] float accuracy; //ACC
 		[SerializeField] float range; //RNG 
+		[SerializeField] int projectile; //PRO
 		[SerializeField] float damage; //DMG
 		[SerializeField] float piercing; //PIE
 		[SerializeField] float speed; //SPD
@@ -15,6 +16,7 @@ public class Tower : MonoBehaviour
 		public float Firerate {get {return firerate;} set {firerate = value; onStatsChange?.Invoke("firerate", value);}} 
 		public float Accuracy {get {return accuracy;} set {accuracy = value; onStatsChange?.Invoke("accuracy", value);}} 
 		public float Range {get {return range;} set {range = value; onStatsChange?.Invoke("range", value);}} 
+		public int Projectile {get {return projectile;} set {projectile = value; onStatsChange?.Invoke("projectile", value);}} 
 		public float Damage {get {return damage;} set {damage = value; onStatsChange?.Invoke("damage", value);}} 
 		public float Piercing {get {return piercing;} set {piercing = value; onStatsChange?.Invoke("piercing", value);}} 
 		public float Speed {get {return speed;} set {speed = value; onStatsChange?.Invoke("speed", value);}} 
@@ -25,6 +27,7 @@ public class Tower : MonoBehaviour
 			firerate = statsGiven.Firerate;
 			accuracy = statsGiven.Accuracy;
 			range = statsGiven.Range;
+			projectile = statsGiven.projectile;
 			damage = statsGiven.Damage;
 			piercing = statsGiven.piercing;
 			speed = statsGiven.speed;
@@ -57,13 +60,22 @@ public class Tower : MonoBehaviour
 		curFirerate += Time.deltaTime;
 		if(curFirerate >= 1/stats.Firerate)
 		{
-			GameObject striked = Instantiate(strike, firepoint.position, firepoint.localRotation);
-			striked.SetActive(false);
-			striked.transform.rotation = aimer.rotation; 
-			striked.GetComponent<Strike>().stats = new Stats(stats);
-			striked.SetActive(true);
+			for (int p = 0; p < stats.Projectile; p++)
+			{
+				Striking();
+			}
 			curFirerate -= curFirerate;
 		}
+	}
+
+	void Striking()
+	{
+		Quaternion accurate = Quaternion.Euler(0,0,Random.Range(-stats.Accuracy, stats.Accuracy) + aimer.localEulerAngles.z);
+		GameObject striked = Instantiate(strike, firepoint.position, Quaternion.identity);
+		striked.SetActive(false);
+		striked.transform.rotation = accurate; 
+		striked.GetComponent<Strike>().stats = new Stats(stats);
+		striked.SetActive(true);
 	}
 
 	void RangeCheck()
