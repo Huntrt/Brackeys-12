@@ -17,6 +17,7 @@ public class General : MonoBehaviour
 	#endregion
     
 	public Camera cam;
+	public LayerMask enemyLayer;
 
 	public Vector2 MousePos()
 	{
