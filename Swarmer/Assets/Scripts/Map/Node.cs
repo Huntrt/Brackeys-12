@@ -9,18 +9,18 @@ public class Node
 	public int index;
 	public Occupation[] occupations;
 	//? 0 = ground | 1 = foundation | 2 = tower
-	public bool towerable = false, isBorder = false;
-	public Vector2Int chunkLocate;
+	public bool isBorder = false;
+	public Vector2Int chunkReside;
 
 	public Node(Vector2Int coord, Vector2 pos, int index, Vector2Int chunk)
 	{
 		this.coord = coord;
 		this.pos = pos;
 		this.index = index;
-		this.chunkLocate = chunk;
-		//Cretae blank occupation
+		this.chunkReside = chunk;
+		//Create blank occupation
 		occupations = new Occupation[3];
-		for (int o = 0; o < 3; o++) {occupations[o] = new Occupation();}
+		for (int o = 0; o < 3; o++) {occupations[o] = new Occupation(); UnOccupating(o);}
 		//Make new flow
 		flows = new Flows();
 		ResetFlow();
@@ -29,20 +29,49 @@ public class Node
 	[Serializable]
 	public class Occupation
 	{
-		public GameObject structure;
+		public GameObject obj;
+		public Structure component;
 		public ushort flowCostMod;
 	}
 
-	public void Occupating(GameObject structureObj)
+	public bool AllowOccupation(GameObject checkObj, out string status)
 	{
-		Structure structure = structureObj.GetComponent<Structure>();
-		occupations[structure.layer].structure = structureObj;
+		Structure structure = checkObj.GetComponent<Structure>();
+		/// STOP - If there an structure already occupied on that layer
+		if(occupations[structure.layer].obj != null) 
+		{
+			status = "Structure [" + occupations[structure.layer].obj.name + "] already exist at layer " + structure.layer; 
+			return false;
+		}
+		/// STOP - If try to build tower but foundation not occupied
+		if(structure.layer == 2 && occupations[1].obj == null) 
+		{
+			status = "There no FOUNDATION for tower [" + checkObj.name +"]"; 
+			return false;
+		}
+		/// STOP - If try to build tower but the foundation not allow
+		if(structure.layer == 2 && !occupations[1].component.towerable) 
+		{
+			status = "The foundation [" + occupations[1].obj.name + "] does not support tower"; 
+			return false;
+		}
+		status = "Structure [" + checkObj.name + "] allow to occupied";
+		return true;
+	}
+
+	public bool Occupating(GameObject occupator)
+	{
+		Structure structure = occupator.GetComponent<Structure>();
+		occupations[structure.layer].obj = occupator;
+		occupations[structure.layer].component = structure;
 		occupations[structure.layer].flowCostMod = structure.flowCostMod;
+		return true;
 	}
 
 	public void UnOccupating(int layer)
 	{
-		occupations[layer].structure = null;
+		occupations[layer].obj = null;
+		occupations[layer].component = null;
 		occupations[layer].flowCostMod = 0;
 	}
 

@@ -16,11 +16,11 @@ Gameplay:
 		▪ Popup to build when hover on buildable node.
 		▪ Building system core.
 	Pathfinding:
-		▪ Flow field:
+		✓ Flow field:
 			✓ Spread the path from goal.
 			✓ Prior for each object.
 			✓ Enemy move on it.
-			▪ Pathing building
+			✓ Pathing building
 	Enemey:
 		▪ Health system
 		▪ Check if there path to heart.
@@ -33,3 +33,7 @@ Gameplay:
 	Economy:
 		▪ Buy tower
 		▪ Drop money
+
+Bug:
+	▪ Massed collider lag @caution
+		a. Temporary stop enemy collider if they collider with each other rapidly

@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Unity.Mathematics;     
 using UnityEngine;
 using UnityEditor;
+using System.Runtime.InteropServices;
 
 public class Map : MonoBehaviour
 {
@@ -67,14 +68,14 @@ public class Map : MonoBehaviour
 			if(node.isBorder)
 			{
 				node.isBorder = false;
-				Builder.DestroyOnNode(node, 1);
+				Builder.DemolishAtNode(node, 1);
 			}
 			//This node is border if it dont have neighbor
 			List<Node> neighbor = GetNeighbor(node, true, true, false);
 			if(neighbor.Count < 8)
 			{
 				node.isBorder = true;
-				GameObject borderCreated = Builder.BuildOnNode(node, borderPrf, 1);
+				GameObject borderCreated = Builder.BuildAtNode(node, borderPrf); 
 				borderCreated.transform.SetParent(borderGrouper.transform);
 			}
 		}
@@ -104,7 +105,7 @@ public class Map : MonoBehaviour
 		///Build the ground at layer zero on created node
 		if(ground != null) 
 		{
-			GameObject groundBuilded = Builder.BuildOnNode(createdNode, ground, 0);
+			GameObject groundBuilded = Builder.BuildAtNode(createdNode, ground);
 			//Setup the ground object just create
 			groundBuilded.name = nodes.Count + " | Node " + createCoord;
 			groundBuilded.transform.SetParent(groundGrouper.transform);
@@ -143,7 +144,7 @@ public class Map : MonoBehaviour
 		if(!debug) return;
 		foreach (Node n in nodes)
 		{
-			Handles.Label(n.pos, "u" + n.chunkLocate + "\n c" + n.coord + "\n");
+			Handles.Label(n.pos, "u" + n.chunkReside + "\n c" + n.coord + "\n");
 		}
 	}
 }
