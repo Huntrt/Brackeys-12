@@ -22,8 +22,8 @@ public class Map : MonoBehaviour
 	public bool debug;
 	[SerializeField] GameObject borderPrf;
 	[SerializeField] GameObject borderGrouper;
-	[SerializeField] GameObject nodePrf;
-	[SerializeField] GameObject nodeGrouper;
+	[SerializeField] GameObject groundPrf;
+	[SerializeField] GameObject groundGrouper;
 	[SerializeField] int mapSize; public int MapSize {get => mapSize;}
 	[SerializeField] float spacing; public float Spacing {get => spacing;}
     public Dictionary<Vector2Int, Node> nodeIndexs = new Dictionary<Vector2Int, Node>();
@@ -54,7 +54,7 @@ public class Map : MonoBehaviour
 		//Create node for given chunk
 		for (int x = -mapSize; x <= mapSize; x++) for (int y = -mapSize; y <= mapSize; y++)
 		{
-			CreateNode(new Vector2Int(x + shiftedChunk.x,y + shiftedChunk.y), chunk, nodePrf);
+			CreateNode(new Vector2Int(x + shiftedChunk.x,y + shiftedChunk.y), chunk, groundPrf);
 		}
 		RenewBorder();
 	}
@@ -67,14 +67,14 @@ public class Map : MonoBehaviour
 			if(node.isBorder)
 			{
 				node.isBorder = false;
-				DestroyOnNode(node, 1);
+				Builder.DestroyOnNode(node, 1);
 			}
 			//This node is border if it dont have neighbor
 			List<Node> neighbor = GetNeighbor(node, true, true, false);
 			if(neighbor.Count < 8)
 			{
 				node.isBorder = true;
-				GameObject borderCreated = BuildOnNode(node, borderPrf, 1);
+				GameObject borderCreated = Builder.BuildOnNode(node, borderPrf, 1);
 				borderCreated.transform.SetParent(borderGrouper.transform);
 			}
 		}
@@ -90,23 +90,6 @@ public class Map : MonoBehaviour
 		if(nodeIndexs.ContainsKey(coord)) return nodeIndexs[coord]; else return null;
 	}
 
-
-	public GameObject BuildOnNode(Node node, GameObject structure, int layer)
-	{
-		GameObject builded = Instantiate(structure, node.pos, quaternion.identity);
-		node.occupations[layer] = builded;
-		return builded;
-	}
-
-	public void DestroyOnNode(Node node, GameObject structure) //? Destroy by search the building occupaid it
-	{
-		foreach (GameObject o in node.occupations) {if(o == structure) Destroy(o);}
-	}
-	public void DestroyOnNode(Node node, int layer) //? Destroy by get the structure at given layer
-	{
-		Destroy(node.occupations[layer]);
-	}
-
 	public void CreateNode(Vector2Int createCoord, Vector2Int chunk, GameObject ground = null)
 	{
 		//Prevent new node duplication
@@ -116,16 +99,16 @@ public class Map : MonoBehaviour
 			return;
 		}
 		Vector2 worldPos = new Vector3(createCoord.x, createCoord.y, 0) * spacing;
-		//Create the ground if needed
-		if(ground != null)
-		{
-			ground = Instantiate(ground, worldPos, Quaternion.identity);
-			//Setup the ground object just create
-			ground.name = nodes.Count + " | Node " + createCoord;
-			ground.transform.SetParent(nodeGrouper.transform);
-		}
 		//Make an new node and index it
-		Node createdNode = new Node(createCoord, worldPos, nodes.Count, ground, chunk);
+		Node createdNode = new Node(createCoord, worldPos, nodes.Count, chunk);
+		///Build the ground at layer zero on created node
+		if(ground != null) 
+		{
+			GameObject groundBuilded = Builder.BuildOnNode(createdNode, ground, 0);
+			//Setup the ground object just create
+			groundBuilded.name = nodes.Count + " | Node " + createCoord;
+			groundBuilded.transform.SetParent(groundGrouper.transform);
+		}
 		nodes.Add(createdNode);
 		nodeIndexs.Add(createCoord, createdNode);
 	}

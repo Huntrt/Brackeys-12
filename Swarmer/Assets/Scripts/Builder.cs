@@ -2,6 +2,20 @@ using UnityEngine;
 
 public class Builder : MonoBehaviour
 {
+	#region Set this class to singleton
+	static Builder _i; public static Builder i
+	{
+		get
+		{
+			if(_i==null)
+			{
+				_i = GameObject.FindObjectOfType<Builder>();
+			}
+			return _i;
+		}
+	}
+	#endregion
+
 	//test: Test variable
 	public GameObject previewer;
 	Node hoverNode; public Node HoverNode {get => hoverNode;}
@@ -42,5 +56,28 @@ public class Builder : MonoBehaviour
 	{
 		buildPanel.transform.position = g.cam.WorldToScreenPoint(hoverNode.pos);
 		buildPanel.SetActive(true);
+	}
+
+	public static GameObject BuildOnNode(Node node, GameObject structure, int layer)
+	{
+		GameObject builded = Instantiate(structure, node.pos, Quaternion.identity);
+		node.Occupating(builded);
+		return builded;
+	}
+
+	public static void DestroyOnNode(Node node, GameObject structure) //? Destroy by search the building occupaid it
+	{
+		for (int o = 0; o < node.occupations.Length; o++)
+		{
+			if(node.occupations[o].structure == structure) 
+			{
+				Destroy(node.occupations[o].structure); 
+				node.UnOccupating(o);
+			}
+		}
+	}
+	public static void DestroyOnNode(Node node, int layer) //? Destroy by get the structure at given layer
+	{
+		Destroy(node.occupations[layer].structure);
 	}
 }

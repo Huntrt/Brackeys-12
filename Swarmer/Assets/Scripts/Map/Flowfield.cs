@@ -27,7 +27,7 @@ public class Flowfield : MonoBehaviour
 	void CostToGoal(Vector2 goalPos)
 	{
 		//Renew all the node flows
-		foreach (Node node in m.nodes) {node.flows.Renew();}
+		foreach (Node node in m.nodes) {node.ResetFlow();}
 		//Convert goal to coordinates
 		Vector2Int goalCoord = Map.WorldToCoordinates(goalPos);
 		//Stop if goal coord not exist
