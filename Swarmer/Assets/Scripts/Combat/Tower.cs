@@ -6,19 +6,34 @@ public class Tower : MonoBehaviour
 	{
 		public delegate void OnStatsChange(string stats, float modifier); public OnStatsChange onStatsChange;
 		[SerializeField] float firerate; //FRT
-		public float Firerate {get {return firerate;} set {firerate = value; onStatsChange?.Invoke("firerate", value);}} 
 		[SerializeField] float accuracy; //ACC
-		public float Accuracy {get {return accuracy;} set {accuracy = value; onStatsChange?.Invoke("accuracy", value);}} 
 		[SerializeField] float range; //RNG 
-		public float Range {get {return range;} set {range = value; onStatsChange?.Invoke("range", value);}} 
 		[SerializeField] float damage; //DMG
-		public float Damage {get {return damage;} set {damage = value; onStatsChange?.Invoke("damage", value);}} 
+		[SerializeField] float piercing; //PIE
 		[SerializeField] float speed; //SPD
-		public float Speed {get {return speed;} set {speed = value; onStatsChange?.Invoke("speed", value);}} 
 		[SerializeField] float lifetime; //LFT
+		public float Firerate {get {return firerate;} set {firerate = value; onStatsChange?.Invoke("firerate", value);}} 
+		public float Accuracy {get {return accuracy;} set {accuracy = value; onStatsChange?.Invoke("accuracy", value);}} 
+		public float Range {get {return range;} set {range = value; onStatsChange?.Invoke("range", value);}} 
+		public float Damage {get {return damage;} set {damage = value; onStatsChange?.Invoke("damage", value);}} 
+		public float Piercing {get {return piercing;} set {piercing = value; onStatsChange?.Invoke("piercing", value);}} 
+		public float Speed {get {return speed;} set {speed = value; onStatsChange?.Invoke("speed", value);}} 
 		public float Lifetime {get {return lifetime;} set {lifetime = value; onStatsChange?.Invoke("lifetime", value);}} 
+
+		public Stats(Stats statsGiven)
+		{
+			firerate = statsGiven.Firerate;
+			accuracy = statsGiven.Accuracy;
+			range = statsGiven.Range;
+			damage = statsGiven.Damage;
+			piercing = statsGiven.piercing;
+			speed = statsGiven.speed;
+			lifetime = statsGiven.Lifetime;
+		}
 	}
-	public Stats stats = new Stats();
+	public Stats stats;
+	[SerializeField] GameObject strike;
+	float curFirerate;
 	[SerializeField] GameObject targetEnemy;
 	[SerializeField] Transform firepoint, aimer;
 	[SerializeField] LineRenderer rangeDisplay;
@@ -31,6 +46,27 @@ public class Tower : MonoBehaviour
 	}
 
 	void Update()
+	{
+		RangeCheck();
+		Firing();
+	}
+
+	void Firing()
+	{
+		if(targetEnemy == null) return;
+		curFirerate += Time.deltaTime;
+		if(curFirerate >= 1/stats.Firerate)
+		{
+			GameObject striked = Instantiate(strike, firepoint.position, firepoint.localRotation);
+			striked.SetActive(false);
+			striked.transform.rotation = aimer.rotation; 
+			striked.GetComponent<Strike>().stats = new Stats(stats);
+			striked.SetActive(true);
+			curFirerate -= curFirerate;
+		}
+	}
+
+	void RangeCheck()
 	{
 		rangeDisplay.gameObject.SetActive(showRange);
 		//Show the range

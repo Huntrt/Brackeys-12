@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
+  - Turret_Strike
   layers:
   - Default
   - TransparentFX
@@ -13,8 +15,8 @@ TagManager:
   - UI
   - Enemy
   - Turret
-  - 
-  - 
+  - Turret_Strike
+  - Structure
   - 
   - 
   - 

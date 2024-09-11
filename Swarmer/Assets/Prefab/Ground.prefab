@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7964226198220038240}
   - component: {fileID: 2443579263922976851}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Center
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4034494233945555094}
   - component: {fileID: -4391806398414858051}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,6 +132,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layer: 0
   flowCostMod: 10
+  towerable: 0
 --- !u!1 &8458530304162074466
 GameObject:
   m_ObjectHideFlags: 0
@@ -142,7 +143,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5327097013562930265}
   - component: {fileID: 1808123009654111251}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Outline
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2229032409872579222}
   - component: {fileID: 7841502550715410662}
   - component: {fileID: 4239668642859843781}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49,6 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layer: 1
   flowCostMod: 500
+  towerable: 0
 --- !u!212 &2229032409872579222
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -160,3 +161,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layer: 1
   flowCostMod: 400
+  towerable: 0

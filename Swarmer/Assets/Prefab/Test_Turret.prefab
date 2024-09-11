@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5439958915524516619}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Firepoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8011594679558457411}
   - component: {fileID: 5402156566109934613}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,7 +126,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4214023492100533933}
   - component: {fileID: 2544381486444185791}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -211,7 +211,7 @@ GameObject:
   - component: {fileID: 8412127512102106364}
   - component: {fileID: 2833738076335533808}
   - component: {fileID: 4339703118665088794}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Test_Turret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -264,12 +264,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats:
-    firerate: 1
+    firerate: 10
     accuracy: 0
     range: 4
-    damage: 3
-    speed: 10
+    damage: 5
+    piercing: 10
+    speed: 15
     lifetime: 2
+  strike: {fileID: 1899326858833944987, guid: 70ebd1ae38738b443963244c484e26db, type: 3}
   targetEnemy: {fileID: 0}
   firepoint: {fileID: 5439958915524516619}
   aimer: {fileID: 8412127512102106364}
@@ -285,7 +287,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4108792388993715261}
   - component: {fileID: 4395187749685219033}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Range Display
   m_TagString: Untagged
   m_Icon: {fileID: 0}
