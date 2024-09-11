@@ -24,6 +24,7 @@ Gameplay:
 	Enemey:
 		▪ Health system
 		▪ Check if there path to heart.
+		▪ Spawning
 		▪ List:
 			▪ Scout
 			▪ Tank
@@ -33,6 +34,13 @@ Gameplay:
 	Economy:
 		▪ Buy tower
 		▪ Drop money
+	Loop:
+		▪ Map expanded.
+		▪ Buy defense.
+		▪ Enemy spawn point.
+		▪ Stronger enemy.
+		▪ Loot.
+		▪ Repeat...
 
 Bug:
 	▪ Massed collider lag @caution
