@@ -4,7 +4,7 @@ Gameplay:
 		✓ Build the ground.
 		✓ Allow to expand map.
 		✓ Build the border.
-		▪ Player heart.
+		✓ Player heart.
 		▪ Camera control.
 	Build:
 		▪ Tower system:
@@ -21,11 +21,13 @@ Gameplay:
 			✓ Spread the path from goal.
 			✓ Prior for each object.
 			✓ Enemy move on it.
-			✓ Pathing building
+			✓ Pathing building.
 	Enemey:
-		▪ Health system
-		▪ Check if there path to heart.
-		▪ Spawning
+		✓ Health system.
+		✓ Check if there path to heart.
+		✓ Spawning.
+		▪ Spawning scaling.
+		▪ Enemy scaling.
 		▪ List:
 			▪ Scout
 			▪ Tank
@@ -49,3 +51,5 @@ Bug:
 		a. Temporary stop enemy collider if they collider with each other rapidly
 	▪ Composite border generate lag @minimal
 		? Upon map expansion adding more border to composite will cause lag
+	▪ Bulldozer inaccuracy @minimal
+		? There an rare chance if bulldozer align perfect diagonal it will not destroy wall

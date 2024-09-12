@@ -16,15 +16,15 @@ public class Flowfield : MonoBehaviour
 
 	void OnEnable()
 	{
-		Map.i.onMapCreated += PathToGoal;
+		GameLoop.onLevelBegin += PathToGoal;
 	}
 
 	void OnDisable()
 	{
-		Map.i.onMapCreated -= PathToGoal;
+		GameLoop.onLevelBegin -= PathToGoal;
 	}
 
-	public void PathToGoal(Vector2Int chunk)
+	public void PathToGoal(int lv)
 	{
 		//Set goal as player heart
 		Vector2 goalPos = Player.i.heartObj.transform.position;
@@ -95,6 +95,7 @@ public class Flowfield : MonoBehaviour
 
 	void DrawDebug()
 	{
+		print("A");
 		foreach (GameObject a in flowArrows) {Destroy(a);} flowArrows.Clear();
 		if(!debug) return;
 		foreach (Node n in m.nodes) 

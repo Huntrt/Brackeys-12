@@ -25,6 +25,7 @@ public class Node
 		flows = new Flows();
 		ResetFlow();
 	}
+
 	
 	[Serializable]
 	public class Occupation
@@ -32,6 +33,13 @@ public class Node
 		public GameObject obj;
 		public Structure component;
 		public ushort flowCostMod;
+	}
+
+	public bool HaveOccupation(int layer)
+	{
+		if(occupations[layer].obj == null) return false;
+		if(occupations[layer].component == null) return false;
+		return true;
 	}
 
 	public bool AllowOccupation(GameObject checkObj, out string status)

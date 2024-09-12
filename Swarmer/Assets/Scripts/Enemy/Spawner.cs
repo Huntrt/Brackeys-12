@@ -1,9 +1,9 @@
 using System.Collections.Generic;
-using Unity.Mathematics;
 using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
+	public GameObject bulldozerPref;
 	public GameObject spawnerPrf;
 	public GameObject testEnemy; //temp: enemy test
     public int spawnerCount;
@@ -19,7 +19,7 @@ public class Spawner : MonoBehaviour
 
 	void Update()
 	{
-		if(GameLoop.i.combatPhase)
+		if(GameLoop.i.raidPhase)
 		{
 			Spawning();
 		}
@@ -32,7 +32,7 @@ public class Spawner : MonoBehaviour
 		{
 			foreach (Node spawer in spawnerBuildeds)
 			{
-				Instantiate(testEnemy, spawer.pos, quaternion.identity);
+				Instantiate(testEnemy, spawer.pos, Quaternion.identity);
 			}
 			spawnRateTimer -= spawnRateTimer;
 		}
@@ -48,6 +48,7 @@ public class Spawner : MonoBehaviour
 		for (int i = 0; i < spawnerCount; i++)
 		{
 			Node spawnerNode = vacantNodes[UnityEngine.Random.Range(0, vacantNodes.Count)];
+			Instantiate(bulldozerPref, spawnerNode.pos, bulldozerPref.transform.rotation);
 			Builder.BuildAtNode(spawnerNode, spawnerPrf);
 			spawnerBuildeds.Add(spawnerNode);
 		}

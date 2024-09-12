@@ -14,6 +14,14 @@ public class Structure : MonoBehaviour
 
 	public bool HaveCatalog(Category neededCategory)
 	{
-		return categories.Contains(neededCategory);
+		if(categories == null || categories.Length < 0)
+		{
+			return false;
+		}
+		for (int c = 0; c < categories.Length; c++)
+		{
+			if(categories[c] == neededCategory) {return true;}
+		}
+		return false;
 	}
 }
