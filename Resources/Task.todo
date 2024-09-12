@@ -5,6 +5,7 @@ Gameplay:
 		✓ Allow to expand map.
 		✓ Build the border.
 		▪ Player heart.
+		▪ Camera control.
 	Build:
 		▪ Tower system:
 			a. Single tower but with alot of upgrade (simple but could be very complex, dull graphic)
@@ -35,13 +36,16 @@ Gameplay:
 		▪ Buy tower
 		▪ Drop money
 	Loop:
-		▪ Map expanded.
+		✓ Map expanded.
 		▪ Buy defense.
-		▪ Enemy spawn point.
+		✓ Enemy spawn point.
 		▪ Stronger enemy.
 		▪ Loot.
 		▪ Repeat...
 
 Bug:
 	▪ Massed collider lag @caution
+		? Enemy collide too much when grouping cuase lag
 		a. Temporary stop enemy collider if they collider with each other rapidly
+	▪ Composite border generate lag @minimal
+		? Upon map expansion adding more border to composite will cause lag

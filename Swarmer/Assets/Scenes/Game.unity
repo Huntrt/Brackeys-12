@@ -1403,7 +1403,7 @@ MonoBehaviour:
   groundPrf: {fileID: 4949450767277753067, guid: 9e25733be5c627646a74b65b48d57bed,
     type: 3}
   groundGrouper: {fileID: 1637862229}
-  mapSize: 11
+  mapSize: 7
   spacing: 0.63
   nodes: []
 --- !u!114 &1767444748
@@ -1433,8 +1433,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6438e956c23011740bb33db411fd483d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedChunk: {x: 0, y: 0}
   generatedChunks: []
+  chunkEveryLv: 3
+  debug: 0
 --- !u!1 &1831488156
 GameObject:
   m_ObjectHideFlags: 0
