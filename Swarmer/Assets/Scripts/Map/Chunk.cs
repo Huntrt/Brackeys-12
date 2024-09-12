@@ -28,15 +28,15 @@ public class Chunk : MonoBehaviour
 
 	void Start()
 	{
-		GeneratingChunk(new ChunkData(Vector2Int.zero));
+		CreateChunk(new ChunkData(Vector2Int.zero));
 	}
 
 	void OnEnable()
 	{
-		GameLoop.onLevelComplete += ChooseChunk;
+		GameLoop.onLevelComplete += GenerateChunk;
 	}
 
-	void ChooseChunk(int lv)
+	void GenerateChunk(int lv)
 	{
 		//Only generate new chunk if lv has reached
 		if(GameLoop.i.level % chunkEveryLv != 0) return;
@@ -60,7 +60,7 @@ public class Chunk : MonoBehaviour
 		if(selectNeighbor == 2) {neighborChunk = new ChunkData(selectChunk.coord + Vector2Int.left);}
 		if(selectNeighbor == 3) {neighborChunk = new ChunkData(selectChunk.coord + Vector2Int.right);}
 		//Generate the chunk
-		ChunkData generated = GeneratingChunk(neighborChunk);
+		ChunkData generated = CreateChunk(neighborChunk);
 		//Upon genrate that chunk will check all direction to apply neighbor status to those chunk and itself
 		ChunkData checking = null;
 		for (int d = 0; d < 4; d++)
@@ -88,7 +88,7 @@ public class Chunk : MonoBehaviour
 		}
 	}
 
-	ChunkData GeneratingChunk(ChunkData targetChunk)
+	ChunkData CreateChunk(ChunkData targetChunk)
 	{
 		//Stop if map of chunk already exist
 		for (int c = 0; c < generatedChunks.Count; c++) if(targetChunk.coord == generatedChunks[c].coord)
@@ -112,7 +112,7 @@ public class Chunk : MonoBehaviour
 
 	void OnDisable()
 	{
-		GameLoop.onLevelComplete -= ChooseChunk;
+		GameLoop.onLevelComplete -= GenerateChunk;
 	}
 
 	void OnDrawGizmos()

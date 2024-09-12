@@ -30,6 +30,7 @@ public class Map : MonoBehaviour
     public Dictionary<Vector2Int, Node> nodeIndexs = new Dictionary<Vector2Int, Node>();
 	public List<Node> nodes = new List<Node>();
 	public delegate void OnMapCreated(Vector2Int chunk); public OnMapCreated onMapCreated;
+	public Vector2 maxMapSize, minMapSize;
 	
 	//Function to make any value take into account of spacing
 	public static float Spaced(float value) {return (value) * i.spacing;}
@@ -112,8 +113,15 @@ public class Map : MonoBehaviour
 			groundBuilded.name = nodes.Count + " | Node " + createCoord;
 			groundBuilded.transform.SetParent(groundGrouper.transform);
 		}
+		//Save create node and it index
 		nodes.Add(createdNode);
 		nodeIndexs.Add(createCoord, createdNode);
+		//Update map size if created node position reached min/max map size
+		Vector2 nodePos = createdNode.pos;
+		if(nodePos.x < Map.i.minMapSize.x) Map.i.minMapSize.x = nodePos.x;
+		if(nodePos.y < Map.i.minMapSize.y) Map.i.minMapSize.y = nodePos.y;
+		if(nodePos.x > Map.i.maxMapSize.x) Map.i.maxMapSize.x = nodePos.x;
+		if(nodePos.y > Map.i.maxMapSize.y) Map.i.maxMapSize.y = nodePos.y;
 	}
 
 	public List<Node> GetNeighbor(Node owner, bool cardinal, bool diagonal, bool self)

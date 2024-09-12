@@ -142,7 +142,7 @@ MonoBehaviour:
       prior: 0
       direction: {x: 0, y: 0}
       nextNode: {x: 0, y: 0}
-  stepRate: 0.5
+  stepRate: 0.1
 --- !u!1 &6405240230394409408
 GameObject:
   m_ObjectHideFlags: 0

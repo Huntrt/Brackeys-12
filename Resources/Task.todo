@@ -5,17 +5,19 @@ Gameplay:
 		✓ Allow to expand map.
 		✓ Build the border.
 		✓ Player heart.
-		▪ Camera control.
+		✓ Camera control.
 	Build:
 		▪ Tower system:
-			a. Single tower but with alot of upgrade (simple but could be very complex, dull graphic)
+			X a. Single tower but with alot of upgrade (simple but could be very complex, dull graphic)
 				* Simple build system
-			b. Evolve tower (could be hard to do and need alot of resource)
+			X b. Evolve tower (could be hard to do and need alot of resource)
 				* Complex build system
-			c. Independent tower (simple and genertic)
-				* Complex build system
-		▪ Popup to build when hover on buildable node.
-		▪ Building system core.
+			✓ c. Independent tower (simple and genertic)
+				* Complex build system.
+		✓ Building system core.
+		▪ Builder UI.
+		▪ Upgrade & Info UI.
+		▪ Tower progression.
 	Pathfinding:
 		✓ Flow field:
 			✓ Spread the path from goal.
