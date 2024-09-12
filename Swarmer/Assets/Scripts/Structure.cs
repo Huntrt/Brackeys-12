@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 
 public class Structure : MonoBehaviour
@@ -6,4 +7,13 @@ public class Structure : MonoBehaviour
     public int layer;
 	public ushort flowCostMod;
 	public bool towerable;
+	public Category[] categories;
+	public Node nodeReside;
+
+	public enum Category {wall, tower}
+
+	public bool HaveCatalog(Category neededCategory)
+	{
+		return categories.Contains(neededCategory);
+	}
 }

@@ -83,7 +83,7 @@ public class Node
 		public ushort cost;
 		public ushort prior;
 		public Vector2 direction;
-		public Vector2 nextFlow;
+		public Vector2Int nextNode;
 	}
 
 	public Flows flows;

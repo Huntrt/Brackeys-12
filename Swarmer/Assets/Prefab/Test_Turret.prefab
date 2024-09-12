@@ -213,7 +213,7 @@ GameObject:
   - component: {fileID: 4339703118665088794}
   m_Layer: 7
   m_Name: Test_Turret
-  m_TagString: Untagged
+  m_TagString: Structure
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -251,6 +251,18 @@ MonoBehaviour:
   layer: 2
   flowCostMod: 0
   towerable: 0
+  categories: 01000000
+  nodeReside:
+    coord: {x: 0, y: 0}
+    pos: {x: 0, y: 0}
+    index: 0
+    occupations: []
+    isBorder: 0
+    chunkReside: {x: 0, y: 0}
+    flows:
+      cost: 0
+      prior: 0
+      direction: {x: 0, y: 0}
 --- !u!114 &4339703118665088794
 MonoBehaviour:
   m_ObjectHideFlags: 0

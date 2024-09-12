@@ -14,6 +14,14 @@ public class Enemy : MonoBehaviour
 		health.onDeath -= OnDeath;
 	}
 
+	void OnCollisionEnter2D(Collision2D other)
+	{
+		if(other.collider.CompareTag("Heart"))
+		{
+			Player.i.DamageHeart(1);
+		}
+	}
+
 	public void OnDeath()
 	{
 		GameLoop.i.KillCouting();

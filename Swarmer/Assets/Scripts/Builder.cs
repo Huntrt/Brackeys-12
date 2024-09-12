@@ -38,17 +38,19 @@ public class Builder : MonoBehaviour
 
 	public static void DemolishAtNode(Node node, GameObject structure) //? Destroy by search the building occupaid it
 	{
-		for (int o = 0; o < node.occupations.Length; o++)
+		//Find the occcupation of given node
+		for (int o = 0; o < node.occupations.Length; o++) if(node.occupations[o].obj == structure) 
 		{
-			if(node.occupations[o].obj == structure) 
-			{
-				Destroy(node.occupations[o].obj); 
-				node.UnOccupating(o);
-			}
+			//Destroy the structure above foundation
+			if(o == 1 && node.occupations[2].obj != null) DemolishAtNode(node, 2);
+			Destroy(node.occupations[o].obj); 
+			node.UnOccupating(o);
 		}
 	}
 	public static void DemolishAtNode(Node node, int layer) //? Destroy by get the structure at given layer
 	{
+		//Destroy the structure above foundation layer
+		if(layer == 1 && node.occupations[2].obj != null) DemolishAtNode(node, 2);
 		Destroy(node.occupations[layer].obj);
 		node.UnOccupating(layer);
 	}

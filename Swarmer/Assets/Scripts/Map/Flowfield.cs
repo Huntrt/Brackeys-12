@@ -1,6 +1,4 @@
 using System.Collections.Generic;
-using System.Xml.Serialization;
-using Unity.Mathematics;
 using UnityEditor;
 using UnityEngine;
 
@@ -16,16 +14,20 @@ public class Flowfield : MonoBehaviour
 		m = Map.i;
 	}
 
-	void Update()
+	void OnEnable()
 	{
-		if(Input.GetKeyDown(KeyCode.Mouse0))
-		{
-			CostToGoal(General.i.MousePos());
-		}
+		Map.i.onMapCreated += PathToGoal;
 	}
 
-	void CostToGoal(Vector2 goalPos)
+	void OnDisable()
 	{
+		Map.i.onMapCreated -= PathToGoal;
+	}
+
+	public void PathToGoal(Vector2Int chunk)
+	{
+		//Set goal as player heart
+		Vector2 goalPos = Player.i.heartObj.transform.position;
 		//Renew all the node flows
 		foreach (Node node in m.nodes) {node.ResetFlow();}
 		//Convert goal to coordinates
@@ -85,7 +87,7 @@ public class Flowfield : MonoBehaviour
 				{
 					priority = neighbor.flows.prior;
 					node.flows.direction = neighbor.coord - node.coord;
-					node.flows.nextFlow = neighbor.coord;
+					node.flows.nextNode = neighbor.coord;
 				}
 			}
 		}

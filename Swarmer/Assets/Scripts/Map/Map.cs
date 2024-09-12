@@ -29,6 +29,7 @@ public class Map : MonoBehaviour
 	[SerializeField] float spacing; public float Spacing {get => spacing;}
     public Dictionary<Vector2Int, Node> nodeIndexs = new Dictionary<Vector2Int, Node>();
 	public List<Node> nodes = new List<Node>();
+	public delegate void OnMapCreated(Vector2Int chunk); public OnMapCreated onMapCreated;
 	
 	//Function to make any value take into account of spacing
 	public static float Spaced(float value) {return (value) * i.spacing;}
@@ -58,6 +59,7 @@ public class Map : MonoBehaviour
 			CreateNode(new Vector2Int(x + shiftedChunk.x,y + shiftedChunk.y), chunk, groundPrf);
 		}
 		RenewBorder();
+		onMapCreated?.Invoke(chunk);
 	}
 
 	void RenewBorder()
