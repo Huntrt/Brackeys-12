@@ -63,6 +63,7 @@ public class Node
 	public bool Occupating(GameObject occupator)
 	{
 		Structure structure = occupator.GetComponent<Structure>();
+		structure.nodeReside = this;
 		occupations[structure.layer].obj = occupator;
 		occupations[structure.layer].component = structure;
 		occupations[structure.layer].flowCostMod = structure.flowCostMod;
@@ -82,6 +83,7 @@ public class Node
 		public ushort cost;
 		public ushort prior;
 		public Vector2 direction;
+		public Vector2 nextFlow;
 	}
 
 	public Flows flows;

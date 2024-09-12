@@ -85,6 +85,7 @@ public class Flowfield : MonoBehaviour
 				{
 					priority = neighbor.flows.prior;
 					node.flows.direction = neighbor.coord - node.coord;
+					node.flows.nextFlow = neighbor.coord;
 				}
 			}
 		}
