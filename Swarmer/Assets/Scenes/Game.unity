@@ -1402,7 +1402,7 @@ MonoBehaviour:
   minZoom: 2
   curZoom: 0
   defaultZoom: 5
-  zoomSpeed: 3
+  zoomSpeed: 1
   moveSpeed: 15
   cam: {fileID: 834018942}
   zoomInfoTxt: {fileID: 1245326784}
@@ -2290,7 +2290,7 @@ MonoBehaviour:
     type: 3}
   groundGrouper: {fileID: 1637862229}
   mapSize: 7
-  spacing: 0.63
+  spacing: 0.6
   nodes: []
   maxMapSize: {x: 0, y: 0}
   minMapSize: {x: 0, y: 0}

@@ -1306,6 +1306,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Sprite_Fill
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a972fde47e6d30e4bb7160c4637592e1
+      internalID: -1476323532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -1339,6 +1360,7 @@ TextureImporter:
       Ground_8: -1007483193
       Ground_9: -137479251
       Player_Heart: 1184316249
+      Sprite_Fill: -1476323532
       Sprites_45: 2020199343
       Sprites_53: 1226898625
       Sprites_54: 1566281785

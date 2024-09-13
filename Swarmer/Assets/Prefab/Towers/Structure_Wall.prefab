@@ -12,9 +12,8 @@ GameObject:
   - component: {fileID: 2950418752899351986}
   - component: {fileID: 5113394913064668173}
   - component: {fileID: 8801548466309980497}
-  - component: {fileID: 8801484963695885980}
   m_Layer: 9
-  m_Name: Wall
+  m_Name: Structure_Wall
   m_TagString: Structure
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -3.8267717, y: -2.472441, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -62,6 +61,7 @@ MonoBehaviour:
       cost: 0
       prior: 0
       direction: {x: 0, y: 0}
+      nextNode: {x: 0, y: 0}
 --- !u!212 &5113394913064668173
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -82,7 +82,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c144fe4cd1bfce545b4468888c041a57, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -102,9 +102,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1881613663
   m_SortingLayer: 2
-  m_SortingOrder: 0
-  m_Sprite: {fileID: -1936034422, guid: a9b922a6e75812047856c2019f8137cb, type: 3}
-  m_Color: {r: 0.7, g: 0.7, b: 0.7, a: 1}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 771730623, guid: c0ee02f634b35a444bc408cc96836680, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -150,39 +150,12 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.0002382, y: 1}
+    oldSize: {x: 0.6, y: 0.6}
     newSize: {x: 1.0002382, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.6, y: 0.6}
   m_EdgeRadius: 0
---- !u!114 &8801484963695885980
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1178745751596808524}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae683f71417f87d46be8ef905a987c50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  layer: 1
-  flowCostMod: 400
-  towerable: 0
-  categories: 
-  nodeReside:
-    coord: {x: 0, y: 0}
-    pos: {x: 0, y: 0}
-    index: 0
-    occupations: []
-    isBorder: 0
-    chunkReside: {x: 0, y: 0}
-    flows:
-      cost: 0
-      prior: 0
-      direction: {x: 0, y: 0}

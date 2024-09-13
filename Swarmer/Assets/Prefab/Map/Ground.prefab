@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4034494233945555094}
+  - component: {fileID: -4391806398414858051}
   - component: {fileID: 4315075072016159238}
   - component: {fileID: 6496298904779583684}
-  - component: {fileID: -4391806398414858051}
   m_Layer: 9
   m_Name: Ground
   m_TagString: Untagged
@@ -29,12 +29,40 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1871943172736328537}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-4391806398414858051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4949450767277753067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae683f71417f87d46be8ef905a987c50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layer: 0
+  flowCostMod: 10
+  towerable: 0
+  categories: 
+  nodeReside:
+    coord: {x: 0, y: 0}
+    pos: {x: 0, y: 0}
+    index: 0
+    occupations: []
+    isBorder: 0
+    chunkReside: {x: 0, y: 0}
+    flows:
+      cost: 0
+      prior: 0
+      direction: {x: 0, y: 0}
+      nextNode: {x: 0, y: 0}
 --- !u!212 &4315075072016159238
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -55,7 +83,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c144fe4cd1bfce545b4468888c041a57, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -110,35 +138,30 @@ MonoBehaviour:
   - {fileID: -1007483193, guid: c0ee02f634b35a444bc408cc96836680, type: 3}
   - {fileID: -137479251, guid: c0ee02f634b35a444bc408cc96836680, type: 3}
   - {fileID: 1411430411, guid: c0ee02f634b35a444bc408cc96836680, type: 3}
+  - {fileID: 1275975180, guid: c0ee02f634b35a444bc408cc96836680, type: 3}
+  - {fileID: 1275975180, guid: c0ee02f634b35a444bc408cc96836680, type: 3}
+  - {fileID: 1275975180, guid: c0ee02f634b35a444bc408cc96836680, type: 3}
+  - {fileID: 1275975180, guid: c0ee02f634b35a444bc408cc96836680, type: 3}
+  - {fileID: 1275975180, guid: c0ee02f634b35a444bc408cc96836680, type: 3}
+  - {fileID: 1275975180, guid: c0ee02f634b35a444bc408cc96836680, type: 3}
+  - {fileID: 1275975180, guid: c0ee02f634b35a444bc408cc96836680, type: 3}
+  - {fileID: 1275975180, guid: c0ee02f634b35a444bc408cc96836680, type: 3}
+  - {fileID: 1275975180, guid: c0ee02f634b35a444bc408cc96836680, type: 3}
+  - {fileID: 1275975180, guid: c0ee02f634b35a444bc408cc96836680, type: 3}
+  - {fileID: 1275975180, guid: c0ee02f634b35a444bc408cc96836680, type: 3}
+  - {fileID: 1275975180, guid: c0ee02f634b35a444bc408cc96836680, type: 3}
+  - {fileID: 1275975180, guid: c0ee02f634b35a444bc408cc96836680, type: 3}
+  - {fileID: 1275975180, guid: c0ee02f634b35a444bc408cc96836680, type: 3}
+  - {fileID: 1275975180, guid: c0ee02f634b35a444bc408cc96836680, type: 3}
+  - {fileID: 1275975180, guid: c0ee02f634b35a444bc408cc96836680, type: 3}
+  - {fileID: 1275975180, guid: c0ee02f634b35a444bc408cc96836680, type: 3}
+  - {fileID: 1275975180, guid: c0ee02f634b35a444bc408cc96836680, type: 3}
+  - {fileID: 1275975180, guid: c0ee02f634b35a444bc408cc96836680, type: 3}
+  - {fileID: 1275975180, guid: c0ee02f634b35a444bc408cc96836680, type: 3}
+  - {fileID: 1275975180, guid: c0ee02f634b35a444bc408cc96836680, type: 3}
+  - {fileID: 1275975180, guid: c0ee02f634b35a444bc408cc96836680, type: 3}
+  - {fileID: 1275975180, guid: c0ee02f634b35a444bc408cc96836680, type: 3}
   sr: {fileID: 4315075072016159238}
---- !u!114 &-4391806398414858051
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4949450767277753067}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae683f71417f87d46be8ef905a987c50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  layer: 0
-  flowCostMod: 10
-  towerable: 0
-  categories: 
-  nodeReside:
-    coord: {x: 0, y: 0}
-    pos: {x: 0, y: 0}
-    index: 0
-    occupations: []
-    isBorder: 0
-    chunkReside: {x: 0, y: 0}
-    flows:
-      cost: 0
-      prior: 0
-      direction: {x: 0, y: 0}
-      nextNode: {x: 0, y: 0}
 --- !u!1 &7174031155258164037
 GameObject:
   m_ObjectHideFlags: 0
@@ -191,7 +214,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c144fe4cd1bfce545b4468888c041a57, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -212,7 +235,7 @@ SpriteRenderer:
   m_SortingLayerID: 1881613663
   m_SortingLayer: 2
   m_SortingOrder: -1
-  m_Sprite: {fileID: -1936034422, guid: a9b922a6e75812047856c2019f8137cb, type: 3}
+  m_Sprite: {fileID: -1476323532, guid: c0ee02f634b35a444bc408cc96836680, type: 3}
   m_Color: {r: 0.15, g: 0.15, b: 0.15, a: 1}
   m_FlipX: 0
   m_FlipY: 0
