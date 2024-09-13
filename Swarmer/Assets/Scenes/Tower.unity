@@ -2502,7 +2502,7 @@ MonoBehaviour:
   firepoint: {fileID: 5439958915727124034}
   aimer: {fileID: 8412127512167860661}
   rangeDisplay: {fileID: 4395187749482558352}
-  showRange: 1
+  rangeDetector: {fileID: 8412127512167860662}
 --- !u!120 &4395187749482558352
 LineRenderer:
   serializedVersion: 2
@@ -4240,6 +4240,7 @@ GameObject:
   - component: {fileID: 7852455535278790327}
   - component: {fileID: 2833738076534526905}
   - component: {fileID: 4339703118863483475}
+  - component: {fileID: 8412127512167860662}
   m_Layer: 7
   m_Name: Test_Turret
   m_TagString: Structure
@@ -4455,6 +4456,20 @@ Transform:
   - {fileID: 4108792389196329332}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8412127512167860662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7756507093485941924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3576c76ff5a5794686902d4132ee688, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  render: {fileID: 4395187749482558352}
+  showRange: 1
 --- !u!114 &8479047422171335535
 MonoBehaviour:
   m_ObjectHideFlags: 0
