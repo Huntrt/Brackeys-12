@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3219701121902078480}
-  - component: {fileID: 5864888895031565806}
   - component: {fileID: 4207165589282787686}
+  - component: {fileID: 5864888895031565806}
   - component: {fileID: 8020515996493490919}
   - component: {fileID: 5354173747043273001}
   m_Layer: 8
@@ -29,12 +29,30 @@ Transform:
   m_GameObject: {fileID: 1899326858833944987}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.48964447, y: -1.6995436, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.1, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4207165589282787686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1899326858833944987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43eadf1809cc8914f84d669360b46f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stats:
+    speed: 0
+    lifetime: 0
+    piercing: 0
+  rb: {fileID: 8020515996493490919}
+  col: {fileID: 5354173747043273001}
 --- !u!212 &5864888895031565806
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -87,29 +105,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4207165589282787686
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1899326858833944987}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43eadf1809cc8914f84d669360b46f08, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stats:
-    firerate: 0
-    accuracy: 0
-    range: 0
-    projectile: 0
-    damage: 0
-    piercing: 0
-    speed: 0
-    lifetime: 0
-  rb: {fileID: 8020515996493490919}
-  col: {fileID: 5354173747043273001}
 --- !u!50 &8020515996493490919
 Rigidbody2D:
   serializedVersion: 4

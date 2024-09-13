@@ -24,6 +24,6 @@ public class Enemy : MonoBehaviour
 
 	public void OnDeath()
 	{
-		GameLoop.i.KillCouting();
+		if(GameLoop.i != null) GameLoop.i.KillCouting();
 	}
 }

@@ -2486,15 +2486,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67e5acef57f420c4383ecfe551eaeee7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats:
+  turretStats:
     firerate: 10
-    accuracy: 5
-    range: 4
-    projectile: 5
-    damage: 4
-    piercing: 10
-    speed: 15
+    range: 7
+    damage: 3
+    accuracy: 4
+    projectile: 1
+  projectileStats:
+    damage: 0
+    speed: 12
     lifetime: 2
+    piercing: 2
   strike: {fileID: 1899326858833944987, guid: 70ebd1ae38738b443963244c484e26db, type: 3}
   targetEnemy: {fileID: 0}
   firepoint: {fileID: 5439958915727124034}
