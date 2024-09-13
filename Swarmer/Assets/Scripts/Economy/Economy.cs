@@ -2,6 +2,20 @@ using UnityEngine;
 
 public class Economy : MonoBehaviour
 {
+	#region Set this class to singleton
+	static Economy _i; public static Economy i
+	{
+		get
+		{
+			if(_i==null)
+			{
+				_i = GameObject.FindObjectOfType<Economy>();
+			}
+			return _i;
+		}
+	}
+	#endregion
+
     [SerializeField] int money;
 	[SerializeField] TMPro.TextMeshProUGUI moneyCounterTxt;
 
@@ -15,7 +29,6 @@ public class Economy : MonoBehaviour
 	{
 		if(amount > money)
 		{
-			print("No enough money");
 			return false;
 		}
 		money -= amount;

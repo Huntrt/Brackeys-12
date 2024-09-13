@@ -46,7 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae683f71417f87d46be8ef905a987c50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  layer: 2
+  displayName: Rocket
+  layer: 0
   flowCostMod: 0
   towerable: 0
   categories: 01000000

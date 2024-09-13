@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1293614668457172497}
+  - component: {fileID: -2516292969836843577}
   - component: {fileID: 2950418752899351986}
   - component: {fileID: 5113394913064668173}
   - component: {fileID: 8801548466309980497}
@@ -34,6 +35,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-2516292969836843577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1178745751596808524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21293d266dff2ae4a976f46634070f77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cost: 2
+  sellPenalty: 1
 --- !u!114 &2950418752899351986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46,6 +61,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae683f71417f87d46be8ef905a987c50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  displayName: Wall
   layer: 1
   flowCostMod: 500
   towerable: 1

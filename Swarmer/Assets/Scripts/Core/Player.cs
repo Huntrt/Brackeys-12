@@ -46,29 +46,32 @@ public class Player : MonoBehaviour
 			//Move the preview and get node got hover
 			previewer.transform.position = Map.SnapPosition(g.MousePos());
 			hoverNode = Map.i.nodeIndexs[mouseCoord];
-			if(Input.GetKeyDown(KeyCode.Mouse0))
-			{
-				ShowBuildPanel();
-			}
+			///Show build panel when right click
+			if(Input.GetKeyDown(KeyCode.Mouse0)) {ShowBuildPanel();}
 		}
 		//test: Hide the build ui when right click
 		if(Input.GetKeyDown(KeyCode.Mouse1) && buildPanel.activeInHierarchy)
 		{
-			buildPanel.SetActive(false);
+			HideBuildPanel();
 			return;
 		}
 	}
 
-	void ShowBuildPanel()
+	public void ShowBuildPanel()
 	{
 		buildPanel.transform.position = g.cam.WorldToScreenPoint(hoverNode.pos);
 		buildPanel.SetActive(true);
 	}
 
-	public void BuildStructure(GameObject testStructure)
+	public void HideBuildPanel()
+	{
+		buildPanel.SetActive(false);
+	}
+
+	public void PlaceStructure(GameObject structure)
 	{
 		string buildStatus;
-		BuilderManager.BuildAtNode(hoverNode, testStructure, out buildStatus); 
+		BuilderManager.BuildAtNode(hoverNode, structure, out buildStatus); 
 		print(buildStatus);
 		buildPanel.SetActive(false);
 	}

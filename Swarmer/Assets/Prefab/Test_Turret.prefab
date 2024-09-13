@@ -209,6 +209,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8412127512102106364}
+  - component: {fileID: 7852455535214013438}
   - component: {fileID: 2833738076335533808}
   - component: {fileID: 4339703118665088794}
   m_Layer: 7
@@ -236,6 +237,20 @@ Transform:
   - {fileID: 4108792388993715261}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7852455535214013438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7756507093555366381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21293d266dff2ae4a976f46634070f77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cost: 5
+  sellPenalty: 2
 --- !u!114 &2833738076335533808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -248,6 +263,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae683f71417f87d46be8ef905a987c50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  displayName: Test_Turret
   layer: 2
   flowCostMod: 0
   towerable: 0
@@ -263,6 +279,7 @@ MonoBehaviour:
       cost: 0
       prior: 0
       direction: {x: 0, y: 0}
+      nextNode: {x: 0, y: 0}
 --- !u!114 &4339703118665088794
 MonoBehaviour:
   m_ObjectHideFlags: 0
