@@ -24,15 +24,21 @@ public class Economy : MonoBehaviour
 		money += amount;
 		moneyCounterTxt.text = "$" + money;
 	}
-	
-	public bool Spend(int amount)
+
+	public bool SpendCheck(int amount)
 	{
-		if(amount > money)
+		if(money >= amount)
 		{
-			return false;
+			money -= amount;
+			return true;
 		}
+		Debug.Log("No money");
+		return false;
+	}
+	
+	public void Spend(int amount)
+	{
 		money -= amount;
 		moneyCounterTxt.text = "$" + money;
-		return true;
 	}
 }

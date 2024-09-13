@@ -20,7 +20,6 @@ public class Tower_Turret : Tower
 	[SerializeField] GameObject strike;
 	[SerializeField] GameObject targetEnemy;
 	[SerializeField] Transform firepoint, aimer;
-	[SerializeField] LineRenderer rangeDisplay;
 	[SerializeField] RangeDetector rangeDetector;
 	float curFirerate;
 

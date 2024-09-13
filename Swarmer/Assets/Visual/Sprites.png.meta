@@ -827,10 +827,10 @@ TextureImporter:
       name: Structure_Tower_Strike_Arrow
       rect:
         serializedVersion: 2
-        x: 2
-        y: 57
-        width: 5
-        height: 3
+        x: 3
+        y: 56
+        width: 3
+        height: 5
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -848,10 +848,10 @@ TextureImporter:
       name: Structure_Tower_Strike_Bullet
       rect:
         serializedVersion: 2
-        x: 12
-        y: 58
-        width: 3
-        height: 1
+        x: 13
+        y: 57
+        width: 1
+        height: 3
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -911,10 +911,10 @@ TextureImporter:
       name: Structure_Tower_Strike_Slash
       rect:
         serializedVersion: 2
-        x: 38
-        y: 55
-        width: 5
-        height: 7
+        x: 37
+        y: 56
+        width: 7
+        height: 5
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1315,7 +1315,7 @@ TextureImporter:
         width: 9
         height: 9
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1323,6 +1323,174 @@ TextureImporter:
       bones: []
       spriteID: a972fde47e6d30e4bb7160c4637592e1
       internalID: -1476323532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprites_X
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 0
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 123141e8b3e1dd3449ae8a8fd72004ec
+      internalID: 1612353663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprites_Upge
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 0
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80786a00be9350040856ef9d6a639e32
+      internalID: -465285027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprites_Money
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 0
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a985318b93668543a6c472ce806aacb
+      internalID: -759324252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprites_Select
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 0
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20766ef287e99bc48bb666e0d52385db
+      internalID: 703012871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Structure_Tower_Strike_Electric_1
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 56
+        width: 9
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c028b326f7de14b4fbecf579567d86d0
+      internalID: 1526592317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Structure_Tower_Strike_Electric_2
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 56
+        width: 9
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f43923c797809bd42bfc7d305fc7ccce
+      internalID: 303384565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Structure_Tower_Strike_Electric_3
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 56
+        width: 9
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2127690d4f7af62478f2b9adcc373a85
+      internalID: 231313217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Structure_Tower_Strike_Electric_4
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 56
+        width: 9
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf059e512b8bbf446b4c5acd449a1f69
+      internalID: -1231138092
       vertices: []
       indices: 
       edges: []
@@ -1361,9 +1529,14 @@ TextureImporter:
       Ground_9: -137479251
       Player_Heart: 1184316249
       Sprite_Fill: -1476323532
+      Sprites_0: -737236183
       Sprites_45: 2020199343
       Sprites_53: 1226898625
       Sprites_54: 1566281785
+      Sprites_Money: -759324252
+      Sprites_Select: 703012871
+      Sprites_Upge: -465285027
+      Sprites_X: 1612353663
       Structure_Tower_Archer: 1892076982
       Structure_Tower_Barrage: 335497207
       Structure_Tower_Beamer: 25166582
@@ -1382,6 +1555,10 @@ TextureImporter:
       Structure_Tower_Strike_Bullet: -2089738349
       Structure_Tower_Strike_CannonBall: 976777332
       Structure_Tower_Strike_Cut: 95383844
+      Structure_Tower_Strike_Electric_1: 1526592317
+      Structure_Tower_Strike_Electric_2: 303384565
+      Structure_Tower_Strike_Electric_3: 231313217
+      Structure_Tower_Strike_Electric_4: -1231138092
       Structure_Tower_Strike_FireBall: 1737893033
       Structure_Tower_Strike_Slash: -1824565826
       Structure_Tower_Thunder: 928881139

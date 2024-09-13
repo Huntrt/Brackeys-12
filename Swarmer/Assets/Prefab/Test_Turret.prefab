@@ -212,6 +212,7 @@ GameObject:
   - component: {fileID: 7852455535214013438}
   - component: {fileID: 2833738076335533808}
   - component: {fileID: 4339703118665088794}
+  - component: {fileID: 5428721266028571985}
   m_Layer: 7
   m_Name: Test_Turret
   m_TagString: Structure
@@ -292,20 +293,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67e5acef57f420c4383ecfe551eaeee7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats:
+  turretStats:
     firerate: 10
-    accuracy: 5
-    range: 4
-    projectile: 5
-    damage: 4
-    piercing: 10
-    speed: 15
+    range: 7
+    damage: 3
+    accuracy: 4
+    projectile: 1
+  projectileStats:
+    damage: 0
+    speed: 12
     lifetime: 2
+    piercing: 2
   strike: {fileID: 1899326858833944987, guid: 70ebd1ae38738b443963244c484e26db, type: 3}
   targetEnemy: {fileID: 0}
   firepoint: {fileID: 5439958915524516619}
   aimer: {fileID: 8412127512102106364}
   rangeDisplay: {fileID: 4395187749685219033}
+  rangeDetector: {fileID: 5428721266028571985}
+--- !u!114 &5428721266028571985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7756507093555366381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3576c76ff5a5794686902d4132ee688, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tower: {fileID: 4339703118665088794}
+  render: {fileID: 4395187749685219033}
   showRange: 1
 --- !u!1 &9019028531849902957
 GameObject:

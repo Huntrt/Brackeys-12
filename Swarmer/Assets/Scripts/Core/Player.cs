@@ -22,7 +22,11 @@ public class Player : MonoBehaviour
 	public GameObject previewer;
 	[SerializeField] Node hoverNode; public Node HoverNode {get => hoverNode;}
 	public Vector2Int mouseCoord; public Vector2Int MouseCoord {get => mouseCoord;}
+	[Header("UI")]
 	public GameObject buildPanel;
+	[SerializeField] GameObject layer1Panel, layer2Panel;
+	[SerializeField] GameObject sellPanel;
+	[SerializeField] TMPro.TextMeshProUGUI sellAmountTxt;
 	General g;
 
 	void OnEnable()
@@ -47,7 +51,12 @@ public class Player : MonoBehaviour
 			previewer.transform.position = Map.SnapPosition(g.MousePos());
 			hoverNode = Map.i.nodeIndexs[mouseCoord];
 			///Show build panel when right click
-			if(Input.GetKeyDown(KeyCode.Mouse0)) {ShowBuildPanel();}
+			if(Input.GetKeyDown(KeyCode.Mouse0))
+			{
+				buildPanel.transform.position = g.cam.WorldToScreenPoint(hoverNode.pos);
+				ShowBuildPanel();
+				ShowSellPanel();
+			}
 		}
 		//test: Hide the build ui when right click
 		if(Input.GetKeyDown(KeyCode.Mouse1) && buildPanel.activeInHierarchy)
@@ -57,23 +66,61 @@ public class Player : MonoBehaviour
 		}
 	}
 
-	public void ShowBuildPanel()
+	void ShowSellPanel()
 	{
-		buildPanel.transform.position = g.cam.WorldToScreenPoint(hoverNode.pos);
+		for (int i = 2; i >= 1 ; i--)
+		{
+			if(hoverNode.HaveOccupation(i))
+			{
+				GameObject structure = hoverNode.occupations[i].obj;
+				Buyable buyable = structure.GetComponent<Buyable>();
+				print(structure.name);
+				if(buyable != null)
+				{
+					sellPanel.SetActive(true);
+					sellAmountTxt.text = "Sell +" + buyable.sellAmount + "$";
+					break;
+				}
+			}
+		}
+	}
+
+	void ShowBuildPanel()
+	{
+		//If there still occupation spot left
+		if(!hoverNode.HaveOccupation(2))
+		{
+			//Show layer 2 panel if layer 1 occupy and allow to tower
+			if(hoverNode.HaveOccupation(1))
+			{
+				if(HoverNode.occupations[1].component.towerable)
+				{
+					layer2Panel.SetActive(true);
+				}
+			}
+			//Show layer 1 panel when there no occupation at that layer
+			else
+			{
+				layer1Panel.SetActive(true);
+			}
+		}
 		buildPanel.SetActive(true);
 	}
 
 	public void HideBuildPanel()
 	{
 		buildPanel.SetActive(false);
+		layer1Panel.SetActive(false);
+		layer2Panel.SetActive(false);
+		sellPanel.SetActive(false);
 	}
 
-	public void PlaceStructure(GameObject structure)
+	public bool PlaceStructure(GameObject structure)
 	{
 		string buildStatus;
-		BuilderManager.BuildAtNode(hoverNode, structure, out buildStatus); 
-		print(buildStatus);
-		buildPanel.SetActive(false);
+		bool placed = BuilderManager.BuildAtNode(hoverNode, structure, out buildStatus);
+		HideBuildPanel();
+		return placed;
 	}
 
 	void CreateHeart(Vector2Int chunk)

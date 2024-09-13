@@ -25,15 +25,24 @@ public class BuyManager : MonoBehaviour
 		}
 	}
 
-	public void Buy(GameObject structure, Structure data)
+	public void Buy(GameObject structure, Structure data, Buyable buyable)
 	{
-		Buyable buyable = structure.GetComponent<Buyable>();
-		bool haveBought = Economy.i.Spend(buyable.Cost);
-		if(haveBought)
+		//Check if could spend
+		bool couldBought = Economy.i.SpendCheck(buyable.Cost);
+		//Waiting to see if could place
+		bool couldPlace = false;
+		//If able to buy
+		if(couldBought)
 		{
-			Player.i.PlaceStructure(structure);
+			//And able to place
+			couldPlace = Player.i.PlaceStructure(structure); if(couldPlace)
+			{
+				///Then spend the money
+				Economy.i.Spend(buyable.Cost);
+				Player.i.HideBuildPanel();
+			}
 		}
-		else
+		if(!couldBought || !couldPlace)
 		{
 			print("Not enough money to buy " + data.DisplayName);
 		}
@@ -58,6 +67,7 @@ public class BuyManager : MonoBehaviour
 		{
 			Economy.i.Earn(buyableNode.sellAmount);
 			BuilderManager.DemolishAtNode(hoverNode, sellLayer);
+			Player.i.HideBuildPanel();
 		}
 		else
 		{
