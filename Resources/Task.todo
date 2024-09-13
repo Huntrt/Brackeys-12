@@ -15,8 +15,8 @@ Gameplay:
 			✓ c. Independent tower (simple and genertic)
 				* Complex build system.
 		✓ Building system core.
-		▪ Builder UI.
-		▪ Upgrade & Info UI.
+		✓ Builder UI.
+		✓ Upgrade & Info UI.
 		▪ Tower progression.
 	Pathfinding:
 		✓ Flow field:
@@ -31,14 +31,14 @@ Gameplay:
 		▪ Spawning scaling.
 		▪ Enemy scaling.
 		▪ Pooling.
-		▪ List:
-			▪ Scout
-			▪ Tank
-			▪ Shield - shield buff.
-			▪ Rallies - speed buff.
+		✓ List:
+			✓ Scout
+			✓ Tank
+			X Shield - shield buff.
+			X Rallies - speed buff.
 			Etc...
 	Economy:
-		▪ Buy tower
+		✓ Buy tower
 		▪ Drop money
 	Loop:
 		✓ Map expanded.
@@ -47,6 +47,14 @@ Gameplay:
 		▪ Stronger enemy.
 		▪ Loot.
 		▪ Repeat...
+Essential:
+	▪ Progression.
+	▪ Audio.
+	▪ Music.
+	▪ Credit.
+	▪ Tutorial @consider
+	▪ Keybind.
+	▪ Cleanup.
 
 Bug:
 	▪ Massed collider lag @caution
