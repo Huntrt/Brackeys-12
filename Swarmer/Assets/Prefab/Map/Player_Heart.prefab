@@ -98,6 +98,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae683f71417f87d46be8ef905a987c50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  displayName: Heart
+  description: Protect at all cost
   layer: 1
   flowCostMod: 0
   towerable: 0

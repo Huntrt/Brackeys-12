@@ -26,6 +26,9 @@ public class Tower_Turret : Tower
 	void OnEnable()
 	{
 		turretStats.onStatsChange += StatsChangeCaller;
+		projectileStats.onStatsChange += StatsChangeCaller;
+		turretStats.onStatsChange += ShowInfo;
+		projectileStats.onStatsChange += ShowInfo;
 	}
 
 	void StatsChangeCaller(string statsName, float modifier) {onTowerStatsChange?.Invoke(statsName, modifier);}
@@ -33,6 +36,9 @@ public class Tower_Turret : Tower
 	void OnDisable()
 	{
 		turretStats.onStatsChange -= StatsChangeCaller;
+		projectileStats.onStatsChange -= StatsChangeCaller;
+		turretStats.onStatsChange -= ShowInfo;
+		projectileStats.onStatsChange -= ShowInfo;
 	}
 
 	void Update()
@@ -72,5 +78,20 @@ public class Tower_Turret : Tower
 		///Set the strike stats 
 		striked.GetComponent<Strike_Projectile>().stats = new Strike_Projectile.Stats(projectileStats, turretStats.Damage);
 		striked.SetActive(true);
+	}
+
+	public override void ShowInfo(string statsName, float modifier)
+	{
+		base.ShowInfo(statsName, modifier);
+		infoControl.Inform("Damage", turretStats.Damage);
+		infoControl.Inform("Firerate", turretStats.FireRate);
+		infoControl.Inform("Range", turretStats.Range);
+		infoControl.Inform("Inaccuracy", turretStats.Accuracy);
+		infoControl.Inform("Piercing", projectileStats.Piercing);
+		infoControl.Inform("Projectile Count", turretStats.Projectile);
+		infoControl.Inform("Projectile Speed", projectileStats.Speed);
+		infoControl.Inform("Projectile Life Time", projectileStats.Lifetime);
+		TowerInfoManager.i.UpdateInfo(infoControl.infos);
+		TowerInfoManager.i.ShowInfo(true);
 	}
 }

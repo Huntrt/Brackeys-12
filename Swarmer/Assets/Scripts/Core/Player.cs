@@ -54,6 +54,7 @@ public class Player : MonoBehaviour
 			if(Input.GetKeyDown(KeyCode.Mouse0))
 			{
 				buildPanel.transform.position = g.cam.WorldToScreenPoint(hoverNode.pos);
+				ShowTowerInfo();
 				ShowBuildPanel();
 				ShowSellAndInfoPanel();
 			}
@@ -64,6 +65,13 @@ public class Player : MonoBehaviour
 			HideBuildPanel();
 			return;
 		}
+	}
+
+	void ShowTowerInfo()
+	{
+		GameObject hoverObj = hoverNode.occupations[2].obj;
+		if(hoverObj == null) return;
+		hoverObj.GetComponent<Tower>().ShowInfo("", -1);
 	}
 
 	void ShowSellAndInfoPanel()
@@ -114,6 +122,7 @@ public class Player : MonoBehaviour
 		layer2Panel.SetActive(false);
 		sellPanel.SetActive(false);
 		StructureInfo.i.CloseInfo();
+		TowerInfoManager.i.ShowInfo(false);
 	}
 
 	public bool PlaceStructure(GameObject structure)

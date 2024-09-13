@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 9065650877911242898}
   - component: {fileID: 7384262668791750780}
   - component: {fileID: 1550935489380238006}
+  - component: {fileID: 8105982774314407612}
   - component: {fileID: 5801737471832627753}
   m_Layer: 0
   m_Name: Structure_Tower_Cannon
@@ -95,10 +96,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67e5acef57f420c4383ecfe551eaeee7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  infoControl: {fileID: 8105982774314407612}
   turretStats:
+    damage: 15
     firerate: 1
     range: 5
-    damage: 15
     accuracy: 5
     projectile: 1
   projectileStats:
@@ -139,6 +141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayName: Cannon
+  description: 
   layer: 2
   flowCostMod: 0
   towerable: 0
@@ -155,6 +158,19 @@ MonoBehaviour:
       prior: 0
       direction: {x: 0, y: 0}
       nextNode: {x: 0, y: 0}
+--- !u!114 &8105982774314407612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2407504171462048982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30086415a7d156c44a12f877c0334c64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infos: []
 --- !u!212 &5801737471832627753
 SpriteRenderer:
   m_ObjectHideFlags: 0
