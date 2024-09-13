@@ -3,6 +3,7 @@ using UnityEngine;
 public class Structure : MonoBehaviour
 {
 	[SerializeField] string displayName; public string DisplayName {get => displayName;}
+	[SerializeField] string description; public string Description {get => description;}
 	[Range(0,2)]
     public int layer;
 	public ushort flowCostMod;

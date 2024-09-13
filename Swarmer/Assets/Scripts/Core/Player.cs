@@ -55,7 +55,7 @@ public class Player : MonoBehaviour
 			{
 				buildPanel.transform.position = g.cam.WorldToScreenPoint(hoverNode.pos);
 				ShowBuildPanel();
-				ShowSellPanel();
+				ShowSellAndInfoPanel();
 			}
 		}
 		//test: Hide the build ui when right click
@@ -66,21 +66,21 @@ public class Player : MonoBehaviour
 		}
 	}
 
-	void ShowSellPanel()
+	void ShowSellAndInfoPanel()
 	{
-		for (int i = 2; i >= 1 ; i--)
+		//Go through to check if hover node have occupation
+		for (int i = 2; i >= 1 ; i--)if(hoverNode.HaveOccupation(i))
 		{
-			if(hoverNode.HaveOccupation(i))
+			//Show info of the occupation structure
+			StructureInfo.i.ShowInfo(hoverNode.occupations[i].component);
+			//Show the sell info if the structure allow to sell
+			GameObject structure = hoverNode.occupations[i].obj;
+			Buyable buyable = structure.GetComponent<Buyable>();
+			if(buyable != null)
 			{
-				GameObject structure = hoverNode.occupations[i].obj;
-				Buyable buyable = structure.GetComponent<Buyable>();
-				print(structure.name);
-				if(buyable != null)
-				{
-					sellPanel.SetActive(true);
-					sellAmountTxt.text = "Sell +" + buyable.sellAmount + "$";
-					break;
-				}
+				sellPanel.SetActive(true);
+				sellAmountTxt.text = "Sell +" + buyable.sellAmount + "$";
+				break;
 			}
 		}
 	}
@@ -113,6 +113,7 @@ public class Player : MonoBehaviour
 		layer1Panel.SetActive(false);
 		layer2Panel.SetActive(false);
 		sellPanel.SetActive(false);
+		StructureInfo.i.CloseInfo();
 	}
 
 	public bool PlaceStructure(GameObject structure)

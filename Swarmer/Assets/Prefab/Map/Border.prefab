@@ -9,10 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4489158127963482178}
-  - component: {fileID: 7631553224913788373}
+  - component: {fileID: 4239668642859843781}
   - component: {fileID: 2229032409872579222}
   - component: {fileID: 7841502550715410662}
-  - component: {fileID: 4239668642859843781}
   m_Layer: 9
   m_Name: Border
   m_TagString: Untagged
@@ -35,7 +34,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7631553224913788373
+--- !u!114 &4239668642859843781
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -47,8 +46,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae683f71417f87d46be8ef905a987c50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  displayName: Border
+  description: Structure for blocking the map off
   layer: 1
-  flowCostMod: 500
+  flowCostMod: 400
   towerable: 0
   categories: 
   nodeReside:
@@ -160,31 +161,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &4239668642859843781
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 540316702099237722}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae683f71417f87d46be8ef905a987c50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  layer: 1
-  flowCostMod: 400
-  towerable: 0
-  categories: 
-  nodeReside:
-    coord: {x: 0, y: 0}
-    pos: {x: 0, y: 0}
-    index: 0
-    occupations: []
-    isBorder: 0
-    chunkReside: {x: 0, y: 0}
-    flows:
-      cost: 0
-      prior: 0
-      direction: {x: 0, y: 0}
-      nextNode: {x: 0, y: 0}
