@@ -1,15 +1,15 @@
 using UnityEngine;
 
-public class Builder : MonoBehaviour
+public class BuilderManager : MonoBehaviour
 {
 	#region Set this class to singleton
-	static Builder _i; public static Builder i
+	static BuilderManager _i; public static BuilderManager i
 	{
 		get
 		{
 			if(_i==null)
 			{
-				_i = GameObject.FindObjectOfType<Builder>();
+				_i = GameObject.FindObjectOfType<BuilderManager>();
 			}
 			return _i;
 		}

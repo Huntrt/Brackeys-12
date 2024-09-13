@@ -24,7 +24,7 @@ public class PathBulldozer : MonoBehaviour
 				if(resideNode.occupations[1].component.HaveCatalog(Structure.Category.wall))
 				{
 					print("Bulldozed the [" + resideNode.occupations[1].obj.name +"] at " + resideNode.coord);
-					Builder.DemolishAtNode(resideNode, 1);
+					BuilderManager.DemolishAtNode(resideNode, 1);
 				}
 				//Destroy self if have reached heart
 				if(resideNode.occupations[1].obj == Player.i.heartObj)

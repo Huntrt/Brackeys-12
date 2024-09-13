@@ -68,7 +68,7 @@ public class Player : MonoBehaviour
 	public void BuildStructure(GameObject testStructure)
 	{
 		string buildStatus;
-		Builder.BuildAtNode(hoverNode, testStructure, out buildStatus); 
+		BuilderManager.BuildAtNode(hoverNode, testStructure, out buildStatus); 
 		print(buildStatus);
 		buildPanel.SetActive(false);
 	}
@@ -78,7 +78,7 @@ public class Player : MonoBehaviour
 		//Create the heart in the center node of chunk 0
 		if(chunk == Vector2Int.zero)
 		{
-			heartObj = Builder.BuildAtNode(Map.i.FindNode(Vector2Int.zero), heartObj);
+			heartObj = BuilderManager.BuildAtNode(Map.i.FindNode(Vector2Int.zero), heartObj);
 			Map.i.onMapCreated -= CreateHeart;
 		}
 	}

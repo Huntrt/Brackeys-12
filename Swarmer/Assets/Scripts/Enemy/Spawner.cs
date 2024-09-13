@@ -49,7 +49,7 @@ public class Spawner : MonoBehaviour
 		{
 			Node spawnerNode = vacantNodes[UnityEngine.Random.Range(0, vacantNodes.Count)];
 			Instantiate(bulldozerPref, spawnerNode.pos, bulldozerPref.transform.rotation);
-			Builder.BuildAtNode(spawnerNode, spawnerPrf);
+			BuilderManager.BuildAtNode(spawnerNode, spawnerPrf);
 			spawnerBuildeds.Add(spawnerNode);
 		}
 	}
@@ -58,7 +58,7 @@ public class Spawner : MonoBehaviour
 	{
 		foreach (Node spawner in spawnerBuildeds)
 		{
-			Builder.DemolishAtNode(spawner, 1);
+			BuilderManager.DemolishAtNode(spawner, 1);
 		}
 		spawnerBuildeds.Clear();
 	}

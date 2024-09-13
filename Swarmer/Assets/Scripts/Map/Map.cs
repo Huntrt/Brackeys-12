@@ -71,14 +71,14 @@ public class Map : MonoBehaviour
 			if(node.isBorder)
 			{
 				node.isBorder = false;
-				Builder.DemolishAtNode(node, 1);
+				BuilderManager.DemolishAtNode(node, 1);
 			}
 			//This node is border if it dont have neighbor
 			List<Node> neighbor = GetNeighbor(node, true, true, false);
 			if(neighbor.Count < 8)
 			{
 				node.isBorder = true;
-				GameObject borderCreated = Builder.BuildAtNode(node, borderPrf); 
+				GameObject borderCreated = BuilderManager.BuildAtNode(node, borderPrf); 
 				borderCreated.transform.SetParent(borderGrouper.transform);
 			}
 		}
@@ -108,7 +108,7 @@ public class Map : MonoBehaviour
 		///Build the ground at layer zero on created node
 		if(ground != null) 
 		{
-			GameObject groundBuilded = Builder.BuildAtNode(createdNode, ground);
+			GameObject groundBuilded = BuilderManager.BuildAtNode(createdNode, ground);
 			//Setup the ground object just create
 			groundBuilded.name = nodes.Count + " | Node " + createCoord;
 			groundBuilded.transform.SetParent(groundGrouper.transform);
