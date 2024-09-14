@@ -40,7 +40,7 @@ public class Spawner : MonoBehaviour
 	void BeginSpawner(int lv)
 	{
 		/// Build spawner on random empty node
-		List<Node> vacantNodes = Map.i.GetVacants();
+		List<Node> vacantNodes = Map.i.GetVacants(Vector2Int.zero);
 		for (int i = 0; i < spawnerCount; i++)
 		{
 			Node spawnerNode = vacantNodes[UnityEngine.Random.Range(0, vacantNodes.Count)];

@@ -149,12 +149,12 @@ public class Map : MonoBehaviour
 		return neighbors;
 	}
 
-	public List<Node> GetVacants()
+	public List<Node> GetVacants(Vector2Int ignoreChunk)
 	{
 		List<Node> vacants = new List<Node>();
 		foreach (Node node in nodes)
 		{
-			if(node.occupations[1].obj == null)
+			if(node.occupations[1].obj == null && node.chunkReside != ignoreChunk)
 			{
 				vacants.Add(node);
 			}
