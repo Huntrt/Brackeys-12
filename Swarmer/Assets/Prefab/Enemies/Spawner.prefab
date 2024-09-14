@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3629545095258781354}
   - component: {fileID: -5363487888521812837}
   - component: {fileID: 8458171450842727016}
+  - component: {fileID: 2020327150887272116}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
@@ -26,13 +27,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3625001912691931817}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.38268343, w: 0.92387956}
-  m_LocalPosition: {x: 4.2036805, y: 1.1647553, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &-5363487888521812837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45,9 +46,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae683f71417f87d46be8ef905a987c50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  displayName: 
+  description: 
   layer: 1
   flowCostMod: 20
   towerable: 0
+  categories: 
+  nodeReside:
+    coord: {x: 0, y: 0}
+    pos: {x: 0, y: 0}
+    index: 0
+    occupations: []
+    isBorder: 0
+    chunkReside: {x: 0, y: 0}
+    flows:
+      cost: 0
+      prior: 0
+      direction: {x: 0, y: 0}
+      nextNode: {x: 0, y: 0}
 --- !u!212 &8458171450842727016
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -89,7 +105,7 @@ SpriteRenderer:
   m_SortingLayerID: 1881613663
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1936034422, guid: a9b922a6e75812047856c2019f8137cb, type: 3}
+  m_Sprite: {fileID: 379495965, guid: c0ee02f634b35a444bc408cc96836680, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 0.5019608}
   m_FlipX: 0
   m_FlipY: 0
@@ -100,3 +116,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2020327150887272116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3625001912691931817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a45f8ca9cd9bff749aa95ec5a0d636b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 379495965, guid: c0ee02f634b35a444bc408cc96836680, type: 3}
+  - {fileID: 401431393, guid: c0ee02f634b35a444bc408cc96836680, type: 3}
+  - {fileID: 196898327, guid: c0ee02f634b35a444bc408cc96836680, type: 3}
+  - {fileID: 38466327, guid: c0ee02f634b35a444bc408cc96836680, type: 3}
+  - {fileID: 1319232010, guid: c0ee02f634b35a444bc408cc96836680, type: 3}
+  sr: {fileID: 8458171450842727016}

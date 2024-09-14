@@ -12,8 +12,8 @@ public class Tower : MonoBehaviour
 
 	}
 
-	protected void DamageEnemy(GameObject enemy, float damage)
+	protected void DamageEnemy(GameObject enemyObj, float damage)
 	{
-		enemy.GetComponent<Health>().Damaging(damage);
+		enemyObj.GetComponent<Health>().Damaging(damage);
 	}
 }

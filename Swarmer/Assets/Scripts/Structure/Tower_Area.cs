@@ -78,15 +78,16 @@ public class Tower_Area : Tower
 	void Striking()
 	{
 		//Create an circle it for given
-		RaycastHit2D[] hits = Physics2D.CircleCastAll(aimer.transform.position, towerStats.Radius, Vector2.zero, General.i.enemyLayer);
+		RaycastHit2D[] hits = Physics2D.CircleCastAll(aimer.transform.position, towerStats.Radius, Vector2.zero, 0, General.i.enemyLayer);
 		int enemyHitted = Mathf.RoundToInt(towerStats.Amount);
 		//Deal damage to enemy hit and create the effect
 		if(hits.Length > 0) foreach (RaycastHit2D hit in hits)
 		{
-			if(enemyHitted <= 0) return;
-			enemyHitted--;
+			print(hit.transform.name);
 			DamageEnemy(hit.collider.gameObject, towerStats.Damage);
 			Instantiate(strikeEffect, hit.transform.position, strikeEffect.transform.rotation);
+			enemyHitted--;
+			if(enemyHitted <= 0) return;
 		}
 	}
 }

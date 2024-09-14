@@ -38,6 +38,7 @@ public class CameraControl : MonoBehaviour
 		if(Input.GetKey(right)) {moveDir += Vector2.right;}
 		if(Input.GetKeyDown(repositionCam)) {RespostionCamera();}
 		//Zoom
+		if(Player.i.buildPanel.activeInHierarchy) return;
 		curZoom += (-Input.mouseScrollDelta.y) * zoomSpeed;
 		curZoom = Mathf.Clamp(curZoom, minZoom, maxZoom);
 		if(Input.GetKeyDown(resetZoom)) {ResetZoom();}

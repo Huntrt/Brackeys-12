@@ -18,12 +18,13 @@ public class Enemy : MonoBehaviour
 	{
 		if(other.collider.CompareTag("Heart"))
 		{
-			Player.i.DamageHeart(1);
+			health.Die();
 		}
 	}
 
 	public void OnDeath()
 	{
+		Player.i.DamageHeart(1);
 		if(GameLoop.i != null) GameLoop.i.KillCouting();
 	}
 }

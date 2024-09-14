@@ -16,13 +16,18 @@ public class Economy : MonoBehaviour
 	}
 	#endregion
 
-    [SerializeField] int money;
+    [SerializeField] int money; public int Money {get => money;}
 	[SerializeField] TMPro.TextMeshProUGUI moneyCounterTxt;
+
+	void Awake()
+	{
+		moneyCounterTxt.text = money + "$";
+	}
 
 	public void Earn(int amount)
 	{
 		money += amount;
-		moneyCounterTxt.text = "$" + money;
+		moneyCounterTxt.text = money + "$";
 	}
 
 	public bool SpendCheck(int amount)
@@ -39,6 +44,6 @@ public class Economy : MonoBehaviour
 	public void Spend(int amount)
 	{
 		money -= amount;
-		moneyCounterTxt.text = "$" + money;
+		moneyCounterTxt.text = money + "$";
 	}
 }
