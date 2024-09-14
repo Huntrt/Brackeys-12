@@ -22,13 +22,14 @@ public class EnemyScaling : MonoBehaviour
 	public float spawnRateEveryLv, spawnRateIncrease, spawnRateIncreaseChance;
 	[System.Serializable] public class Enhancement
 	{
-		public float speed, health;
+		public float speed, health, loot;
 		public float chance;
 
-		public Enhancement(float speed, float health, float chance)
+		public Enhancement(float speed, float health, float loot, float chance)
 		{
 			this.speed = speed;
 			this.health = health;
+			this.loot = loot;
 			this.chance = chance;
 		}
 	}
@@ -65,16 +66,17 @@ public class EnemyScaling : MonoBehaviour
 		{
 			float eSpeed = Random.Range(minEnhancement.speed, maxEnhancement.speed);
 			float eHealth = Random.Range(minEnhancement.health, maxEnhancement.health);
+			float eLoot = Random.Range(minEnhancement.loot, maxEnhancement.loot);
 			float eChance = Random.Range(minEnhancement.chance, maxEnhancement.chance);
 
-			enhancements.Add(new Enhancement(eSpeed, eHealth, eChance));
+			enhancements.Add(new Enhancement(eSpeed, eHealth, eLoot, eChance));
 		}
 	}
 
 	public Enhancement PickEnhancement()
 	{
 		//Go through each enhancement and add up the total
-		Enhancement picked = new Enhancement(0,0,0);
+		Enhancement picked = new Enhancement(0,0,0,0);
 		foreach (Enhancement enhancement in enhancements)
 		{
 			if(Random.Range(0f,100f) < enhancement.chance)

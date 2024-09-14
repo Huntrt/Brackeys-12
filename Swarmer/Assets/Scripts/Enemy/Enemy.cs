@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+	[SerializeField] int loot;
     [SerializeField] Health health;
 	[SerializeField] Pathing movement;
 
@@ -12,6 +13,7 @@ public class Enemy : MonoBehaviour
 		health.MaxHealth += enhancement.health; 
 		health.SetFullHealth();
 		movement.speed += enhancement.speed;
+		loot += Mathf.RoundToInt(enhancement.loot);
 	}
 
 	void OnDisable()
@@ -30,6 +32,7 @@ public class Enemy : MonoBehaviour
 
 	public void OnDeath()
 	{
+		if(Economy.i != null) Economy.i.Earn(loot);
 		if(GameLoop.i != null) GameLoop.i.KillCouting();
 	}
 }

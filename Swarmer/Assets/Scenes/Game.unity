@@ -14819,10 +14819,12 @@ MonoBehaviour:
   minEnhancement:
     speed: 0.2
     health: 0.3
+    loot: 0
     chance: 5
   maxEnhancement:
     speed: 1
     health: 4
+    loot: 5
     chance: 20
   enhancements: []
   enhancmentsEveryLv: 3

@@ -51,6 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f311b002d05d81440bead52e2434d04a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loot: 5
   health: {fileID: 7883385601932928684}
   movement: {fileID: 4098112679839308290}
 --- !u!114 &7883385601932928684

@@ -48,6 +48,7 @@ Gameplay:
 		▪ Loot.
 		▪ Repeat...
 Essential:
+	▪ Indicator.
 	▪ Balance.
 	▪ Audio.
 	▪ Music.
@@ -66,6 +67,8 @@ Polish:
 	▪ Demolish Effect.
 	▪ Build Effect.
 	▪ Chunk Create Effect.
+	▪ Minimap.
+	▪ Econ Effect.
 
 Bug:
 	▪ Massed collider lag @caution
