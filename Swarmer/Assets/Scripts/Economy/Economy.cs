@@ -34,7 +34,6 @@ public class Economy : MonoBehaviour
 	{
 		if(money >= amount)
 		{
-			money -= amount;
 			return true;
 		}
 		Debug.Log("No money");
