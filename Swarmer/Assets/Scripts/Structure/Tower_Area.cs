@@ -7,12 +7,19 @@ public class Tower_Area : Tower
 		[SerializeField] float radius; public float Radius {get => radius; set {radius = value; onStatsChange?.Invoke("radius", value);}}
 		[SerializeField] float repeat; public float Repeat {get => repeat; set {repeat = value; onStatsChange?.Invoke("repeat", value);}}
 		[SerializeField] float amount; public float Amount {get => amount; set {amount = value; onStatsChange?.Invoke("amount", value);}}
+		[Header("Explosion Extension")]
+		[SerializeField] bool explosionExt; public bool ExplosionExt {get => explosionExt;}
+		[SerializeField] float exp_damage; public float Exp_Damage {get => exp_damage; set {exp_damage = value; onStatsChange?.Invoke("exp_damage", value);}}
+		[SerializeField] float exp_radius; public float Exp_Radius {get => exp_radius; set {exp_radius = value; onStatsChange?.Invoke("exp_radius", value);}}
 
 		public Stats SetStats(Stats statsGiven)
 		{
 			Radius = statsGiven.Radius;
 			Repeat = statsGiven.Repeat;
 			Amount = statsGiven.Amount;
+			explosionExt = statsGiven.explosionExt;
+			Exp_Damage = statsGiven.Exp_Damage;
+			Exp_Radius = statsGiven.Exp_Radius;
 			return this;
 		}
 	}
@@ -26,6 +33,13 @@ public class Tower_Area : Tower
 		infoControl.Inform("Strike Radius", towerStats.Radius);
 		infoControl.Inform("Strike Amount", towerStats.Amount);
 		infoControl.Inform("Repeat Attack", towerStats.Repeat);
+		infoControl.Inform("Repeat Attack", towerStats.Repeat);
+		infoControl.Inform("Repeat Attack", towerStats.Repeat);
+		if(towerStats.ExplosionExt)
+		{
+			infoControl.Inform("Explosion Damage", towerStats.Exp_Damage);
+			infoControl.Inform("Explosion Radius", towerStats.Exp_Radius);
+		}
 		TowerInfoManager.i.UpdateInfo(infoControl.infos);
 		TowerInfoManager.i.ShowInfo(true);
 	}
@@ -83,10 +97,13 @@ public class Tower_Area : Tower
 		//Deal damage to enemy hit and create the effect
 		if(hits.Length > 0) foreach (RaycastHit2D hit in hits)
 		{
-			print(hit.transform.name);
 			DamageEnemy(hit.collider.gameObject, towerStats.Damage);
-			Instantiate(strikeEffect, hit.transform.position, strikeEffect.transform.rotation);
+			GameObject createdEffect = Instantiate(strikeEffect, hit.transform.position, strikeEffect.transform.rotation);
 			enemyHitted--;
+			if(towerStats.ExplosionExt)
+			{
+				createdEffect.GetComponent<Strike_Explosion>().Explode(towerStats.Damage, towerStats.Radius);
+			}
 			if(enemyHitted <= 0) return;
 		}
 	}
