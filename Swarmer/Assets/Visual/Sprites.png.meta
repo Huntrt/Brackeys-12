@@ -134,7 +134,7 @@ TextureImporter:
       name: Enemy_Spawner_1
       rect:
         serializedVersion: 2
-        x: 9
+        x: 18
         y: 99
         width: 9
         height: 9
@@ -155,7 +155,7 @@ TextureImporter:
       name: Enemy_Spawner_2
       rect:
         serializedVersion: 2
-        x: 18
+        x: 27
         y: 99
         width: 9
         height: 9
@@ -176,7 +176,7 @@ TextureImporter:
       name: Enemy_Spawner_3
       rect:
         serializedVersion: 2
-        x: 27
+        x: 36
         y: 99
         width: 9
         height: 9
@@ -197,7 +197,7 @@ TextureImporter:
       name: Enemy_Spawner_4
       rect:
         serializedVersion: 2
-        x: 36
+        x: 45
         y: 99
         width: 9
         height: 9
@@ -218,7 +218,7 @@ TextureImporter:
       name: Enemy_Spawner_5
       rect:
         serializedVersion: 2
-        x: 45
+        x: 54
         y: 99
         width: 9
         height: 9
@@ -1495,6 +1495,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Player_Heart_Fill
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 99
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad198e28766099947bb6c8937272c82a
+      internalID: -329300183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -1528,8 +1549,8 @@ TextureImporter:
       Ground_8: -1007483193
       Ground_9: -137479251
       Player_Heart: 1184316249
+      Player_Heart_Fill: -737236183
       Sprite_Fill: -1476323532
-      Sprites_0: -737236183
       Sprites_45: 2020199343
       Sprites_53: 1226898625
       Sprites_54: 1566281785

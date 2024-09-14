@@ -15,10 +15,8 @@ public class Player : MonoBehaviour
 		}
 	}
 	#endregion
-    
-	public GameObject heartObj;
-	public int curHeart, maxHeart;
-	//test: Test variable
+
+	public Heart heart;
 	public GameObject previewer;
 	[SerializeField] Node hoverNode; public Node HoverNode {get => hoverNode;}
 	Tower hoverTower;
@@ -32,15 +30,9 @@ public class Player : MonoBehaviour
 	[SerializeField] TMPro.TextMeshProUGUI upgradeCostTxt;
 	General g;
 
-	void OnEnable()
-	{
-		Map.i.onMapCreated += CreateHeart;
-	}
-
 	void Start()
 	{
 		g = General.i;
-		curHeart = maxHeart;
 	}
 	
 	void Update()
@@ -168,24 +160,5 @@ public class Player : MonoBehaviour
 		bool placed = BuilderManager.BuildAtNode(hoverNode, structure, out buildStatus);
 		HideHoverPanel();
 		return placed;
-	}
-
-	void CreateHeart(Vector2Int chunk)
-	{
-		//Create the heart in the center node of chunk 0
-		if(chunk == Vector2Int.zero)
-		{
-			heartObj = BuilderManager.BuildAtNode(Map.i.FindNode(Vector2Int.zero), heartObj);
-			Map.i.onMapCreated -= CreateHeart;
-		}
-	}
-
-	public void DamageHeart(int taken)
-	{
-		curHeart -= taken;
-		if(curHeart <= 0)
-		{
-			print("Game Over");
-		}
 	}
 }

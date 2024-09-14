@@ -27,7 +27,7 @@ public class PathBulldozer : MonoBehaviour
 					BuilderManager.DemolishAtNode(resideNode, 1);
 				}
 				//Destroy self if have reached heart
-				if(resideNode.occupations[1].obj == Player.i.heartObj)
+				if(resideNode.occupations[1].obj == Player.i.heart.obj)
 				{
 					Destroy(gameObject);
 				}

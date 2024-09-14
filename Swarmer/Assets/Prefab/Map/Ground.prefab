@@ -140,30 +140,9 @@ MonoBehaviour:
   - {fileID: -1007483193, guid: c0ee02f634b35a444bc408cc96836680, type: 3}
   - {fileID: -137479251, guid: c0ee02f634b35a444bc408cc96836680, type: 3}
   - {fileID: 1411430411, guid: c0ee02f634b35a444bc408cc96836680, type: 3}
-  - {fileID: 1275975180, guid: c0ee02f634b35a444bc408cc96836680, type: 3}
-  - {fileID: 1275975180, guid: c0ee02f634b35a444bc408cc96836680, type: 3}
-  - {fileID: 1275975180, guid: c0ee02f634b35a444bc408cc96836680, type: 3}
-  - {fileID: 1275975180, guid: c0ee02f634b35a444bc408cc96836680, type: 3}
-  - {fileID: 1275975180, guid: c0ee02f634b35a444bc408cc96836680, type: 3}
-  - {fileID: 1275975180, guid: c0ee02f634b35a444bc408cc96836680, type: 3}
-  - {fileID: 1275975180, guid: c0ee02f634b35a444bc408cc96836680, type: 3}
-  - {fileID: 1275975180, guid: c0ee02f634b35a444bc408cc96836680, type: 3}
-  - {fileID: 1275975180, guid: c0ee02f634b35a444bc408cc96836680, type: 3}
-  - {fileID: 1275975180, guid: c0ee02f634b35a444bc408cc96836680, type: 3}
-  - {fileID: 1275975180, guid: c0ee02f634b35a444bc408cc96836680, type: 3}
-  - {fileID: 1275975180, guid: c0ee02f634b35a444bc408cc96836680, type: 3}
-  - {fileID: 1275975180, guid: c0ee02f634b35a444bc408cc96836680, type: 3}
-  - {fileID: 1275975180, guid: c0ee02f634b35a444bc408cc96836680, type: 3}
-  - {fileID: 1275975180, guid: c0ee02f634b35a444bc408cc96836680, type: 3}
-  - {fileID: 1275975180, guid: c0ee02f634b35a444bc408cc96836680, type: 3}
-  - {fileID: 1275975180, guid: c0ee02f634b35a444bc408cc96836680, type: 3}
-  - {fileID: 1275975180, guid: c0ee02f634b35a444bc408cc96836680, type: 3}
-  - {fileID: 1275975180, guid: c0ee02f634b35a444bc408cc96836680, type: 3}
-  - {fileID: 1275975180, guid: c0ee02f634b35a444bc408cc96836680, type: 3}
-  - {fileID: 1275975180, guid: c0ee02f634b35a444bc408cc96836680, type: 3}
-  - {fileID: 1275975180, guid: c0ee02f634b35a444bc408cc96836680, type: 3}
-  - {fileID: 1275975180, guid: c0ee02f634b35a444bc408cc96836680, type: 3}
   sr: {fileID: 4315075072016159238}
+  defaultSprite: {fileID: 0}
+  defaultChance: 90
 --- !u!1 &7174031155258164037
 GameObject:
   m_ObjectHideFlags: 0

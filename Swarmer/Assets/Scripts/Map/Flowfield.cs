@@ -27,7 +27,7 @@ public class Flowfield : MonoBehaviour
 	public void PathToGoal(int lv)
 	{
 		//Set goal as player heart
-		Vector2 goalPos = Player.i.heartObj.transform.position;
+		Vector2 goalPos = Player.i.heart.obj.transform.position;
 		//Renew all the node flows
 		foreach (Node node in m.nodes) {node.ResetFlow();}
 		//Convert goal to coordinates
