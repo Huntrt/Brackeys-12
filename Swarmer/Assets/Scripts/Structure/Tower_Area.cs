@@ -6,11 +6,13 @@ public class Tower_Area : Tower
 	{
 		[SerializeField] float radius; public float Radius {get => radius; set {radius = value; onStatsChange?.Invoke("radius", value);}}
 		[SerializeField] float repeat; public float Repeat {get => repeat; set {repeat = value; onStatsChange?.Invoke("repeat", value);}}
+		[SerializeField] float amount; public float Amount {get => amount; set {amount = value; onStatsChange?.Invoke("amount", value);}}
 
 		public Stats SetStats(Stats statsGiven)
 		{
 			Radius = statsGiven.Radius;
 			Repeat = statsGiven.Repeat;
+			Amount = statsGiven.Amount;
 			return this;
 		}
 	}
@@ -22,6 +24,7 @@ public class Tower_Area : Tower
 		infoControl.Inform("Firerate", towerStats.FireRate);
 		infoControl.Inform("Range", towerStats.Range);
 		infoControl.Inform("Strike Radius", towerStats.Radius);
+		infoControl.Inform("Strike Amount", towerStats.Amount);
 		infoControl.Inform("Repeat Attack", towerStats.Repeat);
 		TowerInfoManager.i.UpdateInfo(infoControl.infos);
 		TowerInfoManager.i.ShowInfo(true);
@@ -75,8 +78,11 @@ public class Tower_Area : Tower
 	void Striking()
 	{
 		RaycastHit2D[] hits = Physics2D.CircleCastAll(aimer.transform.position, towerStats.Radius, Vector2.zero, General.i.enemyLayer);
+		int enemyHitted = Mathf.RoundToInt(towerStats.Amount);
 		if(hits.Length > 0) foreach (RaycastHit2D hit in hits)
 		{
+			if(enemyHitted <= 0) return;
+			enemyHitted--;
 			hit.collider.GetComponent<Health>().Damaging(towerStats.Damage);
 			Instantiate(strikeEffect, hit.transform.position, strikeEffect.transform.rotation);
 		}
