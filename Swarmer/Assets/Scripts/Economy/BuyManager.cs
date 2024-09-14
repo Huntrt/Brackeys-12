@@ -39,7 +39,7 @@ public class BuyManager : MonoBehaviour
 			{
 				///Then spend the money
 				Economy.i.Spend(buyable.Cost);
-				Player.i.HideBuildPanel();
+				Player.i.HideHoverPanel();
 			}
 		}
 		if(!couldBought || !couldPlace)
@@ -67,7 +67,7 @@ public class BuyManager : MonoBehaviour
 		{
 			Economy.i.Earn(buyableNode.sellAmount);
 			BuilderManager.DemolishAtNode(hoverNode, sellLayer);
-			Player.i.HideBuildPanel();
+			Player.i.HideHoverPanel();
 		}
 		else
 		{

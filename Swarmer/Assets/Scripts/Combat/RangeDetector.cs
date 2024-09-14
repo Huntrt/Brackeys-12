@@ -16,16 +16,7 @@ public class RangeDetector : MonoBehaviour
 	{
 		tower.onTowerAndStrikeStatsChange -= DrawRange;
 	}
-
-	void Update()
-	{
-		//temp: range display test
-		if(Input.GetKeyDown(KeyCode.R))
-		{
-			RangeDisplay(!render.gameObject.activeInHierarchy);
-		}
-	}
-
+	
 	public void RangeDisplay(bool show)
 	{
 		if(show) DrawRange("range", 0);

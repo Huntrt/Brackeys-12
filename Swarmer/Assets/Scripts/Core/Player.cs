@@ -21,6 +21,7 @@ public class Player : MonoBehaviour
 	//test: Test variable
 	public GameObject previewer;
 	[SerializeField] Node hoverNode; public Node HoverNode {get => hoverNode;}
+	Tower hoverTower;
 	public Vector2Int mouseCoord; public Vector2Int MouseCoord {get => mouseCoord;}
 	[Header("UI")]
 	public GameObject buildPanel;
@@ -53,25 +54,33 @@ public class Player : MonoBehaviour
 			///Show build panel when right click
 			if(Input.GetKeyDown(KeyCode.Mouse0))
 			{
-				buildPanel.transform.position = g.cam.WorldToScreenPoint(hoverNode.pos);
-				ShowTowerInfo();
-				ShowBuildPanel();
-				ShowSellAndInfoPanel();
+				ShowHoverPanel();
 			}
 		}
 		//test: Hide the build ui when right click
 		if(Input.GetKeyDown(KeyCode.Mouse1) && buildPanel.activeInHierarchy)
 		{
-			HideBuildPanel();
+			HideHoverPanel();
 			return;
 		}
+	}
+
+	void ShowHoverPanel()
+	{
+		ShowTowerInfo();
+		ShowBuildPanel();
+		ShowSellAndInfoPanel();
 	}
 
 	void ShowTowerInfo()
 	{
 		GameObject hoverObj = hoverNode.occupations[2].obj;
 		if(hoverObj == null) return;
-		hoverObj.GetComponent<Tower>().ShowInfo("", -1);
+		hoverTower = hoverObj.GetComponent<Tower>();
+		//Show tower info
+		hoverTower.ShowInfo("", -1);
+		//Show tower range
+		hoverTower.rangeDetector.RangeDisplay(true);
 	}
 
 	void ShowSellAndInfoPanel()
@@ -95,6 +104,8 @@ public class Player : MonoBehaviour
 
 	void ShowBuildPanel()
 	{
+		//Move build panel to cursour
+		buildPanel.transform.position = g.cam.WorldToScreenPoint(hoverNode.pos);
 		//If there still occupation spot left
 		if(!hoverNode.HaveOccupation(2))
 		{
@@ -115,7 +126,7 @@ public class Player : MonoBehaviour
 		buildPanel.SetActive(true);
 	}
 
-	public void HideBuildPanel()
+	public void HideHoverPanel()
 	{
 		buildPanel.SetActive(false);
 		layer1Panel.SetActive(false);
@@ -123,13 +134,14 @@ public class Player : MonoBehaviour
 		sellPanel.SetActive(false);
 		StructureInfo.i.CloseInfo();
 		TowerInfoManager.i.ShowInfo(false);
+		if(hoverTower != null) hoverTower.rangeDetector.RangeDisplay(false);
 	}
 
 	public bool PlaceStructure(GameObject structure)
 	{
 		string buildStatus;
 		bool placed = BuilderManager.BuildAtNode(hoverNode, structure, out buildStatus);
-		HideBuildPanel();
+		HideHoverPanel();
 		return placed;
 	}
 

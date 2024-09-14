@@ -35,7 +35,6 @@ public class Tower_Turret : Tower
 	[SerializeField] GameObject strike;
 	[SerializeField] GameObject targetEnemy;
 	[SerializeField] Transform firepoint, aimer;
-	[SerializeField] RangeDetector rangeDetector;
 	float curFirerate;
 
 	void OnEnable()

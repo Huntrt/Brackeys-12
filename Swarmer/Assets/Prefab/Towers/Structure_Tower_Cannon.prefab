@@ -97,12 +97,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   infoControl: {fileID: 8105982774314407612}
+  rangeDetector: {fileID: 7384262668791750780}
   towerStats:
-    damage: 0
-    firerate: 0
-    range: 0
-    accuracy: 0
-    projectile: 0
+    damage: 10
+    firerate: 1
+    range: 4
+    accuracy: 1
+    projectile: 1
   projectileStats:
     damage: 0
     speed: 8
@@ -112,7 +113,6 @@ MonoBehaviour:
   targetEnemy: {fileID: 0}
   firepoint: {fileID: 8725148336058623564}
   aimer: {fileID: 8725148336058623564}
-  rangeDetector: {fileID: 7384262668791750780}
 --- !u!114 &7384262668791750780
 MonoBehaviour:
   m_ObjectHideFlags: 0

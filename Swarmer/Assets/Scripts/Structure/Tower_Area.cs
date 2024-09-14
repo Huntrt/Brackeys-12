@@ -31,7 +31,6 @@ public class Tower_Area : Tower
 	[SerializeField] GameObject strikeEffect;
 	[SerializeField] GameObject targetEnemy;
 	[SerializeField] Transform firepoint, aimer;
-	[SerializeField] RangeDetector rangeDetector;
 	float curFirerate;
 
 	void OnEnable()

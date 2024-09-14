@@ -1897,7 +1897,7 @@ MonoBehaviour:
   levelCounterTxt: {fileID: 177847410}
   builderUIPanel: {fileID: 52934761}
   raidUIPanel: {fileID: 245424872}
-  killProgressTxt: {fileID: 0}
+  killProgressTxt: {fileID: 1486895869}
 --- !u!114 &758382694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2703,7 +2703,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1952792619}
         m_TargetAssemblyTypeName: Player, Assembly-CSharp
-        m_MethodName: HideBuildPanel
+        m_MethodName: HideHoverPanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3732,7 +3732,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bff5d957750ac849af763ef0717dd43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: {x: 50, y: 29}
 --- !u!1 &1392628815
 GameObject:
   m_ObjectHideFlags: 0
