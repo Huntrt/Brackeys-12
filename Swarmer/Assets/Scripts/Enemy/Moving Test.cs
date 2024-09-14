@@ -10,6 +10,8 @@ public class MovingTest : MonoBehaviour
 	void OnValidate()
 	{
 		rb = GetComponent<Rigidbody2D>();
+		speed = Random.Range(1,12f);
+		transform.position = transform.position.With(x: Random.Range(-3f,3f), y: Random.Range(1f,4f));
 	}
 
 	void FixedUpdate()

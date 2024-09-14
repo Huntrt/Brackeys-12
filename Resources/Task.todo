@@ -64,3 +64,5 @@ Bug:
 		? Upon map expansion adding more border to composite will cause lag
 	▪ Bulldozer inaccuracy @minimal
 		? There an rare chance if bulldozer align perfect diagonal it will not destroy wall
+	▪ Rail tower @caution
+		? Attack and visual are highly inaccurate but dont have time to fix 
