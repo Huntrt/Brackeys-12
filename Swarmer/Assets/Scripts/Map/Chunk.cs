@@ -23,23 +23,33 @@ public class Chunk : MonoBehaviour
 		}
 	}
 	[SerializeField] List<ChunkData> generatedChunks;
-	[SerializeField] int chunkEveryLv;
+	[SerializeField] int initalChunk;
+	[SerializeField] int chunkEveryLv; [SerializeField] float chunkAppearChance;
 	[SerializeField] bool debug;
 
 	void Start()
 	{
 		CreateChunk(new ChunkData(Vector2Int.zero));
+		//Generate multiple chunk on level up
+		for (int i = 0; i < initalChunk; i++) {GeneratingChunk();}
 	}
 
 	void OnEnable()
 	{
-		GameLoop.onLevelComplete += GenerateChunk;
+		GameLoop.onLevelComplete += ChunkLevelUp;
 	}
 
-	void GenerateChunk(int lv)
+	void ChunkLevelUp(int lv)
 	{
-		//Only generate new chunk if lv has reached
+		//When reached the level count to create new chunk
 		if(GameLoop.i.level % chunkEveryLv != 0) return;
+		//When take the chance to generate new chunk
+		if(UnityEngine.Random.Range(0,100) > chunkAppearChance) return;
+		GeneratingChunk();
+	}
+
+	void GeneratingChunk()
+	{
 		//Find all the neighbor still have chunk
 		List<ChunkData> neighborlessChunk = new List<ChunkData>();
 		foreach (ChunkData chunk in generatedChunks)
@@ -112,7 +122,7 @@ public class Chunk : MonoBehaviour
 
 	void OnDisable()
 	{
-		GameLoop.onLevelComplete -= GenerateChunk;
+		GameLoop.onLevelComplete -= ChunkLevelUp;
 	}
 
 	void OnDrawGizmos()

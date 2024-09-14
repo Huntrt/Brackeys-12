@@ -52,6 +52,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: {fileID: 7883385601932928684}
+  movement: {fileID: 4098112679839308290}
 --- !u!114 &7883385601932928684
 MonoBehaviour:
   m_ObjectHideFlags: 0

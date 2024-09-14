@@ -68,9 +68,15 @@ public class Player : MonoBehaviour
 
 	void ShowTowerInfo()
 	{
-		GameObject hoverObj = hoverNode.occupations[2].obj;
-		if(hoverObj == null) return;
-		hoverTower = hoverObj.GetComponent<Tower>();
+		GameObject hoverObj = null;
+		for (int o = 2; o >= 0 ; o--)
+		{
+			hoverObj = hoverNode.occupations[o].obj;
+			if(hoverObj == null) continue;
+			hoverTower = hoverObj.GetComponent<Tower>();
+			if(hoverTower != null) break;
+		}
+		if(hoverTower == null) return;
 		//Show tower info
 		hoverTower.ShowInfo("", -1);
 		//Show tower range

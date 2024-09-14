@@ -136,4 +136,4 @@ MonoBehaviour:
   - {fileID: 1319232010, guid: c0ee02f634b35a444bc408cc96836680, type: 3}
   sr: {fileID: 8458171450842727016}
   defaultSprite: {fileID: 0}
-  defaultChance: 999
+  defaultChance: 0

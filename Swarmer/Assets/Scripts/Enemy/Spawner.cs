@@ -7,7 +7,6 @@ public class Spawner : MonoBehaviour
 	public GameObject spawnerPrf;
 	public GameObject testEnemy; //temp: enemy test
     public int spawnerCount;
-	public float spawnerEveryLv;
 	public float spawnRate; float spawnRateTimer;
 	public List<Node> spawnerBuildeds = new List<Node>();
 
@@ -28,7 +27,7 @@ public class Spawner : MonoBehaviour
 	void Spawning()
 	{
 		spawnRateTimer += Time.deltaTime;
-		if(spawnRateTimer >= spawnRate)
+		if(spawnRateTimer >= 1/spawnRate)
 		{
 			foreach (Node spawer in spawnerBuildeds)
 			{
@@ -40,9 +39,6 @@ public class Spawner : MonoBehaviour
 
 	void BeginSpawner(int lv)
 	{
-		//Scale spawner with level
-		spawnerCount = (int)(lv/spawnerEveryLv);
-		spawnerCount += 1;
 		/// Build spawner on random empty node
 		List<Node> vacantNodes = Map.i.GetVacants();
 		for (int i = 0; i < spawnerCount; i++)

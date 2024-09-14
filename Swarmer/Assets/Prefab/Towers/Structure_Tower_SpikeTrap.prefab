@@ -110,7 +110,7 @@ Transform:
   m_GameObject: {fileID: 5660532439909726172}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.1838653, y: 0.017187342, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -252,7 +252,7 @@ Transform:
   m_GameObject: {fileID: 7192968271499642360}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.0776885, y: -0.08023822, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -314,6 +314,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84051a8846853c346b28cf9603103725, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: 0
+  initialCost: 0
+  curCost: 0
+  costScale: 0
   tower: {fileID: 4159095149716290113}
   towerUpgrade:
     damage: 0
@@ -365,7 +369,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tower: {fileID: 4159095149716290113}
-  render: {fileID: 0}
+  render: {fileID: 3417506151216493466}
   showRange: 0
 --- !u!114 &5265342711042317767
 MonoBehaviour:

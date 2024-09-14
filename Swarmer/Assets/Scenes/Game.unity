@@ -14273,7 +14273,7 @@ MonoBehaviour:
   groundPrf: {fileID: 4949450767277753067, guid: 9e25733be5c627646a74b65b48d57bed,
     type: 3}
   groundGrouper: {fileID: 1637862229}
-  mapSize: 7
+  mapSize: 3
   spacing: 0.6
   nodes: []
   maxMapSize: {x: 0, y: 0}
@@ -14306,7 +14306,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   generatedChunks: []
-  chunkEveryLv: 3
+  initalChunk: 3
+  chunkEveryLv: 5
+  chunkAppearChance: 30
   debug: 0
 --- !u!1 &1771978088
 GameObject:
@@ -14752,6 +14754,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1877717352}
   - component: {fileID: 1877717353}
+  - component: {fileID: 1877717354}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -14792,10 +14795,37 @@ MonoBehaviour:
     type: 3}
   testEnemy: {fileID: 7145367844961188502, guid: e31d293bb8ae7344ca0004dcda2be042,
     type: 3}
-  spawnerCount: 0
-  spawnerEveryLv: 3
-  spawnRate: 0.1
+  spawnerCount: 1
+  spawnRate: 1
   spawnerBuildeds: []
+--- !u!114 &1877717354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877717351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d19378ebd819a16418c08ca46201ba5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawner: {fileID: 1877717353}
+  spawnCountEveryLv: 6
+  spawnCountIncrease: 1
+  spawnRateEveryLv: 2
+  spawnRateIncrease: 1
+  spawnRateIncreaseChance: 60
+  minEnhancement:
+    speed: 0.2
+    health: 0.3
+    chance: 5
+  maxEnhancement:
+    speed: 1
+    health: 4
+    chance: 20
+  enhancements: []
+  enhancmentsEveryLv: 3
 --- !u!1 &1879134309
 GameObject:
   m_ObjectHideFlags: 0

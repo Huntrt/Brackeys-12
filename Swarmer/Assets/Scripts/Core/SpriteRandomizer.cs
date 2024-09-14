@@ -9,7 +9,7 @@ public class SpriteRandomizer : MonoBehaviour
 
 	void OnEnable()
 	{
-		if(Random.Range(0f,100f) > defaultChance)
+		if(Random.Range(0f,100f) < defaultChance)
 		{
 			sr.sprite = defaultSprite;
 			return;

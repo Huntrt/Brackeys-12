@@ -3,10 +3,15 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] Health health;
+	[SerializeField] Pathing movement;
 
 	void OnEnable()
 	{
 		health.onDeath += OnDeath;
+		EnemyScaling.Enhancement enhancement = EnemyScaling.i.PickEnhancement();
+		health.MaxHealth += enhancement.health; 
+		health.SetFullHealth();
+		movement.speed += enhancement.speed;
 	}
 
 	void OnDisable()

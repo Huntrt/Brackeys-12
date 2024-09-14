@@ -60,7 +60,12 @@ Polish:
 	▪ Fix [explosion effect] bug.
 	▪ Improve explosion on hit position.
 	▪ Main menu effects.
-	▪ Game over info
+	▪ Game over info.
+	▪ Kill effect.
+	▪ Upgrade effect.
+	▪ Demolish Effect.
+	▪ Build Effect.
+	▪ Chunk Create Effect.
 
 Bug:
 	▪ Massed collider lag @caution

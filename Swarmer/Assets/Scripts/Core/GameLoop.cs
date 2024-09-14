@@ -63,7 +63,7 @@ public class GameLoop : MonoBehaviour
 		//Start raid phase
 		raidPhase = true;
 		//Set kill requierment
-		killReq = level * 10;
+		killReq = level * 5;
 		//Switch to raider UI
 		builderUIPanel.SetActive(false);
 		raidUIPanel.SetActive(true);

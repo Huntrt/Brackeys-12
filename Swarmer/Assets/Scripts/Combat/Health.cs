@@ -9,6 +9,11 @@ public class Health : MonoBehaviour
 
 	void OnEnable()
 	{
+		SetFullHealth();
+	}
+
+	public void SetFullHealth()
+	{
 		curHealth = maxHealth;
 	}
 
