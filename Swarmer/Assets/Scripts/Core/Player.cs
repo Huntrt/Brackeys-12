@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
 	public GameObject previewer;
 	[SerializeField] Node hoverNode; public Node HoverNode {get => hoverNode;}
 	[SerializeField] Node.Occupation hoverOccupation;
-	Tower hoverTower;
+	[SerializeField] Tower hoverTower;
 	public Vector2Int mouseCoord; public Vector2Int MouseCoord {get => mouseCoord;}
 	[Header("UI")]
 	public GameObject buildPanel;

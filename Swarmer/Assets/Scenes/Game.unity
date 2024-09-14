@@ -7372,7 +7372,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 0
   raidPhase: 0
-  calmDuration: 12
+  calmDuration: 30
   calmTimer: 0
   killReq: 0
   killCount: 0
@@ -19815,6 +19815,7 @@ MonoBehaviour:
     obj: {fileID: 0}
     component: {fileID: 0}
     flowCostMod: 0
+  hoverTower: {fileID: 0}
   mouseCoord: {x: 0, y: 0}
   buildPanel: {fileID: 991303977}
   layer1Panel: {fileID: 1127645621}

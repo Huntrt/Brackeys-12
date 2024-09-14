@@ -297,6 +297,9 @@ MonoBehaviour:
     radius: 0.3
     repeat: 1
     amount: 10
+    explosionExt: 0
+    exp_damage: 0
+    exp_radius: 0
   strikeEffect: {fileID: 2133778360333592456, guid: b26eb5fae52637c45a3094348ed9ad0b,
     type: 3}
   targetEnemy: {fileID: 0}
@@ -315,9 +318,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 0
-  initialCost: 5
-  curCost: 0
+  initialCost: 10
   costScale: 10
+  curCost: 0
   tower: {fileID: 4159095149716290113}
   towerUpgrade:
     damage: 0.4
@@ -326,6 +329,9 @@ MonoBehaviour:
     radius: 0.06
     repeat: 0.2
     amount: 1
+    explosionExt: 0
+    exp_damage: 0
+    exp_radius: 0
 --- !u!114 &100588734196747749
 MonoBehaviour:
   m_ObjectHideFlags: 0
