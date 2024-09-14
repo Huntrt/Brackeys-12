@@ -176,7 +176,7 @@ public class Player : MonoBehaviour
 		}
 		else
 		{
-			print("Not enough money to upgrade");
+			Popup.i.Pop("No money to upgrade");
 		}
 	}
 

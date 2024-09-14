@@ -42,9 +42,9 @@ public class BuyManager : MonoBehaviour
 				Player.i.HideHoverPanel();
 			}
 		}
-		if(!couldBought || !couldPlace)
+		if(!couldBought)
 		{
-			print("Not enough money to buy " + data.DisplayName);
+			Popup.i.Pop("No money to buy " + data.name);
 		}
 	}
 

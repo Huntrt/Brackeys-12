@@ -49,19 +49,22 @@ public class Node
 		/// STOP - If there an structure already occupied on that layer
 		if(occupations[structure.layer].obj != null) 
 		{
-			status = "Structure [" + occupations[structure.layer].obj.name + "] already exist at layer " + structure.layer; 
+			status = "Structure [" + occupations[structure.layer].obj.name + "] already exist at layer " + structure.layer;
+			Popup.i.Pop("Can't build " + structure.DisplayName + " here because it already occupy");
 			return false;
 		}
 		/// STOP - If try to build tower but foundation not occupied
 		if(structure.layer == 2 && occupations[1].obj == null) 
 		{
 			status = "There no FOUNDATION for tower [" + checkObj.name +"]"; 
+			Popup.i.Pop("Can't build " + structure.DisplayName + " here because it don't have a foundation");
 			return false;
 		}
 		/// STOP - If try to build tower but the foundation not allow
 		if(structure.layer == 2 && !occupations[1].component.towerable) 
 		{
 			status = "The foundation [" + occupations[1].obj.name + "] does not support tower"; 
+			Popup.i.Pop("This foundation does not support tower");
 			return false;
 		}
 		status = "Structure [" + checkObj.name + "] allow to occupied";
