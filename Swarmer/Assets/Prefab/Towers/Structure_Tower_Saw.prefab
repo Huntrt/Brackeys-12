@@ -188,7 +188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21293d266dff2ae4a976f46634070f77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 33
+  cost: 25
   sellPenalty: 2
 --- !u!114 &8758139992419010926
 MonoBehaviour:
@@ -229,14 +229,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84051a8846853c346b28cf9603103725, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: 0
+  initialCost: 7
+  curCost: 0
+  costScale: 15
   tower: {fileID: 8758139992419010926}
   towerUpgrade:
-    damage: 0
-    firerate: 0
-    range: 0
-    radius: 0
-    repeat: 0
-    amount: 0
+    damage: 1
+    firerate: 3
+    range: 0.2
+    radius: 0.2
+    repeat: 0.4
+    amount: 4
 --- !u!114 &7775336910351164370
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -265,7 +269,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayName: Saw
-  description: 
+  description: 'Cut up enemy '
   layer: 2
   flowCostMod: 0
   towerable: 0
@@ -335,9 +339,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1881613663
   m_SortingLayer: 2
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 1746319915, guid: c0ee02f634b35a444bc408cc96836680, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.9485849, b: 0.48584908, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

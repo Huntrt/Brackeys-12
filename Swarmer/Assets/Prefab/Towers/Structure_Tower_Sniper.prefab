@@ -83,8 +83,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21293d266dff2ae4a976f46634070f77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 33
-  sellPenalty: 2
+  cost: 35
+  sellPenalty: 3
 --- !u!114 &1314836843914340298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102,13 +102,13 @@ MonoBehaviour:
   upgrader: {fileID: 2570359954120499904}
   towerStats:
     damage: 30
-    firerate: 1
-    range: 5
-    piercing: 2
-    size: 1
+    firerate: 0.3
+    range: 13
+    piercing: 1
+    size: 1.2
     atkCount: 1
-    spread: 5
-    laserLength: 10
+    spread: 0
+    laserLength: 13
   strikeEffect: {fileID: 3369531559651782038, guid: 47a368cbf5874a7408e7c964f8a74f05,
     type: 3}
   targetEnemy: {fileID: 0}
@@ -126,16 +126,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ca8db9d9fd88ad4aa9902757a5e3232, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: 0
+  initialCost: 24
+  curCost: 0
+  costScale: 12
   tower: {fileID: 1314836843914340298}
   towerUpgrade:
-    damage: 0
-    firerate: 0
-    range: 0
-    piercing: 0
-    size: 0
+    damage: 5
+    firerate: 0.3
+    range: 1
+    piercing: 0.4
+    size: 0.5
     atkCount: 0
     spread: 0
-    laserLength: 0
+    laserLength: 1
 --- !u!114 &744353930527128835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,7 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayName: Sniper
-  description: 
+  description: Instant long range attack
   layer: 2
   flowCostMod: 0
   towerable: 0
@@ -234,9 +238,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1881613663
   m_SortingLayer: 2
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 910045652, guid: c0ee02f634b35a444bc408cc96836680, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.5850754, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

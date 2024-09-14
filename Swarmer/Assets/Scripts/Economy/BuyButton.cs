@@ -11,7 +11,9 @@ public class BuyButton : MonoBehaviour
 	{
 		structureData = buyingStructure.GetComponent<Structure>();
 		structureBuyable = buyingStructure.GetComponent<Buyable>();
-		icon.sprite = buyingStructure.GetComponent<SpriteRenderer>().sprite;
+		SpriteRenderer structureSr = buyingStructure.GetComponent<SpriteRenderer>();
+		icon.sprite = structureSr.sprite;
+		icon.color = structureSr.color;
 		gameObject.name = "Buy - " + structureData.DisplayName;
 	}
 

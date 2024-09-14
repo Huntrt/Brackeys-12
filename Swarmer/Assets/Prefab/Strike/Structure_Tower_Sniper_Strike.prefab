@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: -3643406759189905926}
   - component: {fileID: -5719828191386539409}
   m_Layer: 0
-  m_Name: Structure_Tower_Sniper_StrikeEffect
+  m_Name: Structure_Tower_Sniper_Strike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -98,8 +98,8 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 0.5882353}
-      key1: {r: 1, g: 1, b: 1, a: 0.5882353}
+      key0: {r: 0, g: 0.58431375, b: 1, a: 0.5882353}
+      key1: {r: 0, g: 0.58431375, b: 1, a: 0.5882353}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}

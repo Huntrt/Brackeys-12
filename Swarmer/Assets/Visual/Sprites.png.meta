@@ -1504,7 +1504,7 @@ TextureImporter:
         width: 9
         height: 9
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1512,6 +1512,48 @@ TextureImporter:
       bones: []
       spriteID: ad198e28766099947bb6c8937272c82a
       internalID: -329300183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Structure_Tower_Strike_Thrust
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 50
+        width: 5
+        height: 3
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32da9504a63117844bca0e6fe20f2fd3
+      internalID: 1603681015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Structure_Tower_Strike_Rocket
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 47
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0699d7ce6bec5647bb640926f2ec0ac
+      internalID: -1404985270
       vertices: []
       indices: 
       edges: []
@@ -1581,7 +1623,9 @@ TextureImporter:
       Structure_Tower_Strike_Electric_3: 231313217
       Structure_Tower_Strike_Electric_4: -1231138092
       Structure_Tower_Strike_FireBall: 1737893033
+      Structure_Tower_Strike_Rocket: -1404985270
       Structure_Tower_Strike_Slash: -1824565826
+      Structure_Tower_Strike_Thrust: 1603681015
       Structure_Tower_Thunder: 928881139
       Structure_Tower_Turret: -427557338
       Structure_Wall_All: 771730623
