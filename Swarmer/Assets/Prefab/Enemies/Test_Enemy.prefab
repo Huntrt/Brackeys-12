@@ -12,9 +12,11 @@ GameObject:
   - component: {fileID: 5967306489228359574}
   - component: {fileID: 7883385601932928684}
   - component: {fileID: 4098112679839308290}
+  - component: {fileID: 5886649690878379634}
   - component: {fileID: 4964232396734657475}
   - component: {fileID: 7969177806860397477}
   - component: {fileID: -4853277434620286704}
+  - component: {fileID: -4565080119123181705}
   m_Layer: 6
   m_Name: Test_Enemy
   m_TagString: Enemy
@@ -90,6 +92,21 @@ MonoBehaviour:
       cost: 0
       prior: 0
       direction: {x: 0, y: 0}
+      nextNode: {x: 0, y: 0}
+--- !u!114 &5886649690878379634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7145367844961188502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8b2cc1b067cc50478496f8d8e4c0384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hurtAnimation: {fileID: -4565080119123181705}
+  health: {fileID: 7883385601932928684}
 --- !u!212 &4964232396734657475
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -204,3 +221,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5001191
+--- !u!111 &-4565080119123181705
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7145367844961188502}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 5c48e72e796f15f4897809ed772087cb, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 5c48e72e796f15f4897809ed772087cb, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
