@@ -6,10 +6,23 @@ public class Tower : MonoBehaviour
 	public OnTowerStatsChange onTowerAndStrikeStatsChange;
 	[SerializeField] protected TowerInfoController infoControl;
 	[SerializeField] public RangeDetector rangeDetector;
+	[SerializeField] Upgrader upgrader;
+
+	void OnValidate()
+	{
+		infoControl = GetComponent<TowerInfoController>();
+		rangeDetector = GetComponent<RangeDetector>();
+		upgrader = GetComponent<Upgrader>();
+	}
 
 	public virtual void ShowInfo(string statsName, float modifier)
 	{
 
+	}
+
+	public void Upgrading()
+	{
+		upgrader.ApplyUpgrade();
 	}
 
 	protected void DamageEnemy(GameObject enemyObj, float damage)

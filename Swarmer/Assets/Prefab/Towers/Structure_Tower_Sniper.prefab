@@ -40,8 +40,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6180179787495878681}
-  - component: {fileID: 1314836843914340298}
   - component: {fileID: 6766922515683585776}
+  - component: {fileID: 1314836843914340298}
+  - component: {fileID: 2570359954120499904}
   - component: {fileID: 744353930527128835}
   - component: {fileID: 6543691470568515391}
   - component: {fileID: 6867773712691286274}
@@ -70,34 +71,6 @@ Transform:
   - {fileID: 5743904147264947534}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1314836843914340298
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6805983969336609467}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d4ef527c885a6341923b6e399243e46, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  infoControl: {fileID: 6867773712691286274}
-  rangeDetector: {fileID: 744353930527128835}
-  towerStats:
-    damage: 30
-    firerate: 1
-    range: 5
-    piercing: 2
-    size: 1
-    atkCount: 1
-    spread: 5
-    laserLength: 10
-  strikeEffect: {fileID: 3369531559651782038, guid: 47a368cbf5874a7408e7c964f8a74f05,
-    type: 3}
-  targetEnemy: {fileID: 0}
-  firepoint: {fileID: 5743904147264947534}
-  aimer: {fileID: 5743904147264947534}
 --- !u!114 &6766922515683585776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,6 +85,57 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 33
   sellPenalty: 2
+--- !u!114 &1314836843914340298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6805983969336609467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d4ef527c885a6341923b6e399243e46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infoControl: {fileID: 6867773712691286274}
+  rangeDetector: {fileID: 744353930527128835}
+  upgrader: {fileID: 2570359954120499904}
+  towerStats:
+    damage: 30
+    firerate: 1
+    range: 5
+    piercing: 2
+    size: 1
+    atkCount: 1
+    spread: 5
+    laserLength: 10
+  strikeEffect: {fileID: 3369531559651782038, guid: 47a368cbf5874a7408e7c964f8a74f05,
+    type: 3}
+  targetEnemy: {fileID: 0}
+  firepoint: {fileID: 5743904147264947534}
+  aimer: {fileID: 5743904147264947534}
+--- !u!114 &2570359954120499904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6805983969336609467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ca8db9d9fd88ad4aa9902757a5e3232, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tower: {fileID: 1314836843914340298}
+  towerUpgrade:
+    damage: 0
+    firerate: 0
+    range: 0
+    piercing: 0
+    size: 0
+    atkCount: 0
+    spread: 0
+    laserLength: 0
 --- !u!114 &744353930527128835
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -229,8 +229,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 81731241899090697}
-  - component: {fileID: 4159095149716290113}
   - component: {fileID: 6855356322614205400}
+  - component: {fileID: 4159095149716290113}
+  - component: {fileID: -5763717913354073679}
   - component: {fileID: 100588734196747749}
   - component: {fileID: 3032269066889469565}
   - component: {fileID: 5265342711042317767}
@@ -260,32 +261,6 @@ Transform:
   - {fileID: 2563066600495294415}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4159095149716290113
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7192968271499642360}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: acbe8bacbfe447a45bdc4976b345e456, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  infoControl: {fileID: 5265342711042317767}
-  rangeDetector: {fileID: 3032269066889469565}
-  towerStats:
-    damage: 5
-    firerate: 2
-    range: 0.5
-    radius: 0.5
-    repeat: 1
-    amount: 3
-  strikeEffect: {fileID: 3139924862428637110, guid: 437989ad6d7de9d45ad2ca89a78ad2a7,
-    type: 3}
-  targetEnemy: {fileID: 0}
-  firepoint: {fileID: 2563066600495294415}
-  aimer: {fileID: 2563066600495294415}
 --- !u!114 &6855356322614205400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -300,6 +275,53 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 7
   sellPenalty: 1
+--- !u!114 &4159095149716290113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7192968271499642360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acbe8bacbfe447a45bdc4976b345e456, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infoControl: {fileID: 5265342711042317767}
+  rangeDetector: {fileID: 3032269066889469565}
+  upgrader: {fileID: -5763717913354073679}
+  towerStats:
+    damage: 5
+    firerate: 2
+    range: 0.5
+    radius: 0.5
+    repeat: 1
+    amount: 3
+  strikeEffect: {fileID: 3139924862428637110, guid: 437989ad6d7de9d45ad2ca89a78ad2a7,
+    type: 3}
+  targetEnemy: {fileID: 0}
+  firepoint: {fileID: 2563066600495294415}
+  aimer: {fileID: 2563066600495294415}
+--- !u!114 &-5763717913354073679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7192968271499642360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84051a8846853c346b28cf9603103725, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tower: {fileID: 4159095149716290113}
+  towerUpgrade:
+    damage: 0
+    firerate: 0
+    range: 0
+    radius: 0
+    repeat: 0
+    amount: 0
 --- !u!114 &100588734196747749
 MonoBehaviour:
   m_ObjectHideFlags: 0
