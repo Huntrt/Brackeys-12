@@ -1,6 +1,5 @@
 using UnityEngine;
 
-	//[SerializeField] float a; public float A {get => a; set {a = value; onStatsChange?.Invoke("a", value);}}
 public class Tower_Rail : Tower
 {
 	[System.Serializable] public class Stats : Combat.Stats

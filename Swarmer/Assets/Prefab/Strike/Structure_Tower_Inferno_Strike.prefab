@@ -47,11 +47,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43eadf1809cc8914f84d669360b46f08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explodeOnDeath: 1
+  explodeOnHit: 0
+  explosionPrf: {fileID: 8169959651104118963, guid: 848e596a374434743a8f9a60ebc857c1,
+    type: 3}
   stats:
-    damage: 0
     speed: 0
     lifetime: 0
     piercing: 0
+    explosionExt: 0
+    exp_damage: 0
+    exp_radius: 0
+    homingExt: 0
+    hom_accurate: 0
+    hom_radius: 0
   rb: {fileID: 6648080482674804984}
   col: {fileID: 8252513850719179460}
 --- !u!212 &1803256255030712985

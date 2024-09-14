@@ -55,6 +55,10 @@ Essential:
 	▪ Tutorial @consider
 	▪ Keybind.
 	▪ Cleanup.
+Polish:
+	▪ Connect wall texture.
+	▪ Fix [explosion effect] bug.
+	▪ Improve explosion on hit position.
 
 Bug:
 	▪ Massed collider lag @caution
@@ -66,3 +70,6 @@ Bug:
 		? There an rare chance if bulldozer align perfect diagonal it will not destroy wall
 	▪ Rail tower @caution
 		? Attack and visual are highly inaccurate but dont have time to fix 
+	▪ Explosion effect @minimal
+		? Bigger radius cause less particle
+		a. Exponential increase burse count

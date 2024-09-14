@@ -26,6 +26,16 @@ public class Tower_Turret : Tower
 		infoControl.Inform("Projectile Count", towerStats.Projectile);
 		infoControl.Inform("Projectile Speed", projectileStats.Speed);
 		infoControl.Inform("Projectile Life Time", projectileStats.Lifetime);
+		if(projectileStats.ExplosionExt)
+		{
+			infoControl.Inform("Explosion Damage", projectileStats.Exp_Damage);
+			infoControl.Inform("Explosion Radius", projectileStats.Exp_Radius);
+		}
+		if(projectileStats.HomingExt)
+		{
+			infoControl.Inform("Homing Accuracy", projectileStats.Hom_Accurate);
+			infoControl.Inform("Seek Radius", projectileStats.Hom_Radius);
+		}
 		TowerInfoManager.i.UpdateInfo(infoControl.infos);
 		TowerInfoManager.i.ShowInfo(true);
 	}
