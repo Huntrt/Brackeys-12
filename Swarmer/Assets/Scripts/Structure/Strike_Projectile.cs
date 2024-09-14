@@ -39,9 +39,12 @@ public class Strike_Projectile : MonoBehaviour
 	[SerializeField] Collider2D col;
 	float curLifetime;
 	List<Collider2D> pierces = new List<Collider2D>();
+	Vector2 initPos;
 
 	void OnEnable()
 	{	
+		//Save position it created
+		initPos = rb.position;
 		//Reset all pierced target
 		foreach (Collider2D pierce in pierces) {Physics2D.IgnoreCollision(col, pierce, false);}
 		pierces = new List<Collider2D>();
@@ -60,6 +63,8 @@ public class Strike_Projectile : MonoBehaviour
 	{
 		//Moving the strike
 		rb.MovePosition(rb.position + ((Vector2)transform.up * stats.Speed) * Time.fixedDeltaTime);
+		//Prevent projectile from going too far
+		if(Vector2.Distance(initPos, rb.position) >= 100) End();
 	}
 
 	void OnCollisionEnter2D(Collision2D other)
