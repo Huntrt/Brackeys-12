@@ -18,8 +18,7 @@ public class BuyManager : MonoBehaviour
 
 	void Update()
 	{
-		//temp: sell test
-		if(Input.GetKeyDown(KeyCode.S))
+		if(Input.GetKeyDown(SessionOperator.i.config.SellTower))
 		{
 			Sell();
 		}

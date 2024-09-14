@@ -40,8 +40,8 @@ public class GameLoop : MonoBehaviour
 	void Update()
 	{
 		levelCounterTxt.text = "LEVEL " + level;
-		//test: begin timer key
-		if(Input.GetKeyDown(KeyCode.T))
+		//Skip calm when use hot key
+		if(Input.GetKeyDown(SessionOperator.i.config.SkipCalm))
 		{
 			BeginLevel();
 		}

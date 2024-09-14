@@ -34,15 +34,15 @@ public class CameraControl : MonoBehaviour
 		if(Player.i.buildPanel.activeInHierarchy) return;
 		//Moving
 		moveDir = Vector2.zero;
-		if(Input.GetKey(up)) {moveDir += Vector2.up;}
-		if(Input.GetKey(down)) {moveDir += Vector2.down;}
-		if(Input.GetKey(left)) {moveDir += Vector2.left;}
-		if(Input.GetKey(right)) {moveDir += Vector2.right;}
-		if(Input.GetKeyDown(repositionCam)) {RespostionCamera();}
+		if(Input.GetKey(SessionOperator.i.config.CamUp)) {moveDir += Vector2.up;}
+		if(Input.GetKey(SessionOperator.i.config.CamDown)) {moveDir += Vector2.down;}
+		if(Input.GetKey(SessionOperator.i.config.CamLeft)) {moveDir += Vector2.left;}
+		if(Input.GetKey(SessionOperator.i.config.CamRight)) {moveDir += Vector2.right;}
+		if(Input.GetKeyDown(SessionOperator.i.config.CamToBase)) {RespostionCamera();}
 		//Zoom
 		curZoom += (-Input.mouseScrollDelta.y) * zoomSpeed;
 		curZoom = Mathf.Clamp(curZoom, minZoom, maxZoom);
-		if(Input.GetKeyDown(resetZoom)) {ResetZoom();}
+		if(Input.GetKeyDown(SessionOperator.i.config.ResetZoom)) {ResetZoom();}
 		cam.orthographicSize = curZoom;
 		zoomInfoTxt.text = "Zoom: " + curZoom;
 	}

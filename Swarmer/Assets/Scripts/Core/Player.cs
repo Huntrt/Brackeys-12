@@ -63,14 +63,18 @@ public class Player : MonoBehaviour
 			//Move the preview and get node got hover
 			previewer.transform.position = Map.SnapPosition(g.MousePos());
 			hoverNode = Map.i.nodeIndexs[mouseCoord];
-			///Show build panel when right click
-			if(Input.GetKeyDown(KeyCode.Mouse0))
+			///Show build panel when select click
+			if(Input.GetKeyDown(SessionOperator.i.config.Select))
 			{
 				ShowHoverPanel();
 			}
 		}
-		//test: Hide the build ui when right click
-		if(Input.GetKeyDown(KeyCode.Mouse1) && buildPanel.activeInHierarchy)
+		if(Input.GetKeyDown(SessionOperator.i.config.UpgradeTower)) if(hoverTower != null)
+		{
+			UpgradeHoverTower();
+		}
+		//Hide the build ui when click
+		if(Input.GetKeyDown(SessionOperator.i.config.UnSelect) && buildPanel.activeInHierarchy)
 		{
 			HideHoverPanel();
 			return;
