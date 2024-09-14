@@ -74,3 +74,5 @@ Bug:
 	▪ Explosion effect @minimal
 		? Bigger radius cause less particle
 		a. Exponential increase burse count
+	▪ Sell and upgrade border not updating @minimal
+		? When those button active the first time the border dont fit background

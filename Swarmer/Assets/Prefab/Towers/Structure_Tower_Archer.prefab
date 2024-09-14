@@ -132,17 +132,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c625571b3349a645af4a2b05281a88a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: 0
+  initialCost: 10
+  curCost: 0
+  costScale: 20
   tower: {fileID: 4106547218366462294}
   towerUpgrade:
-    damage: 0
-    firerate: 0
-    range: 0
+    damage: 10
+    firerate: 10
+    range: 5
     accuracy: 0
-    projectile: 0
+    projectile: 3
   strikeUpgrade:
-    speed: 0
-    lifetime: 0
-    piercing: 0
+    speed: 3
+    lifetime: 7
+    piercing: 12
     explosionExt: 0
     exp_damage: 0
     exp_radius: 0

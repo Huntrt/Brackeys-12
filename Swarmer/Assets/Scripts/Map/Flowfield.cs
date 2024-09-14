@@ -95,7 +95,6 @@ public class Flowfield : MonoBehaviour
 
 	void DrawDebug()
 	{
-		print("A");
 		foreach (GameObject a in flowArrows) {Destroy(a);} flowArrows.Clear();
 		if(!debug) return;
 		foreach (Node n in m.nodes) 

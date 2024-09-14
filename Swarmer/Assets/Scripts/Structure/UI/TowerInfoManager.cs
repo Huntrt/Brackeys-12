@@ -28,7 +28,7 @@ public class TowerInfoManager : MonoBehaviour
 		foreach (TowerInfoController.Info info in infos)
 		{
 			GameObject createdUI = Instantiate(towerStatsUITemplate, towerStatsLayout.transform);
-			createdUI.GetComponent<TMPro.TextMeshProUGUI>().text = info.statsName + ": <b><size=12>" + info.statValue + "</size></b>";
+			createdUI.GetComponent<TMPro.TextMeshProUGUI>().text = info.statsName + ": <b><size=12>" + System.Math.Round(info.statValue, 1) + "</size></b>";
 			createdUI.name = "Info stats - " + info.statsName;
 			towerStatsUIs.Add(createdUI);
 		}

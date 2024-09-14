@@ -5,8 +5,8 @@ public class Tower : MonoBehaviour
     public delegate void OnTowerStatsChange(string statsName, float modifier);
 	public OnTowerStatsChange onTowerAndStrikeStatsChange;
 	[SerializeField] protected TowerInfoController infoControl;
-	[SerializeField] public RangeDetector rangeDetector;
-	[SerializeField] Upgrader upgrader;
+	public RangeDetector rangeDetector;
+	public Upgrader upgrader;
 
 	void OnValidate()
 	{

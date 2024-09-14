@@ -28,6 +28,8 @@ public class Player : MonoBehaviour
 	[SerializeField] GameObject layer1Panel, layer2Panel;
 	[SerializeField] GameObject sellPanel;
 	[SerializeField] TMPro.TextMeshProUGUI sellAmountTxt;
+	[SerializeField] GameObject upgradePanel;
+	[SerializeField] TMPro.TextMeshProUGUI upgradeCostTxt;
 	General g;
 
 	void OnEnable()
@@ -81,6 +83,9 @@ public class Player : MonoBehaviour
 		hoverTower.ShowInfo("", -1);
 		//Show tower range
 		hoverTower.rangeDetector.RangeDisplay(true);
+		//Update the upgrade cost display
+		upgradeCostTxt.text = "UP " + hoverTower.upgrader.CurCost + "$";
+		upgradePanel.SetActive(true);
 	}
 
 	void ShowSellAndInfoPanel()
@@ -132,9 +137,29 @@ public class Player : MonoBehaviour
 		layer1Panel.SetActive(false);
 		layer2Panel.SetActive(false);
 		sellPanel.SetActive(false);
+		upgradePanel.SetActive(false);
 		StructureInfo.i.CloseInfo();
 		TowerInfoManager.i.ShowInfo(false);
 		if(hoverTower != null) hoverTower.rangeDetector.RangeDisplay(false);
+	}
+
+	public void UpgradeHoverTower()
+	{
+		if(Economy.i.SpendCheck(hoverTower.upgrader.CurCost))
+		{
+			//Spending money to upgrade
+			Economy.i.Spend(hoverTower.upgrader.CurCost);
+			//Upgrade the htower hovering
+			hoverTower.Upgrading();
+			//Update the info of the tower just upgrade 
+			StructureInfo.i.ShowInfo(hoverNode.occupations[2].component);
+			//Update the upgrade cost display
+			upgradeCostTxt.text = "UP " + hoverTower.upgrader.CurCost + "$";
+		}
+		else
+		{
+			print("Not enough money to upgrade");
+		}
 	}
 
 	public bool PlaceStructure(GameObject structure)
