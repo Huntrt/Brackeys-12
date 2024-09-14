@@ -20,8 +20,8 @@ public class GameLoop : MonoBehaviour
 
 	public int level;
 	public bool raidPhase;
-	public int killReq;
-	[SerializeField] int killCount;
+	public float calmDuration; [SerializeField] float calmTimer;
+	public int killReq; [SerializeField] int killCount;
 	public delegate void OnLevelBegin(int level); public static OnLevelBegin onLevelBegin;
 	public delegate void OnLevelComplete(int level); public static OnLevelComplete onLevelComplete;
 	[Header("UI")]
@@ -29,10 +29,18 @@ public class GameLoop : MonoBehaviour
 	public GameObject builderUIPanel;
 	public GameObject raidUIPanel;
 	public TextMeshProUGUI killProgressTxt;
+	public TextMeshProUGUI calmTimerTxt;
+	[SerializeField] Animation calmTimerAnim;
+
+	void OnEnable()
+	{
+		calmTimer = calmDuration;
+	}
 
 	void Update()
 	{
 		levelCounterTxt.text = "LEVEL " + level;
+		//test: begin timer key
 		if(Input.GetKeyDown(KeyCode.T))
 		{
 			BeginLevel();
@@ -46,6 +54,21 @@ public class GameLoop : MonoBehaviour
 			if(killCount >= killReq)
 			{
 				CompleteLevel();
+				calmTimerAnim.Stop();
+				calmTimer = calmDuration;
+			}
+		}
+		else
+		{
+			//Decrease and display the calm timer
+			calmTimer -= Time.deltaTime;
+			calmTimerTxt.text = Mathf.RoundToInt(calmTimer) + "<size=18>." + (System.Math.Round(calmTimer - Mathf.Floor(calmTimer), 1)*10) + "</size>";
+			//Play timer warning animation when under 10s
+			if(calmTimer < 10) if(!calmTimerAnim.isPlaying) calmTimerAnim.Play();
+			//Start level when out of timer
+			if(calmTimer <= 0)
+			{
+				BeginLevel();
 			}
 		}
 	}
