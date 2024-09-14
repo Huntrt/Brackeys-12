@@ -9,7 +9,7 @@ public class Tower_Turret : Tower
 
 		public Stats SetStats(Stats statsGiven)
 		{
-			accuracy = statsGiven.Accuracy;
+			Accuracy = statsGiven.Accuracy;
 			Projectile = statsGiven.Projectile;
 			return this;
 		}
