@@ -14,7 +14,7 @@ public class Health : MonoBehaviour
 
 	public void Damaging(float taken)
 	{
-		if(taken > 0) return;
+		taken = Mathf.Clamp(taken, 0, Mathf.Infinity);
 		curHealth -= taken;
 		onHurt?.Invoke(taken);
 		if(curHealth <= 0)
@@ -25,7 +25,7 @@ public class Health : MonoBehaviour
 
 	public void Healing(float taken)
 	{
-		if(taken < 0) return;
+		taken = Mathf.Clamp(taken, 0, Mathf.Infinity);
 		curHealth += taken;
 		curHealth = Mathf.Clamp(curHealth, 0, maxHealth);
 		onHeal?.Invoke(taken);
