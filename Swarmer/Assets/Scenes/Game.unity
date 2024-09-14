@@ -10855,7 +10855,7 @@ MonoBehaviour:
       - m_Target: {fileID: 1952792619}
         m_TargetAssemblyTypeName: Player, Assembly-CSharp
         m_MethodName: HideHoverPanel
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

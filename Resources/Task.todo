@@ -28,8 +28,8 @@ Gameplay:
 		✓ Health system.
 		✓ Check if there path to heart.
 		✓ Spawning.
-		▪ Spawning scaling.
-		▪ Enemy scaling.
+		✓ Spawning scaling.
+		✓ Enemy scaling.
 		▪ Pooling.
 		✓ List:
 			✓ Scout
@@ -39,14 +39,14 @@ Gameplay:
 			Etc...
 	Economy:
 		✓ Buy tower
-		▪ Drop money
+		✓ Drop money
 	Loop:
 		✓ Map expanded.
-		▪ Buy defense.
+		✓ Buy defense.
 		✓ Enemy spawn point.
-		▪ Stronger enemy.
-		▪ Loot.
-		▪ Repeat...
+		✓ Stronger enemy.
+		✓ Loot.
+		✓ Repeat...
 Essential:
 	▪ Indicator.
 	▪ Balance.
@@ -69,6 +69,7 @@ Polish:
 	▪ Chunk Create Effect.
 	▪ Minimap.
 	▪ Econ Effect.
+	▪ Raid/Calm Effect.
 
 Bug:
 	▪ Massed collider lag @caution

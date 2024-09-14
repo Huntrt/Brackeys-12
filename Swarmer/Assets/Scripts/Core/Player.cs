@@ -35,14 +35,31 @@ public class Player : MonoBehaviour
 	{
 		g = General.i;
 	}
+
+	void OnEnable()
+	{
+		GameLoop.onLevelBegin += HideHoverPanel;
+	}
+
+	void OnDisable()
+	{
+		GameLoop.onLevelBegin -= HideHoverPanel;
+	}
 	
 	void Update()
 	{
 		//? Convert mouse position to node coordinates
 		mouseCoord = Map.WorldToCoordinates(g.MousePos());
+		///STOP WHEN IN RAID
+		if(GameLoop.i.raidPhase)
+		{
+			previewer.SetActive(false);
+			return;
+		}
 		//If there an node exist at mouse coordinates and build panel is closed
 		if(Map.i.nodeIndexs.ContainsKey(mouseCoord) && !buildPanel.activeInHierarchy)
 		{
+			previewer.SetActive(true);
 			//Move the preview and get node got hover
 			previewer.transform.position = Map.SnapPosition(g.MousePos());
 			hoverNode = Map.i.nodeIndexs[mouseCoord];
@@ -132,7 +149,7 @@ public class Player : MonoBehaviour
 		buildPanel.SetActive(true);
 	}
 
-	public void HideHoverPanel()
+	public void HideHoverPanel(int lv = 0)
 	{
 		buildPanel.SetActive(false);
 		layer1Panel.SetActive(false);
