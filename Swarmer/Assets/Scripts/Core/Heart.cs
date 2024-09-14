@@ -8,6 +8,7 @@ public class Heart : MonoBehaviour
 	public int curHeart, maxHeart;
 	[SerializeField] TMPro.TextMeshProUGUI heartCounterTxt;
 	[SerializeField] Image heartBar;
+	[SerializeField] GameObject gameOverPanel;
 
 	void OnEnable()
 	{
@@ -38,7 +39,7 @@ public class Heart : MonoBehaviour
 		heartBar.fillAmount = (float)((float)curHeart/(float)maxHeart);
 		if(curHeart <= 0)
 		{
-			print("Game Over");
+			gameOverPanel.SetActive(true);
 		}
 	}
 }

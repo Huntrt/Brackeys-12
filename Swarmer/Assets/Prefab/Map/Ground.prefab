@@ -142,7 +142,7 @@ MonoBehaviour:
   - {fileID: 1411430411, guid: c0ee02f634b35a444bc408cc96836680, type: 3}
   sr: {fileID: 4315075072016159238}
   defaultSprite: {fileID: 0}
-  defaultChance: 90
+  defaultChance: 5
 --- !u!1 &7174031155258164037
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,7 +7,7 @@ Gameplay:
 		✓ Player heart.
 		✓ Camera control.
 	Build:
-		▪ Tower system:
+		✓ Tower system:
 			X a. Single tower but with alot of upgrade (simple but could be very complex, dull graphic)
 				* Simple build system
 			X b. Evolve tower (could be hard to do and need alot of resource)
@@ -17,7 +17,7 @@ Gameplay:
 		✓ Building system core.
 		✓ Builder UI.
 		✓ Upgrade & Info UI.
-		▪ Tower progression.
+		✓ Tower progression.
 	Pathfinding:
 		✓ Flow field:
 			✓ Spread the path from goal.
@@ -48,7 +48,7 @@ Gameplay:
 		▪ Loot.
 		▪ Repeat...
 Essential:
-	▪ Progression.
+	▪ Balance.
 	▪ Audio.
 	▪ Music.
 	▪ Credit.
@@ -60,6 +60,7 @@ Polish:
 	▪ Fix [explosion effect] bug.
 	▪ Improve explosion on hit position.
 	▪ Main menu effects.
+	▪ Game over info
 
 Bug:
 	▪ Massed collider lag @caution
