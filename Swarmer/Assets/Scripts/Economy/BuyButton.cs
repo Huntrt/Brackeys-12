@@ -5,7 +5,7 @@ public class BuyButton : MonoBehaviour
 	public GameObject buyingStructure;
 	public Structure structureData;
 	public Buyable structureBuyable;
-	[SerializeField] UnityEngine.UI.Image icon;
+	[SerializeField] UnityEngine.UI.Image icon, bg;
 
 	void OnValidate()
 	{
@@ -13,7 +13,7 @@ public class BuyButton : MonoBehaviour
 		structureBuyable = buyingStructure.GetComponent<Buyable>();
 		SpriteRenderer structureSr = buyingStructure.GetComponent<SpriteRenderer>();
 		icon.sprite = structureSr.sprite;
-		icon.color = structureSr.color;
+		bg.color = structureSr.color;
 		gameObject.name = "Buy - " + structureData.DisplayName;
 	}
 

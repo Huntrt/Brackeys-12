@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
 	public Heart heart;
 	public GameObject previewer;
 	[SerializeField] Node hoverNode; public Node HoverNode {get => hoverNode;}
+	[SerializeField] Node.Occupation hoverOccupation;
 	Tower hoverTower;
 	public Vector2Int mouseCoord; public Vector2Int MouseCoord {get => mouseCoord;}
 	[Header("UI")]
@@ -89,12 +90,14 @@ public class Player : MonoBehaviour
 	void ShowSellAndInfoPanel()
 	{
 		//Go through to check if hover node have occupation
-		for (int i = 2; i >= 1 ; i--)if(hoverNode.HaveOccupation(i))
+		for (int i = 2; i >= 1 ; i--) if(hoverNode.HaveOccupation(i))
 		{
+			//Get the occupation of node currently hover
+			hoverOccupation = hoverNode.occupations[i];
 			//Show info of the occupation structure
-			StructureInfo.i.ShowInfo(hoverNode.occupations[i].component);
+			StructureInfo.i.ShowInfo(hoverOccupation.component);
 			//Show the sell info if the structure allow to sell
-			GameObject structure = hoverNode.occupations[i].obj;
+			GameObject structure = hoverOccupation.obj;
 			Buyable buyable = structure.GetComponent<Buyable>();
 			if(buyable != null)
 			{
@@ -150,7 +153,7 @@ public class Player : MonoBehaviour
 			//Upgrade the htower hovering
 			hoverTower.Upgrading();
 			//Update the info of the tower just upgrade 
-			StructureInfo.i.ShowInfo(hoverNode.occupations[2].component);
+			StructureInfo.i.ShowInfo(hoverOccupation.component);
 			//Update the upgrade cost display
 			upgradeCostTxt.text = "UP " + hoverTower.upgrader.CurCost + "$";
 		}
