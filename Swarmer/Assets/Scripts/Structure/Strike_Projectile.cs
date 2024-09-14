@@ -22,7 +22,7 @@ public class Strike_Projectile : MonoBehaviour
 		public Stats(Stats given, float damage)
 		{
 			Damage = damage;
-			Speed = given.Speed;
+			Speed = Mathf.Clamp(given.Speed, 0, 30);
 			Lifetime = given.Lifetime;
 			Piercing = given.piercing;
 			explosionExt = given.explosionExt;
