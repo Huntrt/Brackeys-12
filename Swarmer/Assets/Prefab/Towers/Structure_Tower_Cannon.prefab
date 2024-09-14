@@ -97,12 +97,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   infoControl: {fileID: 8105982774314407612}
-  turretStats:
-    damage: 15
-    firerate: 1
-    range: 5
-    accuracy: 5
-    projectile: 1
+  towerStats:
+    damage: 0
+    firerate: 0
+    range: 0
+    accuracy: 0
+    projectile: 0
   projectileStats:
     damage: 0
     speed: 8
@@ -294,8 +294,8 @@ LineRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1739264021
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Positions:
   - {x: 0, y: 0, z: 0}

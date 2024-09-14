@@ -15,7 +15,22 @@ public class Tower_Turret : Tower
 		}
 	}
 
-	public Tower_Turret.Stats turretStats;
+	public override void ShowInfo(string statsName, float modifier)
+	{
+		base.ShowInfo(statsName, modifier);
+		infoControl.Inform("Damage", towerStats.Damage);
+		infoControl.Inform("Firerate", towerStats.FireRate);
+		infoControl.Inform("Range", towerStats.Range);
+		infoControl.Inform("Inaccuracy", towerStats.Accuracy);
+		infoControl.Inform("Piercing", projectileStats.Piercing);
+		infoControl.Inform("Projectile Count", towerStats.Projectile);
+		infoControl.Inform("Projectile Speed", projectileStats.Speed);
+		infoControl.Inform("Projectile Life Time", projectileStats.Lifetime);
+		TowerInfoManager.i.UpdateInfo(infoControl.infos);
+		TowerInfoManager.i.ShowInfo(true);
+	}
+
+	public Tower_Turret.Stats towerStats;
 	public Strike_Projectile.Stats projectileStats;
 	[SerializeField] GameObject strike;
 	[SerializeField] GameObject targetEnemy;
@@ -25,25 +40,24 @@ public class Tower_Turret : Tower
 
 	void OnEnable()
 	{
-		turretStats.onStatsChange += StatsChangeCaller;
+		towerStats.onStatsChange += StatsChangeCaller;
 		projectileStats.onStatsChange += StatsChangeCaller;
-		turretStats.onStatsChange += ShowInfo;
-		projectileStats.onStatsChange += ShowInfo;
+		onTowerAndStrikeStatsChange += ShowInfo; //Show new info when stats change 
 	}
 
-	void StatsChangeCaller(string statsName, float modifier) {onTowerStatsChange?.Invoke(statsName, modifier);}
+	//When both tower and it strike stats got change
+	void StatsChangeCaller(string statsName, float modifier) {onTowerAndStrikeStatsChange?.Invoke(statsName, modifier);}
 
 	void OnDisable()
 	{
-		turretStats.onStatsChange -= StatsChangeCaller;
+		towerStats.onStatsChange -= StatsChangeCaller;
 		projectileStats.onStatsChange -= StatsChangeCaller;
-		turretStats.onStatsChange -= ShowInfo;
-		projectileStats.onStatsChange -= ShowInfo;
+		onTowerAndStrikeStatsChange -= ShowInfo;
 	}
 
 	void Update()
 	{
-		targetEnemy = rangeDetector.Detecting(turretStats.Range);
+		targetEnemy = rangeDetector.Detecting(towerStats.Range);
 		if(targetEnemy != null)
 		{
 			//Aimer look at target enemy
@@ -54,13 +68,12 @@ public class Tower_Turret : Tower
 
 	void Firing()
 	{
-		if(targetEnemy == null) return;
 		//Timer to strike
 		curFirerate += Time.deltaTime;
-		if(curFirerate >= 1/turretStats.FireRate)
+		if(curFirerate >= 1/towerStats.FireRate)
 		{
 			//Strike base on projectile count
-			for (int p = 0; p < turretStats.Projectile; p++) {Striking();}
+			for (int p = 0; p < towerStats.Projectile; p++) {Striking();}
 			//Reset timer
 			curFirerate -= curFirerate;
 		}
@@ -69,29 +82,14 @@ public class Tower_Turret : Tower
 	void Striking()
 	{
 		//Adjust the barrel with accuracy to get firing direction
-		Quaternion accurate = Quaternion.Euler(0,0,Random.Range(-turretStats.Accuracy, turretStats.Accuracy) + aimer.localEulerAngles.z);
+		Quaternion accurate = Quaternion.Euler(0,0,Random.Range(-towerStats.Accuracy, towerStats.Accuracy) + aimer.localEulerAngles.z);
 		//Create the strike
 		GameObject striked = Instantiate(strike, firepoint.position, Quaternion.identity);
 		striked.SetActive(false);
 		//Rotate the strike as accuracy
 		striked.transform.rotation = accurate;
 		///Set the strike stats 
-		striked.GetComponent<Strike_Projectile>().stats = new Strike_Projectile.Stats(projectileStats, turretStats.Damage);
+		striked.GetComponent<Strike_Projectile>().stats = new Strike_Projectile.Stats(projectileStats, towerStats.Damage);
 		striked.SetActive(true);
-	}
-
-	public override void ShowInfo(string statsName, float modifier)
-	{
-		base.ShowInfo(statsName, modifier);
-		infoControl.Inform("Damage", turretStats.Damage);
-		infoControl.Inform("Firerate", turretStats.FireRate);
-		infoControl.Inform("Range", turretStats.Range);
-		infoControl.Inform("Inaccuracy", turretStats.Accuracy);
-		infoControl.Inform("Piercing", projectileStats.Piercing);
-		infoControl.Inform("Projectile Count", turretStats.Projectile);
-		infoControl.Inform("Projectile Speed", projectileStats.Speed);
-		infoControl.Inform("Projectile Life Time", projectileStats.Lifetime);
-		TowerInfoManager.i.UpdateInfo(infoControl.infos);
-		TowerInfoManager.i.ShowInfo(true);
 	}
 }

@@ -9,12 +9,12 @@ public class RangeDetector : MonoBehaviour
 
 	void OnEnable()
 	{
-		tower.onTowerStatsChange += DrawRange;
+		tower.onTowerAndStrikeStatsChange += DrawRange;
 	}
 
 	void OnDisable()
 	{
-		tower.onTowerStatsChange -= DrawRange;
+		tower.onTowerAndStrikeStatsChange -= DrawRange;
 	}
 
 	void Update()
