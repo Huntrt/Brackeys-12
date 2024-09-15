@@ -39,9 +39,9 @@ public class Health : MonoBehaviour
 		onHeal?.Invoke(taken);
 	}
 
-	public void Die()
+	public void Die(bool audio = true)
 	{
-		SessionOperator.i.audios.soundSource.PlayOneShot(dieSound);
+		if(audio) SessionOperator.i.audios.soundSource.PlayOneShot(dieSound);
 		onDeath?.Invoke();
 		//temp: pool later
 		Destroy(gameObject);

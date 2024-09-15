@@ -9,6 +9,8 @@ public class Enemy : MonoBehaviour
 	void OnEnable()
 	{
 		health.onDeath += OnDeath;
+		if(GameLoop.i != null) GameLoop.onLevelComplete += LevelCleanup;
+		//Enhance enemy stats
 		if(EnemyScaling.i == null) return;
 		EnemyScaling.Enhancement enhancement = EnemyScaling.i.PickEnhancement();
 		health.MaxHealth += enhancement.health; 
@@ -20,6 +22,7 @@ public class Enemy : MonoBehaviour
 	void OnDisable()
 	{
 		health.onDeath -= OnDeath;
+		if(GameLoop.i != null) GameLoop.onLevelComplete -= LevelCleanup;
 	}
 
 	void OnCollisionEnter2D(Collision2D other)
@@ -29,6 +32,11 @@ public class Enemy : MonoBehaviour
 			Player.i.heart.DamageHeart(1);
 			health.Die();
 		}
+	}
+
+	public void LevelCleanup(int lv)
+	{
+		health.Die(false);
 	}
 
 	public void OnDeath()
