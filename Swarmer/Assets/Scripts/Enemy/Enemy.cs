@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
 	void OnEnable()
 	{
 		health.onDeath += OnDeath;
+		if(EnemyScaling.i == null) return;
 		EnemyScaling.Enhancement enhancement = EnemyScaling.i.PickEnhancement();
 		health.MaxHealth += enhancement.health; 
 		health.SetFullHealth();

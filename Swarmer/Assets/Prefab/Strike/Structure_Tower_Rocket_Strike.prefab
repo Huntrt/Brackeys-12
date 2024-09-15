@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4432400679565590991}
   - component: {fileID: 1116680009349339539}
+  - component: {fileID: 4446519352983956713}
   - component: {fileID: 8128297668640853766}
   - component: {fileID: 685828221449653504}
   - component: {fileID: 2359272591707417474}
@@ -63,6 +64,21 @@ MonoBehaviour:
     hom_radius: 0
   rb: {fileID: 685828221449653504}
   col: {fileID: 2359272591707417474}
+--- !u!114 &4446519352983956713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7307566956085182462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93bd7f1892eaddc4db2b35fce5011f0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 1116680009349339539}
+  accuracy: 0
+  range: 0
 --- !u!212 &8128297668640853766
 SpriteRenderer:
   m_ObjectHideFlags: 0
