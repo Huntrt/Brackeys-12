@@ -382,18 +382,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b743370ac3e4ec2a1668f5455a8ef8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &913362672 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1544237823203933657, guid: bbb11480fed0eeb42b998f9371351baf,
-    type: 3}
-  m_PrefabInstance: {fileID: 6261435141519450661}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &936758831 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1557204531423990229, guid: bbb11480fed0eeb42b998f9371351baf,
@@ -612,7 +600,6 @@ MonoBehaviour:
   - {fileID: 613452551}
   - {fileID: 687376279}
   - {fileID: 805680909}
-  - {fileID: 913362672}
   - {fileID: 936758831}
   - {fileID: 1070915565}
   - {fileID: 1121630785}
@@ -628,7 +615,6 @@ MonoBehaviour:
   - {fileID: 1964250892}
   - {fileID: 2101769868}
   - {fileID: 2111592858}
-  - {fileID: 2137103373}
   - {fileID: 6261435141519450662}
   - {fileID: 6261435141519450663}
   - {fileID: 6261435141519450664}
@@ -1052,8 +1038,8 @@ MonoBehaviour:
     UnSelect: 324
     Select: 323
     Speedup: 113
-    masterVolume: 25
-    soundVolume: 100
+    masterVolume: 100
+    soundVolume: 35
     musicVolume: 100
     fullScreen: 1
     vSync: 0
@@ -1141,18 +1127,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2137103373 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4556942658121657270, guid: bbb11480fed0eeb42b998f9371351baf,
-    type: 3}
-  m_PrefabInstance: {fileID: 6261435141519450661}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &6261435141519450661
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1171,6 +1145,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1710503800401447162, guid: bbb11480fed0eeb42b998f9371351baf,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -24.999998
+      objectReference: {fileID: 0}
     - target: {fileID: 1912371054593876732, guid: bbb11480fed0eeb42b998f9371351baf,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -1181,6 +1160,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1972861013}
+    - target: {fileID: 2253999041427853867, guid: bbb11480fed0eeb42b998f9371351baf,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 45
+      objectReference: {fileID: 0}
     - target: {fileID: 3775860174223483590, guid: bbb11480fed0eeb42b998f9371351baf,
         type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1321,18 +1305,56 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7589508788682384730, guid: bbb11480fed0eeb42b998f9371351baf,
+        type: 3}
+      propertyPath: m_text
+      value: 'Code and graphic made by Huntrt
+
+        An thank to <color=yellow>BFXR</color>
+        for game sound
+
+        An thank to <color=yellow>Stefan Schmidt</color>
+        for the Tiny5 font'
+      objectReference: {fileID: 0}
     - target: {fileID: 7859884775544449369, guid: bbb11480fed0eeb42b998f9371351baf,
         type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1972861015}
+    - target: {fileID: 8303003332354257828, guid: bbb11480fed0eeb42b998f9371351baf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8923306753499766206, guid: bbb11480fed0eeb42b998f9371351baf,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 350
+      objectReference: {fileID: 0}
+    - target: {fileID: 8923306753499766206, guid: bbb11480fed0eeb42b998f9371351baf,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 76
+      objectReference: {fileID: 0}
+    - target: {fileID: 8923306753499766206, guid: bbb11480fed0eeb42b998f9371351baf,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 21.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8923306753499766206, guid: bbb11480fed0eeb42b998f9371351baf,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9110332527416650106, guid: bbb11480fed0eeb42b998f9371351baf,
         type: 3}
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7631082034244672795, guid: bbb11480fed0eeb42b998f9371351baf, type: 3}
+    - {fileID: 8667465103354112318, guid: bbb11480fed0eeb42b998f9371351baf, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bbb11480fed0eeb42b998f9371351baf, type: 3}

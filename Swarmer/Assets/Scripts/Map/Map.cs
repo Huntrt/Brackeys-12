@@ -27,6 +27,7 @@ public class Map : MonoBehaviour
 	[SerializeField] GameObject groundGrouper;
 	[SerializeField] int mapSize; public int MapSize {get => mapSize;}
 	[SerializeField] float spacing; public float Spacing {get => spacing;}
+	[SerializeField] GameObject mapCreateEffect;
     public Dictionary<Vector2Int, Node> nodeIndexs = new Dictionary<Vector2Int, Node>();
 	public List<Node> nodes = new List<Node>();
 	public delegate void OnMapCreated(Vector2Int chunk); public OnMapCreated onMapCreated;
@@ -59,6 +60,7 @@ public class Map : MonoBehaviour
 		{
 			CreateNode(new Vector2Int(x + shiftedChunk.x,y + shiftedChunk.y), chunk, groundPrf);
 		}
+		Instantiate(mapCreateEffect, (Vector2)(chunk*(mapSize+mapSize/2)), mapCreateEffect.transform.rotation);
 		RenewBorder();
 		onMapCreated?.Invoke(chunk);
 	}

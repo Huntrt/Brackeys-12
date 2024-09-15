@@ -119,6 +119,7 @@ public class Chunk : MonoBehaviour
 				Map.i.BuildBorder(vacant, false);
 			}
 		}
+		
 		return targetChunk;
 	}
 

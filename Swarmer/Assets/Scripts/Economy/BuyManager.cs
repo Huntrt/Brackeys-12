@@ -17,6 +17,7 @@ public class BuyManager : MonoBehaviour
 	#endregion
 
 	[SerializeField] AudioClip sellAudio, buyAudio;
+	[SerializeField] GameObject sellEffect;
 
 	void Update()
 	{
@@ -70,6 +71,7 @@ public class BuyManager : MonoBehaviour
 		if(couldSell)
 		{
 			SessionOperator.i.audios.soundSource.PlayOneShot(sellAudio);
+			Instantiate(sellEffect, hoverNode.pos, sellEffect.transform.rotation);
 			Economy.i.Earn(buyableNode.sellAmount);
 			BuilderManager.DemolishAtNode(hoverNode, sellLayer);
 			Player.i.HideHoverPanel();

@@ -22,6 +22,7 @@ public class Player : MonoBehaviour
 	[SerializeField] Node.Occupation hoverOccupation;
 	[SerializeField] Tower hoverTower;
 	public Vector2Int mouseCoord; public Vector2Int MouseCoord {get => mouseCoord;}
+	[SerializeField] GameObject upgradeEffect, buildEffect;
 	[Header("UI")]
 	public GameObject buildPanel;
 	[SerializeField] GameObject layer1Panel, layer2Panel;
@@ -182,6 +183,7 @@ public class Player : MonoBehaviour
 			//Update the upgrade cost display
 			upgradeCostTxt.text = "UP " + hoverTower.upgrader.CurCost + "$";
 			SessionOperator.i.audios.soundSource.PlayOneShot(upgradeAudio);
+			Instantiate(upgradeEffect, hoverNode.pos, upgradeEffect.transform.rotation);
 		}
 		else
 		{
@@ -194,6 +196,7 @@ public class Player : MonoBehaviour
 	{
 		string buildStatus;
 		bool placed = BuilderManager.BuildAtNode(hoverNode, structure, out buildStatus);
+		Instantiate(buildEffect, hoverNode.pos, buildEffect.transform.rotation);
 		HideHoverPanel();
 		return placed;
 	}

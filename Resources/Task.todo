@@ -51,26 +51,26 @@ Essential:
 	✓ Indicator.
 	✓ Balance.
 	✓ Audio.
-	▪ Music.
-	▪ Credit.
-	▪ Tutorial @consider
+	X Music.
+	✓ Credit.
+	✓ Tutorial.
 	✓ Keybind.
 	▪ Cleanup.
 Cleanup:
 	X Connect wall texture.
 	X Fix [explosion effect] bug.
 	X Improve explosion on hit position.
-	▪ Main menu effects.
-	▪ Game over info.
-	▪ Kill effect.
-	▪ Upgrade effect.
+	X Main menu effects.
+	X Game over info.
+	X Kill effect.
+	✓ Upgrade effect.
 	✓ Bulldoze Effect.
-	▪ Build Effect.
-	▪ Chunk Create Effect.
+	✓ Build Effect.
+	✓ Chunk Create Effect.
 	X Minimap.
-	▪ Econ Effect.
-	▪ Raid/Calm Effect.
-	▪ Fancy tower stats ui
+	X Econ Effect.
+	✓ Raid/Calm Effect.
+	X Fancy tower stats ui
 
 Sound:
 	✓ Enemy Hurt.
@@ -84,8 +84,8 @@ Sound:
 	✓ Game Over
 	✓ Raid
 	✓ Calm
-	▪ Chunk Expand
-	▪ Music
+	✓ Chunk Expand
+	X Music
 
 Bug:
 	▪ Massed collider lag @caution
