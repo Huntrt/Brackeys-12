@@ -29,6 +29,9 @@ public class Player : MonoBehaviour
 	[SerializeField] TMPro.TextMeshProUGUI sellAmountTxt;
 	[SerializeField] GameObject upgradePanel;
 	[SerializeField] TMPro.TextMeshProUGUI upgradeCostTxt;
+	[Header("Sound")]
+	public AudioClip failAudio;
+	public AudioClip upgradeAudio;
 	General g;
 
 	void Start()
@@ -178,10 +181,12 @@ public class Player : MonoBehaviour
 			StructureInfo.i.ShowInfo(hoverOccupation.component);
 			//Update the upgrade cost display
 			upgradeCostTxt.text = "UP " + hoverTower.upgrader.CurCost + "$";
+			SessionOperator.i.audios.soundSource.PlayOneShot(upgradeAudio);
 		}
 		else
 		{
 			Popup.i.Pop("No money to upgrade");
+			SessionOperator.i.audios.soundSource.PlayOneShot(failAudio);
 		}
 	}
 

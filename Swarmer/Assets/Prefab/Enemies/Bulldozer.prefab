@@ -58,6 +58,9 @@ MonoBehaviour:
       direction: {x: 0, y: 0}
       nextNode: {x: 0, y: 0}
   stepRate: 0.1
+  builldozeEffect: {fileID: 2627133433493385827, guid: 0c1758fefe28243459e7f412d167eb95,
+    type: 3}
+  bulldozeAudio: {fileID: 8300000, guid: 094386a05338ea34ba2a275216de0003, type: 3}
 --- !u!212 &2895305073365463865
 SpriteRenderer:
   m_ObjectHideFlags: 0

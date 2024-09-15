@@ -4,6 +4,8 @@ public class PathBulldozer : MonoBehaviour
 {
 	[SerializeField] Node resideNode;
 	[SerializeField] float stepRate; float stepRateTimer;
+	[SerializeField] GameObject builldozeEffect;
+	[SerializeField] AudioClip bulldozeAudio;
 
 	void Start()
 	{
@@ -24,6 +26,8 @@ public class PathBulldozer : MonoBehaviour
 				if(resideNode.occupations[1].component.HaveCatalog(Structure.Category.wall))
 				{
 					print("Bulldozed the [" + resideNode.occupations[1].obj.name +"] at " + resideNode.coord);
+					Instantiate(builldozeEffect, resideNode.pos, builldozeEffect.transform.rotation);
+					SessionOperator.i.audios.soundSource.PlayOneShot(bulldozeAudio);
 					BuilderManager.DemolishAtNode(resideNode, 1);
 				}
 				//Destroy self if have reached heart

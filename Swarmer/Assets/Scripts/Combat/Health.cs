@@ -6,6 +6,7 @@ public class Health : MonoBehaviour
 	public float MaxHealth {get; set;}
 	public delegate void OnHurt(float taken); public delegate void OnHeal(float taken); public delegate void OnDeath();
 	public OnHurt onHurt; public OnHeal onHeal; public OnDeath onDeath;
+	[SerializeField] AudioClip hurtSound, dieSound;
 
 	void OnEnable()
 	{
@@ -25,7 +26,9 @@ public class Health : MonoBehaviour
 		if(curHealth <= 0)
 		{
 			Die();
+			return;
 		}
+		SessionOperator.i.audios.soundSource.PlayOneShot(hurtSound);
 	}
 
 	public void Healing(float taken)
@@ -38,6 +41,7 @@ public class Health : MonoBehaviour
 
 	public void Die()
 	{
+		SessionOperator.i.audios.soundSource.PlayOneShot(dieSound);
 		onDeath?.Invoke();
 		//temp: pool later
 		Destroy(gameObject);

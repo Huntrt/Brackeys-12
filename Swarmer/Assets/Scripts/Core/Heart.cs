@@ -9,6 +9,7 @@ public class Heart : MonoBehaviour
 	[SerializeField] TMPro.TextMeshProUGUI heartCounterTxt;
 	[SerializeField] Image heartBar;
 	[SerializeField] GameObject gameOverPanel;
+	[SerializeField] AudioClip heartHurtAu, gameOverAu;
 
 	void OnEnable()
 	{
@@ -40,6 +41,9 @@ public class Heart : MonoBehaviour
 		if(curHeart <= 0)
 		{
 			gameOverPanel.SetActive(true);
+		SessionOperator.i.audios.soundSource.PlayOneShot(gameOverAu);
+			return;
 		}
+		SessionOperator.i.audios.soundSource.PlayOneShot(heartHurtAu);
 	}
 }

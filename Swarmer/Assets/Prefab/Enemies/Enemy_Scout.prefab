@@ -67,7 +67,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   curHealth: 0
-  maxHealth: 50
+  maxHealth: 10
+  hurtSound: {fileID: 8300000, guid: ebf596f5e4fd0a64cbc6d8d4080a57bf, type: 3}
+  dieSound: {fileID: 8300000, guid: aff509a1bab7f8740b8cd7b4278eb579, type: 3}
 --- !u!114 &4098112679839308290
 MonoBehaviour:
   m_ObjectHideFlags: 0

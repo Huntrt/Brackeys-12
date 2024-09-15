@@ -16,6 +16,8 @@ public class BuyManager : MonoBehaviour
 	}
 	#endregion
 
+	[SerializeField] AudioClip sellAudio, buyAudio;
+
 	void Update()
 	{
 		if(Input.GetKeyDown(SessionOperator.i.config.SellTower))
@@ -36,6 +38,7 @@ public class BuyManager : MonoBehaviour
 			//And able to place
 			couldPlace = Player.i.PlaceStructure(structure); if(couldPlace)
 			{
+				SessionOperator.i.audios.soundSource.PlayOneShot(buyAudio);
 				///Then spend the money
 				Economy.i.Spend(buyable.Cost);
 				Player.i.HideHoverPanel();
@@ -44,6 +47,7 @@ public class BuyManager : MonoBehaviour
 		if(!couldBought)
 		{
 			Popup.i.Pop("No money to buy " + data.name);
+			SessionOperator.i.audios.soundSource.PlayOneShot(Player.i.failAudio);
 		}
 	}
 
@@ -64,6 +68,7 @@ public class BuyManager : MonoBehaviour
 		}
 		if(couldSell)
 		{
+			SessionOperator.i.audios.soundSource.PlayOneShot(sellAudio);
 			Economy.i.Earn(buyableNode.sellAmount);
 			BuilderManager.DemolishAtNode(hoverNode, sellLayer);
 			Player.i.HideHoverPanel();

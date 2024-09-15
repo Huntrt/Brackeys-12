@@ -31,6 +31,7 @@ public class GameLoop : MonoBehaviour
 	public TextMeshProUGUI killProgressTxt;
 	public TextMeshProUGUI calmTimerTxt;
 	[SerializeField] Animation calmTimerAnim;
+	[SerializeField] AudioClip raidAu, calmAu;
 
 	void OnEnable()
 	{
@@ -83,6 +84,7 @@ public class GameLoop : MonoBehaviour
 	{
 		if(raidPhase) return;
 		level++;
+		SessionOperator.i.audios.soundSource.PlayOneShot(raidAu);
 		//Start raid phase
 		raidPhase = true;
 		//Set kill requierment
@@ -96,6 +98,7 @@ public class GameLoop : MonoBehaviour
 
 	public void CompleteLevel()
 	{
+		SessionOperator.i.audios.soundSource.PlayOneShot(calmAu);
 		//Call event
 		onLevelComplete?.Invoke(level);
 		//Switch to builder UI

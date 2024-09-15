@@ -7920,6 +7920,8 @@ MonoBehaviour:
   killProgressTxt: {fileID: 1486895869}
   calmTimerTxt: {fileID: 782904749}
   calmTimerAnim: {fileID: 843904665}
+  raidAu: {fileID: 8300000, guid: dd27017414d43f7418fff4c8acde217b, type: 3}
+  calmAu: {fileID: 8300000, guid: 60db0ec244235dd44b65a3077dd8d61d, type: 3}
 --- !u!114 &758382694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17155,9 +17157,9 @@ MonoBehaviour:
     UpgradeTower: 117
     UnSelect: 324
     Select: 323
-    masterVolume: 0
-    soundVolume: 0
-    musicVolume: 0
+    masterVolume: 51.5
+    soundVolume: 56.4
+    musicVolume: 56.4
     fullScreen: 0
     vSync: 0
     resolution: 0
@@ -20680,6 +20682,7 @@ MonoBehaviour:
   chunkEveryLv: 5
   chunkAppearChance: 30
   debug: 0
+  chunkExpAu: {fileID: 8300000, guid: 38fb0727b9d48934fa0f5b614c6b70a0, type: 3}
 --- !u!1 &1784139971
 GameObject:
   m_ObjectHideFlags: 0
@@ -22589,6 +22592,8 @@ MonoBehaviour:
   sellAmountTxt: {fileID: 1619590195}
   upgradePanel: {fileID: 943235550}
   upgradeCostTxt: {fileID: 1392628817}
+  failAudio: {fileID: 8300000, guid: 3f8dd694476e8f14685df970f374a171, type: 3}
+  upgradeAudio: {fileID: 8300000, guid: 97db450b4ccd79f449a1b5632273eeb9, type: 3}
 --- !u!4 &1952792620
 Transform:
   m_ObjectHideFlags: 0
@@ -22630,6 +22635,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6739ab9c29b93ee409a1478ccef49fc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sellAudio: {fileID: 8300000, guid: 870d9ca259226de45ba9e48b490d324d, type: 3}
+  buyAudio: {fileID: 8300000, guid: 8a65763e89eaa4e45a29bc289f4e872c, type: 3}
 --- !u!114 &1952792623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22675,10 +22682,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obj: {fileID: 6614882461854804080, guid: 5c113ffd3f5e9a840b055df0c166fff3, type: 3}
   curHeart: 0
-  maxHeart: 10
+  maxHeart: 35
   heartCounterTxt: {fileID: 820236982}
   heartBar: {fileID: 1311052104}
   gameOverPanel: {fileID: 584035275}
+  heartHurtAu: {fileID: 8300000, guid: 29eb7df28b223684196088d9816d007f, type: 3}
+  gameOverAu: {fileID: 8300000, guid: 80225e8d283a85d49a72a5d8dab29faf, type: 3}
 --- !u!1 &1957050361
 GameObject:
   m_ObjectHideFlags: 0

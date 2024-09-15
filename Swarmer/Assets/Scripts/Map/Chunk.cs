@@ -26,6 +26,7 @@ public class Chunk : MonoBehaviour
 	[SerializeField] int initalChunk;
 	[SerializeField] int chunkEveryLv; [SerializeField] float chunkAppearChance;
 	[SerializeField] bool debug;
+	[SerializeField] AudioClip chunkExpAu;
 
 	void Start()
 	{
@@ -45,6 +46,7 @@ public class Chunk : MonoBehaviour
 		if(GameLoop.i.level % chunkEveryLv != 0) return;
 		//When take the chance to generate new chunk
 		if(UnityEngine.Random.Range(0,100) > chunkAppearChance) return;
+		SessionOperator.i.audios.soundSource.PlayOneShot(chunkExpAu);
 		GeneratingChunk();
 	}
 
