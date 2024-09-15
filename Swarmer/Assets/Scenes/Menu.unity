@@ -600,7 +600,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textGUIs:
-  - {fileID: 674609029}
   - {fileID: 44820411}
   - {fileID: 118353946}
   - {fileID: 124849127}
@@ -611,6 +610,7 @@ MonoBehaviour:
   - {fileID: 443919404}
   - {fileID: 536887459}
   - {fileID: 613452551}
+  - {fileID: 674609029}
   - {fileID: 687376279}
   - {fileID: 805680909}
   - {fileID: 936758831}
@@ -1054,7 +1054,7 @@ MonoBehaviour:
     masterVolume: 100
     soundVolume: 35
     musicVolume: 100
-    fullScreen: 0
+    fullScreen: 1
     vSync: 0
     resolution: -1
     frameCap: 0
