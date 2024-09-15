@@ -25,6 +25,7 @@ public class Chunk : MonoBehaviour
 	[SerializeField] List<ChunkData> generatedChunks;
 	[SerializeField] int initalChunk;
 	[SerializeField] int chunkEveryLv; [SerializeField] float chunkAppearChance;
+	[SerializeField] float borderVacantChance;
 	[SerializeField] bool debug;
 	[SerializeField] AudioClip chunkExpAu;
 
@@ -110,6 +111,14 @@ public class Chunk : MonoBehaviour
 		}
 		Map.i.CreateMap(targetChunk.coord);
 		generatedChunks.Add(targetChunk);
+		//Create random border on vacant node
+		foreach (Node vacant in Map.i.GetVacantsInChunk(targetChunk.coord))
+		{
+			if(UnityEngine.Random.Range(0,100) < borderVacantChance)
+			{
+				Map.i.BuildBorder(vacant, false);
+			}
+		}
 		return targetChunk;
 	}
 

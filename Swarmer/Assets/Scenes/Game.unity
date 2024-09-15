@@ -21317,7 +21317,8 @@ MonoBehaviour:
   generatedChunks: []
   initalChunk: 3
   chunkEveryLv: 5
-  chunkAppearChance: 30
+  chunkAppearChance: 45
+  borderVacantChance: 4
   debug: 0
   chunkExpAu: {fileID: 8300000, guid: 38fb0727b9d48934fa0f5b614c6b70a0, type: 3}
 --- !u!1 &1784139971
@@ -23209,7 +23210,7 @@ MonoBehaviour:
     pos: {x: 0, y: 0}
     index: 0
     occupations: []
-    isBorder: 0
+    renewBorder: 0
     chunkReside: {x: 0, y: 0}
     flows:
       cost: 0

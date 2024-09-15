@@ -67,21 +67,27 @@ public class Map : MonoBehaviour
 	{
 		foreach (Node node in nodes)
 		{
-			//Destroy all node currently have border
-			if(node.isBorder)
+			//Destroy all node border to be renew
+			if(node.renewBorder)
 			{
-				node.isBorder = false;
+				node.renewBorder = false;
 				BuilderManager.DemolishAtNode(node, 1);
 			}
 			//This node is border if it dont have neighbor
 			List<Node> neighbor = GetNeighbor(node, true, true, false);
 			if(neighbor.Count < 8)
 			{
-				node.isBorder = true;
-				GameObject borderCreated = BuilderManager.BuildAtNode(node, borderPrf); 
-				borderCreated.transform.SetParent(borderGrouper.transform);
+				//Build an renewable border
+				BuildBorder(node, true);
 			}
 		}
+	}
+
+	public void BuildBorder(Node node, bool isRenewable)
+	{
+		node.renewBorder = isRenewable;
+		GameObject borderCreated = BuilderManager.BuildAtNode(node, borderPrf);
+		borderCreated.transform.SetParent(borderGrouper.transform);
 	}
 
 	public Node FindNode(Vector2Int coord, out Node finded)
@@ -155,6 +161,19 @@ public class Map : MonoBehaviour
 		foreach (Node node in nodes)
 		{
 			if(node.occupations[1].obj == null && node.chunkReside != ignoreChunk)
+			{
+				vacants.Add(node);
+			}
+		}
+		return vacants;
+	}
+	
+	public List<Node> GetVacantsInChunk(Vector2Int chunk)
+	{
+		List<Node> vacants = new List<Node>();
+		foreach (Node node in nodes)
+		{
+			if(node.occupations[1].obj == null && node.chunkReside == chunk)
 			{
 				vacants.Add(node);
 			}

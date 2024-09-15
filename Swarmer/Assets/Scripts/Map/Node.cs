@@ -9,7 +9,7 @@ public class Node
 	public int index;
 	public Occupation[] occupations;
 	//? 0 = ground | 1 = foundation | 2 = tower
-	public bool isBorder = false;
+	public bool renewBorder = false;
 	public Vector2Int chunkReside;
 
 	public Node(Vector2Int coord, Vector2 pos, int index, Vector2Int chunk)

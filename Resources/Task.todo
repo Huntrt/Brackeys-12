@@ -50,16 +50,16 @@ Gameplay:
 Essential:
 	✓ Indicator.
 	✓ Balance.
-	▪ Audio.
+	✓ Audio.
 	▪ Music.
 	▪ Credit.
 	▪ Tutorial @consider
 	✓ Keybind.
 	▪ Cleanup.
 Cleanup:
-	▪ Connect wall texture.
-	▪ Fix [explosion effect] bug.
-	▪ Improve explosion on hit position.
+	X Connect wall texture.
+	X Fix [explosion effect] bug.
+	X Improve explosion on hit position.
 	▪ Main menu effects.
 	▪ Game over info.
 	▪ Kill effect.
@@ -67,7 +67,7 @@ Cleanup:
 	✓ Bulldoze Effect.
 	▪ Build Effect.
 	▪ Chunk Create Effect.
-	▪ Minimap.
+	X Minimap.
 	▪ Econ Effect.
 	▪ Raid/Calm Effect.
 	▪ Fancy tower stats ui
