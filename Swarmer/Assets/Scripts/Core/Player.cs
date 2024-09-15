@@ -48,6 +48,7 @@ public class Player : MonoBehaviour
 	
 	void Update()
 	{
+		if(Settings.StageOperator.i.paused) return;
 		//? Convert mouse position to node coordinates
 		mouseCoord = Map.WorldToCoordinates(g.MousePos());
 		///STOP WHEN IN RAID
