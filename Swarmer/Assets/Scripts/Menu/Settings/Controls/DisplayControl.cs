@@ -93,6 +93,7 @@ public class DisplayControl : MonoBehaviour
 			SessionOperator.i.config.resolution = c;
 			//Set resolution in available base on given change 
 			Screen.SetResolution(Res(c).width, Res(c).height, Screen.fullScreenMode, Res(c).refreshRateRatio);
+			
 		}
 
 		//Return available resolution at given index 

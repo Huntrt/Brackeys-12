@@ -11,7 +11,7 @@ public class BuyTooltip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 
 	public void OnPointerEnter(PointerEventData eventData)
 	{
-		tooltipTxt.text = buyButton.structureData.DisplayName + "\n<color=#fff705>$" + buyButton.structureBuyable.Cost + "/" + Economy.i.Money + "</color>";
+		tooltipTxt.text = buyButton.structureData.DisplayName + "\n<color=#fff705>$" + buyButton.structureBuyable.Cost + "</color>";
 		tooltipPanel.transform.position = (Vector2)transform.position + tooltipOffset;
 		tooltipPanel.SetActive(true);
 	}

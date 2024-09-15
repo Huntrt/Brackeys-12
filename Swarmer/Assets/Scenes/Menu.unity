@@ -1043,7 +1043,7 @@ MonoBehaviour:
     musicVolume: 100
     fullScreen: 1
     vSync: 0
-    resolution: 0
+    resolution: -1
     frameCap: 0
   audios: {fileID: 2046977517}
   displays: {fileID: 2046977522}
