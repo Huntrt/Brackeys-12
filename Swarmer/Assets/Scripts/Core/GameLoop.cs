@@ -20,7 +20,7 @@ public class GameLoop : MonoBehaviour
 
 	public int level;
 	public bool raidPhase;
-	public float calmDuration; [SerializeField] float calmTimer;
+	public float calmDuration, initCalmDuration; [SerializeField] float calmTimer;
 	public int killReq; [SerializeField] int killCount;
 	public delegate void OnLevelBegin(int level); public static OnLevelBegin onLevelBegin;
 	public delegate void OnLevelComplete(int level); public static OnLevelComplete onLevelComplete;
@@ -36,7 +36,7 @@ public class GameLoop : MonoBehaviour
 
 	void OnEnable()
 	{
-		calmTimer = calmDuration;
+		calmTimer = initCalmDuration;
 	}
 
 	void Update()
@@ -87,7 +87,8 @@ public class GameLoop : MonoBehaviour
 		if(raidPhase) return;
 		level++;
 		SessionOperator.i.audios.soundSource.PlayOneShot(raidAu);
-		Economy.i.Earn((int)calmTimer*3);
+		//Prevent earn skip from initial lv
+		if(level > 1) Economy.i.Earn((int)calmTimer*3);
 		raidEffect.SetActive(true);
 		//Start raid phase
 		raidPhase = true;

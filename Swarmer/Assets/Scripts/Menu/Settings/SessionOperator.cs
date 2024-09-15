@@ -8,6 +8,7 @@ public class SessionOperator : MonoBehaviour
 	public AudioManager audios;
 	public DisplayManager displays;
 	public KeyManager keys;
+	public bool completeTutorial;
 	
 	void Awake()
 	{

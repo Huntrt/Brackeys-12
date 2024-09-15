@@ -622,6 +622,8 @@ MonoBehaviour:
   - {fileID: 1435384153}
   - {fileID: 1474551457}
   - {fileID: 1734379956}
+  - {fileID: 1795284979}
+  - {fileID: 1795284980}
   - {fileID: 1853569294}
   - {fileID: 1964250892}
   - {fileID: 2101769868}
@@ -661,6 +663,30 @@ Transform:
 --- !u!114 &1734379956 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1667552263212432635, guid: bbb11480fed0eeb42b998f9371351baf,
+    type: 3}
+  m_PrefabInstance: {fileID: 6261435141519450661}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1795284979 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6552620306701751586, guid: bbb11480fed0eeb42b998f9371351baf,
+    type: 3}
+  m_PrefabInstance: {fileID: 6261435141519450661}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1795284980 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4962132178334311764, guid: bbb11480fed0eeb42b998f9371351baf,
     type: 3}
   m_PrefabInstance: {fileID: 6261435141519450661}
   m_PrefabAsset: {fileID: 0}
@@ -1014,28 +1040,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   config:
-    CamUp: 273
-    CamDown: 274
-    CamLeft: 276
-    CamRight: 275
+    CamUp: 119
+    CamDown: 115
+    CamLeft: 97
+    CamRight: 100
     CamToBase: 278
     ResetZoom: 122
     SkipCalm: 13
-    SellTower: 115
+    SellTower: 105
     UpgradeTower: 117
     UnSelect: 324
     Select: 323
-    Speedup: 0
-    masterVolume: 0
-    soundVolume: 0
-    musicVolume: 0
-    fullScreen: 0
+    Speedup: 113
+    masterVolume: 25
+    soundVolume: 100
+    musicVolume: 100
+    fullScreen: 1
     vSync: 0
     resolution: 0
     frameCap: 0
   audios: {fileID: 2046977517}
   displays: {fileID: 2046977522}
   keys: {fileID: 2046977520}
+  completeTutorial: 0
 --- !u!4 &2046977519
 Transform:
   m_ObjectHideFlags: 0

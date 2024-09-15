@@ -1595,7 +1595,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: CamLeft
+  m_text: View Left
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 27470bf9ad98ff846abeac4b49e72614, type: 2}
   m_sharedMaterial: {fileID: -7246742754923083867, guid: 27470bf9ad98ff846abeac4b49e72614,
@@ -3227,7 +3227,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: UpgradeTower
+  m_text: Upgrade
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 27470bf9ad98ff846abeac4b49e72614, type: 2}
   m_sharedMaterial: {fileID: -7246742754923083867, guid: 27470bf9ad98ff846abeac4b49e72614,
@@ -4280,7 +4280,7 @@ MonoBehaviour:
   bindingButton: {fileID: 1988104018769618214}
   keyLabel: {fileID: 1049682994525223620}
   autoNaming: {fileID: 0}
-  actionLabel: {fileID: 3819755245490036721}
+  actionLabel: {fileID: 0}
 --- !u!1 &2492158185543443655
 GameObject:
   m_ObjectHideFlags: 0
@@ -4589,7 +4589,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: CamUp
+  m_text: View Up
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 27470bf9ad98ff846abeac4b49e72614, type: 2}
   m_sharedMaterial: {fileID: -7246742754923083867, guid: 27470bf9ad98ff846abeac4b49e72614,
@@ -4969,7 +4969,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: CamRight
+  m_text: View Right
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 27470bf9ad98ff846abeac4b49e72614, type: 2}
   m_sharedMaterial: {fileID: -7246742754923083867, guid: 27470bf9ad98ff846abeac4b49e72614,
@@ -5424,7 +5424,7 @@ MonoBehaviour:
   bindingButton: {fileID: 6365901038045239519}
   keyLabel: {fileID: 7590072011904122814}
   autoNaming: {fileID: 0}
-  actionLabel: {fileID: 1696780515786653035}
+  actionLabel: {fileID: 0}
 --- !u!1 &3290750655671902768
 GameObject:
   m_ObjectHideFlags: 0
@@ -6111,7 +6111,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: UnSelect
+  m_text: Deselect
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 27470bf9ad98ff846abeac4b49e72614, type: 2}
   m_sharedMaterial: {fileID: -7246742754923083867, guid: 27470bf9ad98ff846abeac4b49e72614,
@@ -6391,7 +6391,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: CamDown
+  m_text: View Down
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 27470bf9ad98ff846abeac4b49e72614, type: 2}
   m_sharedMaterial: {fileID: -7246742754923083867, guid: 27470bf9ad98ff846abeac4b49e72614,
@@ -6846,7 +6846,7 @@ MonoBehaviour:
   bindingButton: {fileID: 5856958163663842824}
   keyLabel: {fileID: 6552620306701751586}
   autoNaming: {fileID: 0}
-  actionLabel: {fileID: 4962132178334311764}
+  actionLabel: {fileID: 0}
 --- !u!1 &4581892749707938629
 GameObject:
   m_ObjectHideFlags: 0
@@ -7121,7 +7121,7 @@ MonoBehaviour:
   bindingButton: {fileID: 4043991459931370813}
   keyLabel: {fileID: 2845224564315839224}
   autoNaming: {fileID: 0}
-  actionLabel: {fileID: 667652785618626523}
+  actionLabel: {fileID: 0}
 --- !u!1 &4676128425124990372
 GameObject:
   m_ObjectHideFlags: 0
@@ -7607,7 +7607,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: SkipCalm
+  m_text: Skip Waiting
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 27470bf9ad98ff846abeac4b49e72614, type: 2}
   m_sharedMaterial: {fileID: -7246742754923083867, guid: 27470bf9ad98ff846abeac4b49e72614,
@@ -7816,7 +7816,7 @@ MonoBehaviour:
   bindingButton: {fileID: 8814361374542824801}
   keyLabel: {fileID: 8319462072299852429}
   autoNaming: {fileID: 0}
-  actionLabel: {fileID: 5394449067304314953}
+  actionLabel: {fileID: 0}
 --- !u!1 &4988510400752229784
 GameObject:
   m_ObjectHideFlags: 0
@@ -8235,7 +8235,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: SellTower
+  m_text: Sell
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 27470bf9ad98ff846abeac4b49e72614, type: 2}
   m_sharedMaterial: {fileID: -7246742754923083867, guid: 27470bf9ad98ff846abeac4b49e72614,
@@ -8444,7 +8444,7 @@ MonoBehaviour:
   bindingButton: {fileID: 3002050766890875305}
   keyLabel: {fileID: 4210560314136558621}
   autoNaming: {fileID: 0}
-  actionLabel: {fileID: 8613510233032094312}
+  actionLabel: {fileID: 0}
 --- !u!1 &5908935780119441953
 GameObject:
   m_ObjectHideFlags: 0
@@ -10016,7 +10016,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Speedup
+  m_text: Game Speed
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 27470bf9ad98ff846abeac4b49e72614, type: 2}
   m_sharedMaterial: {fileID: -7246742754923083867, guid: 27470bf9ad98ff846abeac4b49e72614,
@@ -10410,7 +10410,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: CamToBase
+  m_text: View Reset
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 27470bf9ad98ff846abeac4b49e72614, type: 2}
   m_sharedMaterial: {fileID: -7246742754923083867, guid: 27470bf9ad98ff846abeac4b49e72614,
@@ -10852,7 +10852,7 @@ MonoBehaviour:
   bindingButton: {fileID: 8615546238620741460}
   keyLabel: {fileID: 3952724937958963893}
   autoNaming: {fileID: 0}
-  actionLabel: {fileID: 4354466225054899673}
+  actionLabel: {fileID: 0}
 --- !u!1 &7808189485712192922
 GameObject:
   m_ObjectHideFlags: 0
@@ -11067,7 +11067,7 @@ MonoBehaviour:
   bindingButton: {fileID: 7412930705913312420}
   keyLabel: {fileID: 2730740851099917205}
   autoNaming: {fileID: 0}
-  actionLabel: {fileID: 1987678548540489386}
+  actionLabel: {fileID: 0}
 --- !u!1 &7916827473241893955
 GameObject:
   m_ObjectHideFlags: 0
@@ -11207,7 +11207,7 @@ MonoBehaviour:
   bindingButton: {fileID: 7682302395008655787}
   keyLabel: {fileID: 4315341140697989320}
   autoNaming: {fileID: 0}
-  actionLabel: {fileID: 1059359260269016327}
+  actionLabel: {fileID: 0}
 --- !u!1 &8006494231656049354
 GameObject:
   m_ObjectHideFlags: 0
@@ -11815,7 +11815,7 @@ MonoBehaviour:
   bindingButton: {fileID: 3414996416653172357}
   keyLabel: {fileID: 2063837025894883098}
   autoNaming: {fileID: 0}
-  actionLabel: {fileID: 889358895820563976}
+  actionLabel: {fileID: 0}
 --- !u!1 &8589225030777030370
 GameObject:
   m_ObjectHideFlags: 0
@@ -12272,7 +12272,7 @@ MonoBehaviour:
   bindingButton: {fileID: 8572639059243421960}
   keyLabel: {fileID: 4769387882078458479}
   autoNaming: {fileID: 0}
-  actionLabel: {fileID: 169734839109065205}
+  actionLabel: {fileID: 0}
 --- !u!1 &8966929746057268640
 GameObject:
   m_ObjectHideFlags: 0
@@ -12338,7 +12338,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ResetZoom
+  m_text: Reset Zoom
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 27470bf9ad98ff846abeac4b49e72614, type: 2}
   m_sharedMaterial: {fileID: -7246742754923083867, guid: 27470bf9ad98ff846abeac4b49e72614,
@@ -12547,7 +12547,7 @@ MonoBehaviour:
   bindingButton: {fileID: 519574337953343643}
   keyLabel: {fileID: 2603908829081717380}
   autoNaming: {fileID: 0}
-  actionLabel: {fileID: 1656491490259058503}
+  actionLabel: {fileID: 0}
 --- !u!1 &9110332527416650106
 GameObject:
   m_ObjectHideFlags: 0

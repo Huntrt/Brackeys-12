@@ -68,7 +68,6 @@ public class KeyManager : MonoBehaviour
 					selectedBinder.RefreshKeyLabel();
 					//? Delay to prevent re-bind after binding left mouse
 					if(pressedKey == KeyCode.Mouse0) yield return new WaitForSecondsRealtime(0.3f);
-					print("A");
 					//Stop assigning
 					areBinding = false;
 				}
