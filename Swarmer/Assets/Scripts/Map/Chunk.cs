@@ -125,16 +125,16 @@ public class Chunk : MonoBehaviour
 		GameLoop.onLevelComplete -= ChunkLevelUp;
 	}
 
-	void OnDrawGizmos()
-	{
-		if(!debug) return;
-		foreach (ChunkData chunk in generatedChunks)
-		{
-			Handles.Label((Vector2)chunk.coord * (Map.i.MapSize+1), chunk.coord + "\n" + 
-			chunk.neighbors[0] + ", " +
-			chunk.neighbors[1] + ", " +
-			chunk.neighbors[2] + ", " +
-			chunk.neighbors[3] + ", ");
-		}
-	}
+	// void OnDrawGizmos()
+	// {
+	// 	if(!debug) return;
+	// 	foreach (ChunkData chunk in generatedChunks)
+	// 	{
+	// 		Handles.Label((Vector2)chunk.coord * (Map.i.MapSize+1), chunk.coord + "\n" + 
+	// 		chunk.neighbors[0] + ", " +
+	// 		chunk.neighbors[1] + ", " +
+	// 		chunk.neighbors[2] + ", " +
+	// 		chunk.neighbors[3] + ", ");
+	// 	}
+	// }
 }

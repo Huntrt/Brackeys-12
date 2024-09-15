@@ -105,13 +105,13 @@ public class Flowfield : MonoBehaviour
 		}
 	}
 
-	void OnDrawGizmos()
-	{
-		if(!debug) return;
-		if(m != null) foreach (Node node in m.nodes)
-		{
-			if(node == null) break;
-			Handles.Label(node.pos, node.flows.prior.ToString());
-		}
-	}
+	// void OnDrawGizmos()
+	// {
+	// 	if(!debug) return;
+	// 	if(m != null) foreach (Node node in m.nodes)
+	// 	{
+	// 		if(node == null) break;
+	// 		Handles.Label(node.pos, node.flows.prior.ToString());
+	// 	}
+	// }
 }

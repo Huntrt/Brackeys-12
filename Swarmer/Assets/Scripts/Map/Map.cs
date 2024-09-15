@@ -162,12 +162,12 @@ public class Map : MonoBehaviour
 		return vacants;
 	}
 
-	void OnDrawGizmos()
-	{
-		if(!debug) return;
-		foreach (Node n in nodes)
-		{
-			Handles.Label(n.pos, "u" + n.chunkReside + "\n c" + n.coord + "\n");
-		}
-	}
+	// void OnDrawGizmos()
+	// {
+	// 	if(!debug) return;
+	// 	foreach (Node n in nodes)
+	// 	{
+	// 		Handles.Label(n.pos, "u" + n.chunkReside + "\n c" + n.coord + "\n");
+	// 	}
+	// }
 }
