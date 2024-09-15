@@ -40,6 +40,7 @@ public class CameraControl : MonoBehaviour
 		if(Input.GetKey(SessionOperator.i.config.CamRight)) {moveDir += Vector2.right;}
 		if(Input.GetKeyDown(SessionOperator.i.config.CamToBase)) {RespostionCamera();}
 		//Zoom
+		if(!Application.isFocused) return;
 		curZoom += (-Input.mouseScrollDelta.y) * zoomSpeed;
 		curZoom = Mathf.Clamp(curZoom, minZoom, maxZoom);
 		if(Input.GetKeyDown(SessionOperator.i.config.ResetZoom)) {ResetZoom();}
@@ -53,7 +54,7 @@ public class CameraControl : MonoBehaviour
 	void FixedUpdate()
 	{
 		//Move camera with speed toward the direction
-		cam.transform.position = (Vector2)cam.transform.position + (Vector2)(moveDir * (moveSpeed * Time.deltaTime));
+		cam.transform.position = (Vector2)cam.transform.position + (Vector2)(moveDir * (moveSpeed * Time.unscaledDeltaTime));
 		cam.transform.position = new Vector2
 		(
 			Mathf.Clamp(cam.transform.position.x, Map.i.minMapSize.x, Map.i.maxMapSize.x),

@@ -30,7 +30,8 @@ public class GameLoop : MonoBehaviour
 	public GameObject raidUIPanel;
 	public TextMeshProUGUI killProgressTxt;
 	public TextMeshProUGUI calmTimerTxt;
-	[SerializeField] Animation calmTimerAnim;
+	[SerializeField] GameObject raidEffect, calmEffect;
+	[SerializeField] UnityEngine.UI.Image calmTimerImg;
 	[SerializeField] AudioClip raidAu, calmAu;
 
 	void OnEnable()
@@ -55,8 +56,9 @@ public class GameLoop : MonoBehaviour
 			if(killCount >= killReq)
 			{
 				CompleteLevel();
-				calmTimerAnim.Stop();
 				calmTimer = calmDuration;
+				calmTimerImg.color = Color.white;
+				calmTimerTxt.color = Color.white;
 			}
 		}
 		else
@@ -65,7 +67,7 @@ public class GameLoop : MonoBehaviour
 			calmTimer -= Time.deltaTime;
 			calmTimerTxt.text = Mathf.RoundToInt(calmTimer) + "<size=18>." + (System.Math.Round(calmTimer - Mathf.Floor(calmTimer), 1)*10) + "</size>";
 			//Play timer warning animation when under 10s
-			if(calmTimer < 10) if(!calmTimerAnim.isPlaying) calmTimerAnim.Play();
+			if(calmTimer < 10) {calmTimerImg.color = Color.red; calmTimerTxt.color = Color.red;}
 			//Start level when out of timer
 			if(calmTimer <= 0)
 			{
@@ -85,6 +87,7 @@ public class GameLoop : MonoBehaviour
 		if(raidPhase) return;
 		level++;
 		SessionOperator.i.audios.soundSource.PlayOneShot(raidAu);
+		raidEffect.SetActive(true);
 		//Start raid phase
 		raidPhase = true;
 		//Set kill requierment
@@ -99,6 +102,7 @@ public class GameLoop : MonoBehaviour
 	public void CompleteLevel()
 	{
 		SessionOperator.i.audios.soundSource.PlayOneShot(calmAu);
+		calmEffect.SetActive(true);
 		//Call event
 		onLevelComplete?.Invoke(level);
 		//Switch to builder UI

@@ -30,13 +30,13 @@ public class Enemy : MonoBehaviour
 		if(other.collider.CompareTag("Heart"))
 		{
 			Player.i.heart.DamageHeart(1);
-			health.Die();
+			if(health != null) health.Die();
 		}
 	}
 
 	public void LevelCleanup(int lv)
 	{
-		health.Die(false);
+		if(health != null) health.Die(false);
 	}
 
 	public void OnDeath()
