@@ -53,6 +53,7 @@ public class BuyManager : MonoBehaviour
 
 	public void Sell()
 	{
+		if(GameLoop.i.raidPhase) return;
 		Node hoverNode = Player.i.HoverNode;
 		Buyable buyableNode = null;
 		int sellLayer = -1;
