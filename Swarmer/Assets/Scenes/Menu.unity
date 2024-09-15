@@ -334,6 +334,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &674609029 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3755090422712528779, guid: bbb11480fed0eeb42b998f9371351baf,
+    type: 3}
+  m_PrefabInstance: {fileID: 6261435141519450661}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &687376279 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1696780515786653035, guid: bbb11480fed0eeb42b998f9371351baf,
@@ -588,6 +600,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textGUIs:
+  - {fileID: 674609029}
   - {fileID: 44820411}
   - {fileID: 118353946}
   - {fileID: 124849127}
@@ -1041,7 +1054,7 @@ MonoBehaviour:
     masterVolume: 100
     soundVolume: 35
     musicVolume: 100
-    fullScreen: 1
+    fullScreen: 0
     vSync: 0
     resolution: -1
     frameCap: 0

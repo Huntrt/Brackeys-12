@@ -238,14 +238,14 @@ MonoBehaviour:
   upgrader: {fileID: 1877582653832005104}
   towerStats:
     damage: 10
-    firerate: 1
+    firerate: 0.6
     range: 4.2
-    radius: 0
+    radius: 1
     repeat: 1
     amount: 1
     explosionExt: 1
-    exp_damage: 5
-    exp_radius: 0.8
+    exp_damage: 2
+    exp_radius: 2
   strikeEffect: {fileID: 4562640113171141458, guid: 00daca4682f97ad458d5b3ddafbf36a7,
     type: 3}
   targetEnemy: {fileID: 0}
@@ -277,7 +277,7 @@ MonoBehaviour:
     amount: 2.3
     explosionExt: 1
     exp_damage: 1.4
-    exp_radius: 0.14
+    exp_radius: 1.3
 --- !u!114 &3003674205493842151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -316,7 +316,7 @@ MonoBehaviour:
     pos: {x: 0, y: 0}
     index: 0
     occupations: []
-    isBorder: 0
+    renewBorder: 0
     chunkReside: {x: 0, y: 0}
     flows:
       cost: 0

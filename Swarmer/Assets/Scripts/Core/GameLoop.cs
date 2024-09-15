@@ -63,8 +63,8 @@ public class GameLoop : MonoBehaviour
 		}
 		else
 		{
-			//Decrease and display the calm timer
-			calmTimer -= Time.deltaTime;
+			//Decrease and display the calm timer when not pause
+			if(!Settings.StageOperator.i.paused) calmTimer -= Time.unscaledDeltaTime;
 			calmTimerTxt.text = Mathf.RoundToInt(calmTimer) + "<size=18>." + (System.Math.Round(calmTimer - Mathf.Floor(calmTimer), 1)*10) + "</size>";
 			//Play timer warning animation when under 10s
 			if(calmTimer < 10) {calmTimerImg.color = Color.red; calmTimerTxt.color = Color.red;}

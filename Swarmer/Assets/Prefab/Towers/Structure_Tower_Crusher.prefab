@@ -73,13 +73,13 @@ MonoBehaviour:
     damage: 70
     firerate: 0.3
     range: 1.75
-    radius: 0
+    radius: 1
     repeat: 1
     amount: 3
     explosionExt: 0
     exp_damage: 0
     exp_radius: 0
-  strikeEffect: {fileID: 3139924862428637110, guid: 437989ad6d7de9d45ad2ca89a78ad2a7,
+  strikeEffect: {fileID: 4929026177846848874, guid: d3fe26816093a4646bc38d55848168ce,
     type: 3}
   targetEnemy: {fileID: 0}
   firepoint: {fileID: 389375063040492873}
@@ -103,7 +103,7 @@ MonoBehaviour:
   tower: {fileID: 6913032624941499287}
   towerUpgrade:
     damage: 8
-    firerate: 0.67
+    firerate: 0.87
     range: 1
     radius: 0
     repeat: 0.7
@@ -149,7 +149,7 @@ MonoBehaviour:
     pos: {x: 0, y: 0}
     index: 0
     occupations: []
-    isBorder: 0
+    renewBorder: 0
     chunkReside: {x: 0, y: 0}
     flows:
       cost: 0
