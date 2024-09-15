@@ -1014,17 +1014,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   config:
-    CamUp: 0
-    CamDown: 0
-    CamLeft: 0
-    CamRight: 0
-    CamToBase: 0
-    ResetZoom: 0
-    SkipCalm: 0
-    SellTower: 0
-    UpgradeTower: 0
-    UnSelect: 0
-    Select: 0
+    CamUp: 273
+    CamDown: 274
+    CamLeft: 276
+    CamRight: 275
+    CamToBase: 278
+    ResetZoom: 122
+    SkipCalm: 13
+    SellTower: 115
+    UpgradeTower: 117
+    UnSelect: 324
+    Select: 323
     masterVolume: 0
     soundVolume: 0
     musicVolume: 0

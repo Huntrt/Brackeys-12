@@ -208,9 +208,9 @@ MonoBehaviour:
   towerStats:
     damage: 3
     firerate: 1.2
-    range: 3
-    accuracy: 20
-    projectile: 7
+    range: 3.6
+    accuracy: 45
+    projectile: 6
   projectileStats:
     speed: 6
     lifetime: 4
@@ -238,9 +238,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 0
-  initialCost: 20
+  initialCost: 11
+  costScale: 8
   curCost: 0
-  costScale: 10
   tower: {fileID: 8643546546108537486}
   towerUpgrade:
     damage: 2

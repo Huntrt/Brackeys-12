@@ -273,7 +273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21293d266dff2ae4a976f46634070f77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 10
+  cost: 14
   sellPenalty: 1
 --- !u!114 &4159095149716290113
 MonoBehaviour:
@@ -291,10 +291,10 @@ MonoBehaviour:
   rangeDetector: {fileID: 3032269066889469565}
   upgrader: {fileID: -5763717913354073679}
   towerStats:
-    damage: 3
-    firerate: 3.5
-    range: 0.3
-    radius: 0.3
+    damage: 2
+    firerate: 5.4
+    range: 0.45
+    radius: 0.1
     repeat: 1
     amount: 10
     explosionExt: 0
@@ -318,16 +318,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 0
-  initialCost: 10
+  initialCost: 7
   costScale: 10
   curCost: 0
   tower: {fileID: 4159095149716290113}
   towerUpgrade:
     damage: 0.4
-    firerate: 0.3
-    range: 0.05
-    radius: 0.06
-    repeat: 0.2
+    firerate: 2.3
+    range: 0.3
+    radius: 0.3
+    repeat: 0.25
     amount: 1
     explosionExt: 0
     exp_damage: 0

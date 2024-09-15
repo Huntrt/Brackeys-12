@@ -52,8 +52,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21293d266dff2ae4a976f46634070f77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 35
-  sellPenalty: 3
+  cost: 16
+  sellPenalty: 1
 --- !u!114 &6913032624941499287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70,9 +70,9 @@ MonoBehaviour:
   rangeDetector: {fileID: 7799243056544322455}
   upgrader: {fileID: 4940872177074824845}
   towerStats:
-    damage: 50
+    damage: 70
     firerate: 0.3
-    range: 1.5
+    range: 1.75
     radius: 0
     repeat: 1
     amount: 3
@@ -97,16 +97,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 0
-  initialCost: 16
+  initialCost: 11
+  costScale: 7
   curCost: 0
-  costScale: 19
   tower: {fileID: 6913032624941499287}
   towerUpgrade:
-    damage: 2
-    firerate: 0.08
-    range: 0.4
+    damage: 8
+    firerate: 0.67
+    range: 1
     radius: 0
-    repeat: 0.09
+    repeat: 0.7
     amount: 1.8
     explosionExt: 0
     exp_damage: 0
@@ -139,7 +139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayName: Crusher
-  description: Slow but deadly
+  description: Deliver massive damage after an long time
   layer: 2
   flowCostMod: 0
   towerable: 0

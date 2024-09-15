@@ -70,10 +70,10 @@ MonoBehaviour:
   rangeDetector: {fileID: 3363907821402790859}
   upgrader: {fileID: 2259042668799073549}
   towerStats:
-    damage: 2
-    firerate: 6
+    damage: 1
+    firerate: 4.5
     range: 2
-    accuracy: 10
+    accuracy: 25
     projectile: 3
   projectileStats:
     speed: 15
@@ -102,20 +102,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 0
-  initialCost: 15
+  initialCost: 21
+  costScale: 17
   curCost: 0
-  costScale: 30
   tower: {fileID: 4678687183825854374}
   towerUpgrade:
-    damage: 4
+    damage: 1.3
     firerate: 3
     range: 1
     accuracy: 0
-    projectile: 5
+    projectile: 1.5
   strikeUpgrade:
     speed: 1
-    lifetime: 2
-    piercing: 4
+    lifetime: 1
+    piercing: 2
     explosionExt: 0
     exp_damage: 0
     exp_radius: 0

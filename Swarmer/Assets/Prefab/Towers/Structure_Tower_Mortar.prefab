@@ -239,8 +239,8 @@ MonoBehaviour:
   towerStats:
     damage: 10
     firerate: 1
-    range: 3.4
-    radius: 3
+    range: 4.2
+    radius: 0
     repeat: 1
     amount: 1
     explosionExt: 1
@@ -264,17 +264,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 0
-  initialCost: 34
-  curCost: 0
+  initialCost: 17
   costScale: 16
+  curCost: 0
   tower: {fileID: 1823889706874256279}
   towerUpgrade:
-    damage: 1
-    firerate: 0.8
+    damage: 2.3
+    firerate: 0.84
     range: 1.3
-    radius: 0.7
+    radius: 0
     repeat: 0.6
-    amount: 2
+    amount: 2.3
     explosionExt: 1
     exp_damage: 1.4
     exp_radius: 0.14
@@ -306,7 +306,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayName: Motar
-  description: Instant explode enemy
+  description: Instants explode enemy
   layer: 2
   flowCostMod: 0
   towerable: 0

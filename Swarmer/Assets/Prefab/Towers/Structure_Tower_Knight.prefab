@@ -219,7 +219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21293d266dff2ae4a976f46634070f77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 27
+  cost: 31
   sellPenalty: 4
 --- !u!114 &3062500314627668708
 MonoBehaviour:
@@ -238,7 +238,7 @@ MonoBehaviour:
   upgrader: {fileID: 4409840329482634555}
   towerStats:
     damage: 1.5
-    firerate: 2.2
+    firerate: 2.4
     range: 1
     spread: 10
     projectile: 5
@@ -269,20 +269,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 0
-  initialCost: 18
+  initialCost: 15
+  costScale: 21
   curCost: 0
-  costScale: 22
   tower: {fileID: 3062500314627668708}
   towerUpgrade:
     damage: 1.2
-    firerate: 1.8
-    range: 0.3
+    firerate: 1.12
+    range: 0.7
     spread: 1
     projectile: 2
   strikeUpgrade:
-    speed: 0.2
-    lifetime: 0.2
-    piercing: 1
+    speed: 0.5
+    lifetime: 0.4
+    piercing: 3.5
     explosionExt: 0
     exp_damage: 0
     exp_radius: 0
@@ -317,7 +317,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayName: Knight
-  description: Slash toward enemy
+  description: Powerful area control slash
   layer: 2
   flowCostMod: 0
   towerable: 0

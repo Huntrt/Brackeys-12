@@ -206,12 +206,15 @@ MonoBehaviour:
   rangeDetector: {fileID: 7775336910351164370}
   upgrader: {fileID: 6907194133725292539}
   towerStats:
-    damage: 10
-    firerate: 3
-    range: 3
-    radius: 3
+    damage: 2.2
+    firerate: 3.4
+    range: 1.2
+    radius: 0.6
     repeat: 1
     amount: 5
+    explosionExt: 0
+    exp_damage: 0
+    exp_radius: 0
   strikeEffect: {fileID: 3139924862428637110, guid: 437989ad6d7de9d45ad2ca89a78ad2a7,
     type: 3}
   targetEnemy: {fileID: 0}
@@ -231,16 +234,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 0
   initialCost: 7
+  costScale: 14
   curCost: 0
-  costScale: 15
   tower: {fileID: 8758139992419010926}
   towerUpgrade:
-    damage: 1
+    damage: 1.2
     firerate: 3
     range: 0.2
     radius: 0.2
     repeat: 0.4
     amount: 4
+    explosionExt: 0
+    exp_damage: 0
+    exp_radius: 0
 --- !u!114 &7775336910351164370
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -269,7 +275,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayName: Saw
-  description: 'Cut up enemy '
+  description: Shred enemy in it range
   layer: 2
   flowCostMod: 0
   towerable: 0

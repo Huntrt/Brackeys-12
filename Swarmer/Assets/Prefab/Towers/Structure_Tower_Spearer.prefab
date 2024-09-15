@@ -103,12 +103,12 @@ MonoBehaviour:
   towerStats:
     damage: 3
     firerate: 1.5
-    range: 2
+    range: 3
     spread: 0
     projectile: 1
   projectileStats:
     speed: 1
-    lifetime: 2
+    lifetime: 3
     piercing: 4
     explosionExt: 0
     exp_damage: 0
@@ -133,19 +133,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 0
-  initialCost: 12
-  curCost: 0
+  initialCost: 8
   costScale: 10
+  curCost: 0
   tower: {fileID: 467844237971691687}
   towerUpgrade:
-    damage: 2
+    damage: 1.6
     firerate: 1.1
-    range: 0.89
+    range: 0.9
     spread: 0
     projectile: 0
   strikeUpgrade:
     speed: 0.2
-    lifetime: 0.75
+    lifetime: 0.9
     piercing: 3
     explosionExt: 0
     exp_damage: 0

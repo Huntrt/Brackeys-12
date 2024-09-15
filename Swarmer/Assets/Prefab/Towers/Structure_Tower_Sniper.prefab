@@ -102,13 +102,13 @@ MonoBehaviour:
   upgrader: {fileID: 2570359954120499904}
   towerStats:
     damage: 30
-    firerate: 0.3
-    range: 13
+    firerate: 0.5
+    range: 8
     piercing: 1
     size: 1.2
     atkCount: 1
     spread: 0
-    laserLength: 13
+    laserLength: 8
   strikeEffect: {fileID: 3369531559651782038, guid: 47a368cbf5874a7408e7c964f8a74f05,
     type: 3}
   targetEnemy: {fileID: 0}
@@ -127,16 +127,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 0
-  initialCost: 24
+  initialCost: 10
+  costScale: 18
   curCost: 0
-  costScale: 12
   tower: {fileID: 1314836843914340298}
   towerUpgrade:
     damage: 5
-    firerate: 0.3
+    firerate: 0.47
     range: 1
     piercing: 0.4
-    size: 0.5
+    size: 0.32
     atkCount: 0
     spread: 0
     laserLength: 1
