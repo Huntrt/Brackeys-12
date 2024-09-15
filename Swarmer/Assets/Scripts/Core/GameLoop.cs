@@ -87,6 +87,7 @@ public class GameLoop : MonoBehaviour
 		if(raidPhase) return;
 		level++;
 		SessionOperator.i.audios.soundSource.PlayOneShot(raidAu);
+		Economy.i.Earn((int)calmTimer*3);
 		raidEffect.SetActive(true);
 		//Start raid phase
 		raidPhase = true;
